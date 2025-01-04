@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dct3p68k75t0b"]
+
+[ext_resource type="Script" path="res://scripts/characters scripts/Cleome.cs" id="1_riq3h"]
+[ext_resource type="PackedScene" uid="uid://cvmqiyd8wc7bb" path="res://scenes/animated_characters/Cleome.tscn" id="2_t18nc"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_4otxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
+size = Vector2(40, 40)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "CurrentHability", "Cooldown")]
+z_index = 2
+z_as_relative = false
+collision_mask = 2
+script = ExtResource("1_riq3h")
+movement = NodePath("Movement")
+MyCollision = NodePath("CollisionShape2D")
+animatedSprite = NodePath("Cleome")
+CurrentHability = NodePath("VBoxContainer/Label")
+Cooldown = NodePath("VBoxContainer/Label2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="Cleome" parent="." instance=ExtResource("2_t18nc")]
+position = Vector2(0, -40)
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -56.0
+offset_top = 16.0
+offset_bottom = 66.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Movement" parent="." instance=ExtResource("3_4otxo")]

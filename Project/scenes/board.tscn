@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://n421qfqthsvn"]
+
+[ext_resource type="Script" path="res://scripts/Board.cs" id="1_pgnvf"]
+[ext_resource type="PackedScene" uid="uid://tbvrenpqhjyb" path="res://scenes/player_1.tscn" id="2_8mxxe"]
+[ext_resource type="PackedScene" uid="uid://d3man53m7l1ee" path="res://scenes/path.tscn" id="2_8qon0"]
+[ext_resource type="PackedScene" uid="uid://cq64ahof4th0i" path="res://scenes/player_2.tscn" id="3_3t3pk"]
+[ext_resource type="PackedScene" uid="uid://cyw5cvltpsgs2" path="res://scenes/wall.tscn" id="3_utnd5"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_pgnvf")
+path = ExtResource("2_8qon0")
+wall = ExtResource("3_utnd5")
+player1 = ExtResource("2_8mxxe")
+player2 = ExtResource("3_3t3pk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -17983.0
+offset_top = -17568.0
+offset_right = -17943.0
+offset_bottom = -17528.0
+scale = Vector2(1000, 1000)
+color = Color(0, 0, 0, 1)
