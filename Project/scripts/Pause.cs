@@ -30,6 +30,6 @@ public partial class Pause : CanvasLayer {
         }
     }
     public void PressBack() {
-        GetTree().ChangeSceneToFile("res://scenes/menu.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/start_menu.tscn");
     }
 }

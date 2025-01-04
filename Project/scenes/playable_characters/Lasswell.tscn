@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd8ss8v32uuvh"]
+[gd_scene load_steps=6 format=3 uid="uid://dd8ss8v32uuvh"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Lasswell.cs" id="1_5e64h"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_qthm4"]
 [ext_resource type="PackedScene" uid="uid://gpbvlasngfa2" path="res://scenes/animated_characters/Laswell.tscn" id="3_3rrij"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_bmn3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "CurrentHability", "Cooldown")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyHealthBox", "animatedSprite", "Cooldown")]
 z_index = 2
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_5e64h")
 movement = NodePath("Movement")
-MyCollision = NodePath("CollisionShape2D")
+MyHealthBox = NodePath("HealthBox")
 animatedSprite = NodePath("Laswell")
-CurrentHability = NodePath("VBoxContainer/Label")
 Cooldown = NodePath("VBoxContainer/Label2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,9 +28,6 @@ offset_left = -56.0
 offset_top = 16.0
 offset_bottom = 66.0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -41,3 +38,15 @@ position = Vector2(0, -48)
 scale = Vector2(2, 2)
 animation = &"stop"
 frame_progress = 0.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -136.0
+offset_bottom = -113.0
+
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_bmn3x")]
+z_index = 5
+z_as_relative = false
+collision_layer = 8
+collision_mask = 0
+label = NodePath("../Label")

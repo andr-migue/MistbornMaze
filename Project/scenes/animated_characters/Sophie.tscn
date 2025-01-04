@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://es2nsfdmtyj3"]
+
+[ext_resource type="Texture2D" uid="uid://b1rns3as1xpvl" path="res://assets/Mobile - Final Fantasy Brave Exvius - Esper of Hope Sophie.png" id="1_5y4gs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdm2t"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(0, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vconl"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(116, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pehj3"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(232, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxtsu"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(348, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su0fw"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(0, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v7qh"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(116, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24hiv"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(232, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp3hi"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(348, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omrpb"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(0, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfto"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(116, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcx7o"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(232, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a8ba"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(348, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj30h"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(0, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys8hq"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(116, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyyah"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(232, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsdwr"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(348, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inui0"]
+atlas = ExtResource("1_5y4gs")
+region = Rect2(0, 0, 116, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nt763"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdm2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vconl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pehj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxtsu")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su0fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v7qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24hiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp3hi")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omrpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcx7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a8ba")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj30h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys8hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyyah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsdwr")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inui0")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
+
+[node name="Sophie" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_nt763")
+animation = &"stop"

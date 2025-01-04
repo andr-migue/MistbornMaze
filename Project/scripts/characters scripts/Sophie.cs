@@ -1,5 +1,5 @@
 using Godot;
-public partial class Cleome : CharacterBody2D {
+public partial class Sophie : CharacterBody2D {
     [Export] Movement movement;
     Vector2 inputVector;
     [Export] CollisionShape2D MyCollision;
@@ -47,6 +47,7 @@ public partial class Cleome : CharacterBody2D {
         if (IsHability) {
             MyCollision.Disabled = true;
             MyHealthBox.Monitorable = false;
+            SetTransparency(0.5f);
             IsHability = false;
             Timer.Start();
             Timer2.Start();
@@ -64,6 +65,7 @@ public partial class Cleome : CharacterBody2D {
     private void OnTimerTimeout() {
         MyCollision.Disabled = false;
         MyHealthBox.Monitorable = true;
+        SetTransparency(1);
         CurrentHability.Visible = false;
     }
     private void InicializarTimer2() {
@@ -76,5 +78,9 @@ public partial class Cleome : CharacterBody2D {
     private void OnTimerTimeout2() {
         IsHability = true;
         Cooldown.Visible = false;
+    }
+    public void SetTransparency(float alpha) {
+        Color currentColor = animatedSprite.Modulate;
+        animatedSprite.Modulate = new Color(currentColor.R, currentColor.G, currentColor.B, alpha);
     }
 }

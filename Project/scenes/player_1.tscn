@@ -3,4 +3,6 @@
 [ext_resource type="Script" path="res://scripts/Player1.cs" id="1_mbym0"]
 
 [node name="Player1" type="Node2D"]
+z_index = 5
+z_as_relative = false
 script = ExtResource("1_mbym0")

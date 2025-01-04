@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bngtjbw82pv7o"]
+
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_lcbgt"]
+[ext_resource type="Script" path="res://scripts/characters scripts/Lid.cs" id="1_oko0y"]
+[ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Lid.tscn" id="2_u7t3l"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_fsppm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
+size = Vector2(40, 40)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite", "CurrentHability", "Cooldown")]
+z_index = 2
+z_as_relative = false
+collision_mask = 2
+script = ExtResource("1_oko0y")
+movement = NodePath("Movement")
+animatedSprite = NodePath("Lid")
+CurrentHability = NodePath("VBoxContainer/Label")
+Cooldown = NodePath("VBoxContainer/Label2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -56.0
+offset_top = 16.0
+offset_bottom = 66.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Movement" parent="." instance=ExtResource("1_lcbgt")]
+
+[node name="Lid" parent="." instance=ExtResource("2_u7t3l")]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+z_index = 5
+z_as_relative = false
+offset_left = -40.0
+offset_top = -128.0
+offset_bottom = -105.0
+
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_fsppm")]
+collision_layer = 8
+collision_mask = 0
+label = NodePath("../Label")

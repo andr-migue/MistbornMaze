@@ -1,19 +1,15 @@
 using Godot;
-public partial class Lasswell : CharacterBody2D {
+public partial class Rain : CharacterBody2D {
     [Export] Movement movement;
-    [Export] HealthBox MyHealthBox;
     Vector2 inputVector;
     [Export] AnimatedSprite2D animatedSprite;
     private bool IsHability = true;
     private Timer Timer;
-    [Export] Label Cooldown;
     public override void _Ready() {
         movement.setup(this);
-        InicializarTimer();
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) Cooldown.Text = $"Cooldown: {Timer.TimeLeft:F1}";
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();
@@ -37,24 +33,5 @@ public partial class Lasswell : CharacterBody2D {
         Node parent = GetParent();
         if (parent is Player1 player1) inputVector = player1.InputVector;
         else if (parent is Player2 player2) inputVector = player2.InputVector;
-    }
-    public void Habilidad() {
-        if (IsHability) {
-            MyHealthBox.TakeHealth(50);
-            IsHability = false;
-            Cooldown.Visible = true;
-            Timer.Start();
-        }
-    }
-    private void InicializarTimer() {
-        Timer = new Timer();
-        Timer.WaitTime = 20.0f;
-        Timer.OneShot = true;
-        Timer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
-        AddChild(Timer);
-    }
-    private void OnTimerTimeout() {
-        IsHability = true;
-        Cooldown.Visible = false;
     }
 }

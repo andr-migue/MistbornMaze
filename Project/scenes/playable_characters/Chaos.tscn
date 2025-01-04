@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://86t2iqsyqw3p"]
+
+[ext_resource type="Script" path="res://scripts/characters scripts/Chaos.cs" id="1_5q6jb"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_xuwbq"]
+[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Chaos_bismarck.tscn" id="2_5672d"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_mrt51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
+size = Vector2(40, 40)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite", "Cooldown")]
+z_index = 2
+z_as_relative = false
+collision_mask = 2
+script = ExtResource("1_5q6jb")
+movement = NodePath("Movement")
+animatedSprite = NodePath("Chaos Bismarck")
+Cooldown = NodePath("VBoxContainer/Label2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -56.0
+offset_top = 16.0
+offset_bottom = 66.0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Movement" parent="." instance=ExtResource("1_xuwbq")]
+
+[node name="Chaos Bismarck" parent="." instance=ExtResource("2_5672d")]
+position = Vector2(0, -72)
+scale = Vector2(1.5, 1.5)
+animation = &"move_down"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -184.0
+offset_bottom = -161.0
+
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_mrt51")]
+z_index = 5
+z_as_relative = false
+collision_layer = 8
+collision_mask = 0
+label = NodePath("../Label")

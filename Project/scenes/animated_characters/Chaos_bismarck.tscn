@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://bv275wdwxar24"]
+
+[ext_resource type="Texture2D" uid="uid://bvimcmj0y1srj" path="res://assets/Mobile - Final Fantasy Brave Exvius - Chaos Bismarck.png" id="1_c0tk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8r72"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(0, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwkvf"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(116, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53r82"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(232, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptj7c"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(348, 0, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7b6f"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(0, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42pgq"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(116, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yspmt"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(232, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttibj"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(348, 232, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcwr8"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(0, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4l6d"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(116, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mdu8"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(232, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw0m7"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(348, 348, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_setr6"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(0, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r08dw"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(116, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi8hh"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(232, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsckr"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(348, 116, 116, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obna0"]
+atlas = ExtResource("1_c0tk0")
+region = Rect2(232, 464, 116, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ub0pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8r72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwkvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53r82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptj7c")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7b6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42pgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yspmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttibj")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcwr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4l6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mdu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw0m7")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_setr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r08dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi8hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsckr")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obna0")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
+
+[node name="Chaos Bismarck" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ub0pr")
+animation = &"stop"

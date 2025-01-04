@@ -1,24 +1,21 @@
+using System;
 using Godot;
-public partial class Cleome : CharacterBody2D {
+public partial class Chaos : CharacterBody2D {
     [Export] Movement movement;
     Vector2 inputVector;
-    [Export] CollisionShape2D MyCollision;
     [Export] AnimatedSprite2D animatedSprite;
-    [Export] HealthBox MyHealthBox;
     private bool IsHability = true;
     private Timer Timer;
-    private Timer Timer2;
-    [Export] Label CurrentHability;
     [Export] Label Cooldown;
     public override void _Ready() {
         movement.setup(this);
-        InicializarTimer1();
-        InicializarTimer2();
+        InicializarTimer();
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
-        if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
+        if (!Timer.IsStopped()) {
+            Cooldown.Text = $"Cooldown: {Timer.TimeLeft:F1}";
+        }
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();
@@ -45,33 +42,27 @@ public partial class Cleome : CharacterBody2D {
     }
     public void Habilidad() {
         if (IsHability) {
-            MyCollision.Disabled = true;
-            MyHealthBox.Monitorable = false;
+            Teleport();
             IsHability = false;
             Timer.Start();
-            Timer2.Start();
-            CurrentHability.Visible = true;
-            Cooldown.Visible = true;
         }
     }
-    private void InicializarTimer1() {
+    void Teleport(){
+        Random r = new Random();
+        int x = 0;
+        int y = 0;
+        while (GlobalData.IntBoard[x, y] != 0){
+            x = r.Next(1, GlobalData.Filas - 1);
+            y = r.Next(1, GlobalData.Columnas - 1);
+        }
+        Position = new Vector2(y * 64, x * 64);
+    }
+    private void InicializarTimer() {
         Timer = new Timer();
         Timer.WaitTime = 5.0f;
         Timer.OneShot = true;
-        Timer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
+        Timer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout2)));
         AddChild(Timer);
-    }
-    private void OnTimerTimeout() {
-        MyCollision.Disabled = false;
-        MyHealthBox.Monitorable = true;
-        CurrentHability.Visible = false;
-    }
-    private void InicializarTimer2() {
-        Timer2 = new Timer();
-        Timer2.WaitTime = 20.0f;
-        Timer2.OneShot = true;
-        Timer2.Connect("timeout", new Callable(this, nameof(OnTimerTimeout2)));
-        AddChild(Timer2);
     }
     private void OnTimerTimeout2() {
         IsHability = true;

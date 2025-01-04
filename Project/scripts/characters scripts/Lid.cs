@@ -1,10 +1,8 @@
 using Godot;
-public partial class Cleome : CharacterBody2D {
+public partial class Lid : CharacterBody2D {
     [Export] Movement movement;
     Vector2 inputVector;
-    [Export] CollisionShape2D MyCollision;
     [Export] AnimatedSprite2D animatedSprite;
-    [Export] HealthBox MyHealthBox;
     private bool IsHability = true;
     private Timer Timer;
     private Timer Timer2;
@@ -17,8 +15,12 @@ public partial class Cleome : CharacterBody2D {
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
-        if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
+        if (!Timer.IsStopped()) {
+            CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
+        }
+        if (!Timer2.IsStopped()) {
+            Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
+        }
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();
@@ -45,8 +47,7 @@ public partial class Cleome : CharacterBody2D {
     }
     public void Habilidad() {
         if (IsHability) {
-            MyCollision.Disabled = true;
-            MyHealthBox.Monitorable = false;
+            movement.speed = 400;
             IsHability = false;
             Timer.Start();
             Timer2.Start();
@@ -62,8 +63,7 @@ public partial class Cleome : CharacterBody2D {
         AddChild(Timer);
     }
     private void OnTimerTimeout() {
-        MyCollision.Disabled = false;
-        MyHealthBox.Monitorable = true;
+        movement.speed = 200;
         CurrentHability.Visible = false;
     }
     private void InicializarTimer2() {

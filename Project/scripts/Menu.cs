@@ -2,7 +2,7 @@
 using Godot;
 public partial class Menu : Control {
     public void PressPlay() {
-        GetTree().ChangeSceneToFile("res://scenes/introduction.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/game.tscn");
     }
     void RowsChanged(string text) {
         if (IsNumber(text)) GlobalData.Filas = int.Parse(text);

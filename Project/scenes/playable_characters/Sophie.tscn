@@ -1,21 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://dct3p68k75t0b"]
+[gd_scene load_steps=6 format=3 uid="uid://dl8w6beqjuc6i"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Cleome.cs" id="1_riq3h"]
-[ext_resource type="PackedScene" uid="uid://cvmqiyd8wc7bb" path="res://scenes/animated_characters/Cleome.tscn" id="2_t18nc"]
-[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_4otxo"]
-[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_0nyn4"]
+[ext_resource type="Script" path="res://scripts/characters scripts/Sophie.cs" id="1_mfd0s"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_r0wqg"]
+[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="3_8g3hy"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_sdmke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "MyHealthBox", "CurrentHability", "Cooldown")]
-z_index = 2
+z_index = 5
 z_as_relative = false
 collision_mask = 2
-script = ExtResource("1_riq3h")
+script = ExtResource("1_mfd0s")
 movement = NodePath("Movement")
 MyCollision = NodePath("CollisionShape2D")
-animatedSprite = NodePath("Cleome")
+animatedSprite = NodePath("Sophie")
 MyHealthBox = NodePath("HealthBox")
 CurrentHability = NodePath("VBoxContainer/Label")
 Cooldown = NodePath("VBoxContainer/Label2")
@@ -24,10 +24,6 @@ Cooldown = NodePath("VBoxContainer/Label2")
 z_index = 1
 z_as_relative = false
 shape = SubResource("RectangleShape2D_45uex")
-
-[node name="Cleome" parent="." instance=ExtResource("2_t18nc")]
-position = Vector2(0, -40)
-scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = -56.0
@@ -40,16 +36,18 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Movement" parent="." instance=ExtResource("3_4otxo")]
+[node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
+
+[node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
+position = Vector2(0, -72)
+scale = Vector2(1.5, 1.5)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0
-offset_top = -104.0
-offset_bottom = -81.0
+offset_top = -168.0
+offset_bottom = -145.0
 
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_0nyn4")]
-z_index = 5
-z_as_relative = false
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_sdmke")]
 collision_layer = 8
 collision_mask = 0
 label = NodePath("../Label")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfskvw3mvjl6u"]
+
+[ext_resource type="Script" path="res://scripts/HitBox.cs" id="1_rsnwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx7ei"]
+size = Vector2(40, 40)
+
+[node name="HitBox" type="Area2D"]
+script = ExtResource("1_rsnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_cx7ei")
+debug_color = Color(0.995724, 0, 0.200131, 0.42)

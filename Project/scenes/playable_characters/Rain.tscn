@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bohqspws8bmi0"]
+
+[ext_resource type="Script" path="res://scripts/characters scripts/Rain.cs" id="1_h2pws"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_gkl4j"]
+[ext_resource type="PackedScene" uid="uid://b6mbv5bpkj7kq" path="res://scenes/animated_characters/Rain.tscn" id="2_phi0m"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_swfwc"]
+[ext_resource type="PackedScene" uid="uid://dfskvw3mvjl6u" path="res://scenes/hit_box.tscn" id="5_3wfky"]
+[ext_resource type="Script" path="res://scripts/RainHitBox.cs" id="6_pe1pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
+size = Vector2(40, 40)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite")]
+z_index = 2
+z_as_relative = false
+collision_mask = 2
+script = ExtResource("1_h2pws")
+movement = NodePath("Movement")
+animatedSprite = NodePath("Rain")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="Movement" parent="." instance=ExtResource("2_gkl4j")]
+
+[node name="Rain" parent="." instance=ExtResource("2_phi0m")]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -120.0
+offset_bottom = -97.0
+
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_swfwc")]
+z_index = 5
+z_as_relative = false
+collision_layer = 128
+collision_mask = 0
+label = NodePath("../Label")
+
+[node name="HitBox" parent="." node_paths=PackedStringArray("MyHealthBox") instance=ExtResource("5_3wfky")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("6_pe1pq")
+MyHealthBox = NodePath("../HealthBox")

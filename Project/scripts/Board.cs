@@ -10,13 +10,16 @@ public partial class Board : Node2D{
     [Export] public PackedScene player2;
     public Player1 Player1Instance;
     public Player2 Player2Instance;
+    public int TrapCount;
     public override void _Ready(){
         Filas = GlobalData.Filas;
         Columnas = GlobalData.Columnas;
         int[,] IntBoard = GenerateIntBoard(Filas, Columnas);
+        GlobalData.IntBoard = IntBoard;
         Node2D[,] NodeBoard = GenerateNodeBoard(IntBoard);
         PrintBoard(NodeBoard);
         PlacePlayers();
+        PlaceTraps();
     }
     public static int[,] GenerateIntBoard(int filas, int columnas){
         // Crear matriz de enteros
@@ -150,5 +153,21 @@ public partial class Board : Node2D{
         
         Player1Instance.Position = new Vector2(1 * 64, 1 * 64);
         Player2Instance.Position = new Vector2((Columnas - 2) * 64, (Filas - 2) * 64);
+    }
+    public void PlaceTraps(){
+        TrapCount = GlobalData.Traps;
+        while (TrapCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Node2D trapInstance = (Node2D)GD.Load<PackedScene>("res://scenes/trap.tscn").Instantiate();
+            trapInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(trapInstance);
+            TrapCount--;
+        }
     }
 }
