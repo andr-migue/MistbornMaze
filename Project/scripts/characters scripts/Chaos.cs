@@ -44,6 +44,7 @@ public partial class Chaos : CharacterBody2D {
         if (IsHability) {
             Teleport();
             IsHability = false;
+            Cooldown.Visible = true;
             Timer.Start();
         }
     }
@@ -55,7 +56,7 @@ public partial class Chaos : CharacterBody2D {
             x = r.Next(1, GlobalData.Filas - 1);
             y = r.Next(1, GlobalData.Columnas - 1);
         }
-        Position = new Vector2(y * 64, x * 64);
+        GlobalPosition = new Vector2(y * 64, x * 64);
     }
     private void InicializarTimer() {
         Timer = new Timer();
