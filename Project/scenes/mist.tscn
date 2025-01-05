@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://kf8uplrsfp78"]
+
+[ext_resource type="Texture2D" uid="uid://byxoobrcqini0" path="res://assets/PC Computer - RPG Maker MV - Mist.png" id="1_p0fpd"]
+[ext_resource type="Script" path="res://scripts/Mist.cs" id="1_sueou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8rrn"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1naf"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo2fg"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll45k"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haq5e"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebw8u"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p5rq"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwod8"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drra5"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lrec"]
+atlas = ExtResource("1_p0fpd")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gui1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1naf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo2fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll45k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haq5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebw8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p5rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwod8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drra5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lrec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Mist" type="Area2D" node_paths=PackedStringArray("animatedMist")]
+collision_layer = 0
+script = ExtResource("1_sueou")
+animatedMist = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+z_as_relative = false
+shape = SubResource("RectangleShape2D_a8rrn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 6
+z_as_relative = false
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_gui1i")
+frame_progress = 0.141732

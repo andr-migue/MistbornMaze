@@ -20,3 +20,6 @@ offset_right = -17943.0
 offset_bottom = -17528.0
 scale = Vector2(1000, 1000)
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0383972, 0.0383972, 0.0383972, 1)

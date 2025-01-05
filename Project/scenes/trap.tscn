@@ -75,11 +75,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"salen",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [node name="Trap" type="Node2D" node_paths=PackedStringArray("animatedTrap", "animatedTrap2", "animatedTrap3", "animatedTrap4")]
-z_index = 2
+z_index = 1
+z_as_relative = false
 script = ExtResource("1_rj35k")
 animatedTrap = NodePath("AnimatedSprite2D")
 animatedTrap2 = NodePath("AnimatedSprite2D2")
@@ -93,30 +94,30 @@ collision_layer = 64
 shape = SubResource("RectangleShape2D_3v6ny")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 z_as_relative = false
 position = Vector2(0, -48)
 sprite_frames = SubResource("SpriteFrames_k1lnl")
 animation = &"salen"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 z_as_relative = false
-position = Vector2(8, -32)
+position = Vector2(8, -35)
 sprite_frames = SubResource("SpriteFrames_k1lnl")
 animation = &"salen"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 z_as_relative = false
-position = Vector2(0, -16)
+position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_k1lnl")
 animation = &"salen"
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 z_as_relative = false
-position = Vector2(8, 0)
+position = Vector2(8, -4)
 sprite_frames = SubResource("SpriteFrames_k1lnl")
 animation = &"salen"
 

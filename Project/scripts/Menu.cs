@@ -10,11 +10,8 @@ public partial class Menu : Control {
     void ColumnsChanged(string text) {
         if (IsNumber(text)) GlobalData.Columnas = int.Parse(text);
     }
-    public void PressSelectionPlayer() {
+    public void PressSelectPlayer() {
         GetTree().ChangeSceneToFile("res://scenes/selection_player.tscn");
-    }
-    public void PressInfo() {
-        GetTree().ChangeSceneToFile("res://scenes/info.tscn");
     }
     public void PressExit() {
         GetTree().Quit();

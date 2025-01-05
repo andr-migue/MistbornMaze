@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp1xbqsq0vxdk"]
+
+[ext_resource type="Script" path="res://scripts/Teleport.cs" id="1_x8a1o"]
+[ext_resource type="Texture2D" uid="uid://blm8ki8bvc3p6" path="res://assets/Arcade - Darius Gaiden Silver Hawk - Black Hole Bomb.png" id="2_wae77"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ta1fi"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70pwj"]
+atlas = ExtResource("2_wae77")
+region = Rect2(3, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sdp8"]
+atlas = ExtResource("2_wae77")
+region = Rect2(135, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4fes"]
+atlas = ExtResource("2_wae77")
+region = Rect2(267, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkhug"]
+atlas = ExtResource("2_wae77")
+region = Rect2(399, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf3sd"]
+atlas = ExtResource("2_wae77")
+region = Rect2(531, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vbb0"]
+atlas = ExtResource("2_wae77")
+region = Rect2(663, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80eh1"]
+atlas = ExtResource("2_wae77")
+region = Rect2(795, 0, 132, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1mkn"]
+atlas = ExtResource("2_wae77")
+region = Rect2(927, 0, 132, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84nb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70pwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sdp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4fes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkhug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf3sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vbb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80eh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1mkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Teleport" type="Area2D" node_paths=PackedStringArray("animatedTeleport")]
+collision_layer = 0
+script = ExtResource("1_x8a1o")
+animatedTeleport = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+z_as_relative = false
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_ta1fi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 3
+z_as_relative = false
+position = Vector2(0, -40)
+scale = Vector2(0.640002, 1)
+sprite_frames = SubResource("SpriteFrames_84nb7")
+frame_progress = 0.638511

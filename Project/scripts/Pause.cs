@@ -9,18 +9,22 @@ public partial class Pause : CanvasLayer {
         }
     }
     public override void _PhysicsProcess(double delta) {
-        if (GlobalData.Score1 == 5 && PlayerNoWin) {
+        if (GlobalData.Score1 >= 5 && PlayerNoWin) {
             PlayerNoWin = false;
             PauseVoid();
             GamePausable = false;
-            PausaLabel.Text = "Jugador 1 ha ganado.";
+            PausaLabel.Text = "Jugador 1 ha escapado del\nLaberinto del Lerasium.";
+            GlobalData.Score1 = 0;
+            GlobalData.Score2 = 0;
         }
         
-        if (GlobalData.Score2 == 5 && PlayerNoWin) {
+        if (GlobalData.Score2 >= 5 && PlayerNoWin) {
             PlayerNoWin = false;
             PauseVoid();
             GamePausable = false;
-            PausaLabel.Text = "Jugador 2 ha ganado.";
+            PausaLabel.Text = "Jugador 2 ha escapado del\nLaberinto del Lerasium.";
+            GlobalData.Score1 = 0;
+            GlobalData.Score2 = 0;
         }
     }
     public void PauseVoid() {
@@ -30,6 +34,7 @@ public partial class Pause : CanvasLayer {
         }
     }
     public void PressBack() {
+        GetTree().Paused = !GetTree().Paused;
         GetTree().ChangeSceneToFile("res://scenes/start_menu.tscn");
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://86t2iqsyqw3p"]
+[gd_scene load_steps=8 format=3 uid="uid://86t2iqsyqw3p"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Chaos.cs" id="1_5q6jb"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_xuwbq"]
@@ -8,8 +8,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
+[sub_resource type="Gradient" id="Gradient_d13bh"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_neef6"]
+gradient = SubResource("Gradient_d13bh")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite", "Cooldown")]
-z_index = 2
+z_index = 5
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_5q6jb")
@@ -31,6 +41,7 @@ offset_bottom = 66.0
 layout_mode = 2
 
 [node name="Movement" parent="." instance=ExtResource("1_xuwbq")]
+speed = 150.0
 
 [node name="Chaos Bismarck" parent="." instance=ExtResource("2_5672d")]
 position = Vector2(0, -72)
@@ -47,4 +58,11 @@ z_index = 5
 z_as_relative = false
 collision_layer = 8
 collision_mask = 0
+Health = 500
 label = NodePath("../Label")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(8, 8)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_neef6")

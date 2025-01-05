@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx57nflipldv3"]
+
+[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="1_83tsr"]
+
+[node name="Sophie" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="Sophie" parent="." instance=ExtResource("1_83tsr")]
+animation = &"move_down"
+autoplay = "move_down"
+frame_progress = 0.523822
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 37.3333
+offset_top = -24.0
+offset_right = 267.333
+offset_bottom = 53.0
+scale = Vector2(0.6, 0.6)
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Vida: 100"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Velocidad: 250"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Habilidad: Desvanecimiento"
+horizontal_alignment = 1

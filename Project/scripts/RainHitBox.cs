@@ -3,9 +3,9 @@ public partial class RainHitBox : Area2D {
     [Export] int damage = 30;
     [Export] HealthBox MyHealthBox;
     public override void _Ready(){
-        BodyEntered += Hit;
+        AreaEntered += Hit;
     }
-    void Hit(Node2D body){
+    void Hit(Area2D body){
         if (body is HealthBox healthBox) {
             healthBox.TakeDamage(damage);
             MyHealthBox.TakeHealth(damage);

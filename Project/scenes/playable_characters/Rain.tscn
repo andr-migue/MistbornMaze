@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bohqspws8bmi0"]
+[gd_scene load_steps=10 format=3 uid="uid://bohqspws8bmi0"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Rain.cs" id="1_h2pws"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_gkl4j"]
@@ -10,8 +10,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
+[sub_resource type="Gradient" id="Gradient_4fm40"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bmwls"]
+gradient = SubResource("Gradient_4fm40")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite")]
-z_index = 2
+z_index = 5
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_h2pws")
@@ -24,6 +34,7 @@ z_as_relative = false
 shape = SubResource("RectangleShape2D_45uex")
 
 [node name="Movement" parent="." instance=ExtResource("2_gkl4j")]
+speed = 220.0
 
 [node name="Rain" parent="." instance=ExtResource("2_phi0m")]
 position = Vector2(0, -48)
@@ -39,6 +50,7 @@ z_index = 5
 z_as_relative = false
 collision_layer = 128
 collision_mask = 0
+Health = 100
 label = NodePath("../Label")
 
 [node name="HitBox" parent="." node_paths=PackedStringArray("MyHealthBox") instance=ExtResource("5_3wfky")]
@@ -46,3 +58,9 @@ collision_layer = 0
 collision_mask = 8
 script = ExtResource("6_pe1pq")
 MyHealthBox = NodePath("../HealthBox")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(8, 8)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_bmwls")

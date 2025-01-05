@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bngtjbw82pv7o"]
+[gd_scene load_steps=8 format=3 uid="uid://bngtjbw82pv7o"]
 
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_lcbgt"]
 [ext_resource type="Script" path="res://scripts/characters scripts/Lid.cs" id="1_oko0y"]
@@ -8,8 +8,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
+[sub_resource type="Gradient" id="Gradient_bjy6u"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vty7j"]
+gradient = SubResource("Gradient_bjy6u")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite", "CurrentHability", "Cooldown")]
-z_index = 2
+z_index = 5
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_oko0y")
@@ -51,3 +61,9 @@ offset_bottom = -105.0
 collision_layer = 8
 collision_mask = 0
 label = NodePath("../Label")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(8, 8)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_vty7j")

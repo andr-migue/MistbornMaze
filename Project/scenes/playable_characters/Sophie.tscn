@@ -1,14 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl8w6beqjuc6i"]
+[gd_scene load_steps=9 format=3 uid="uid://dl8w6beqjuc6i"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Sophie.cs" id="1_mfd0s"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_r0wqg"]
 [ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="3_8g3hy"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_sdmke"]
+[ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_0snud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "MyHealthBox", "CurrentHability", "Cooldown")]
+[sub_resource type="Gradient" id="Gradient_esbyu"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fxfpi"]
+gradient = SubResource("Gradient_esbyu")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "MyHealthBox", "sensor", "CurrentHability", "Cooldown")]
 z_index = 5
 z_as_relative = false
 collision_mask = 2
@@ -17,6 +28,7 @@ movement = NodePath("Movement")
 MyCollision = NodePath("CollisionShape2D")
 animatedSprite = NodePath("Sophie")
 MyHealthBox = NodePath("HealthBox")
+sensor = NodePath("Sensor")
 CurrentHability = NodePath("VBoxContainer/Label")
 Cooldown = NodePath("VBoxContainer/Label2")
 
@@ -37,6 +49,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
+speed = 250.0
 
 [node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
 position = Vector2(0, -72)
@@ -50,4 +63,21 @@ offset_bottom = -145.0
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_sdmke")]
 collision_layer = 8
 collision_mask = 0
+Health = 100
 label = NodePath("../Label")
+
+[node name="Sensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("5_0snud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(8, 8)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_fxfpi")

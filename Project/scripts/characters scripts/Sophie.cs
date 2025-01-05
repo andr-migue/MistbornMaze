@@ -5,20 +5,25 @@ public partial class Sophie : CharacterBody2D {
     [Export] CollisionShape2D MyCollision;
     [Export] AnimatedSprite2D animatedSprite;
     [Export] HealthBox MyHealthBox;
+    [Export] PlayerSensor sensor;
     private bool IsHability = true;
     private Timer Timer;
     private Timer Timer2;
     [Export] Label CurrentHability;
     [Export] Label Cooldown;
+    Vector2 InitialPosition;
     public override void _Ready() {
+        InitialPosition = Position;
         movement.setup(this);
         InicializarTimer1();
         InicializarTimer2();
     }
     public override void _Process(double delta) {
         Animation();
+        CheckLimits();
         if (!Timer.IsStopped()) CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
         if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
+        if (sensor.colisiones.Count == 0 && Timer.IsStopped()) OnTimerTimeout(); 
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();
@@ -43,6 +48,11 @@ public partial class Sophie : CharacterBody2D {
         if (parent is Player1 player1) inputVector = player1.InputVector;
         else if (parent is Player2 player2) inputVector = player2.InputVector;
     }
+    void CheckLimits() {
+        if (GlobalPosition.X < -64 || GlobalPosition.X > GlobalData.Columnas * 64 || GlobalPosition.Y < -64 || GlobalPosition.Y > GlobalData.Filas * 64) {
+            Position = InitialPosition;
+        }
+    }
     public void Habilidad() {
         if (IsHability) {
             MyCollision.Disabled = true;
@@ -63,10 +73,12 @@ public partial class Sophie : CharacterBody2D {
         AddChild(Timer);
     }
     private void OnTimerTimeout() {
-        MyCollision.Disabled = false;
-        MyHealthBox.Monitorable = true;
-        SetTransparency(1);
-        CurrentHability.Visible = false;
+        if (sensor.colisiones.Count == 0) {
+            MyCollision.Disabled = false;
+            MyHealthBox.Monitorable = true;
+            SetTransparency(1);
+            CurrentHability.Visible = false;
+        }
     }
     private void InicializarTimer2() {
         Timer2 = new Timer();

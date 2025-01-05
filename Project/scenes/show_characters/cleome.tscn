@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ii3ibovu0u8"]
+
+[ext_resource type="PackedScene" uid="uid://cvmqiyd8wc7bb" path="res://scenes/animated_characters/Cleome.tscn" id="1_u14h5"]
+
+[node name="Cleome" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="Cleome" parent="." instance=ExtResource("1_u14h5")]
+scale = Vector2(1.5, 1.5)
+animation = &"move_down"
+autoplay = "move_down"
+frame_progress = 0.59923
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 37.3333
+offset_top = -24.0
+offset_right = 267.333
+offset_bottom = 53.0
+scale = Vector2(0.6, 0.6)
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Vida: 150"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Velocidad: 200"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Habilidad: Inquisidora"
+horizontal_alignment = 1

@@ -6,13 +6,13 @@ public partial class HealthBox : Area2D {
     Vector2 InitialPosition;
     public override void _Ready() {
         InitialHealth = Health;
-        InitialPosition = GlobalPosition;
+        InitialPosition = Position;
         UpdateHealthLabel(Health);
     }
     void SetHealth(int value) {
         Health += value;
-        UpdateHealthLabel(Health);
         if (Health <= 0) Respawn();
+        UpdateHealthLabel(Health);
     }
     public void TakeHealth(int value) {
         SetHealth(value);
@@ -24,7 +24,15 @@ public partial class HealthBox : Area2D {
         label.Text = "Salud: " + health;
     }
     void Respawn() {
-        GlobalPosition = InitialPosition;
+        CharacterBody2D parent = (CharacterBody2D)GetParent();
+        Node2D playerParent = (Node2D)parent.GetParent();
+        if (GlobalData.Score1 > 0) {
+            if (playerParent is Player1) GlobalData.Score1 -= 1;
+        }
+        if (GlobalData.Score2 > 0) {
+            if (playerParent is Player2) GlobalData.Score2 -= 1;
+        }
         Health = InitialHealth;
+        parent.Position = InitialPosition;
     }
 }

@@ -1,0 +1,181 @@
+[gd_scene load_steps=26 format=3 uid="uid://q0c2rx6x46ex"]
+
+[ext_resource type="Script" path="res://scripts/Spectre.cs" id="1_midhc"]
+[ext_resource type="Script" path="res://scripts/HitBox.cs" id="2_jhjlh"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_irnwa"]
+[ext_resource type="Script" path="res://scripts/Sensor.cs" id="4_iysxy"]
+[ext_resource type="Texture2D" uid="uid://c4o4wm8p22045" path="res://assets/PC Computer - Koumajou Densetsu II Strangers Requiem - Spectre.png" id="5_03paj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7dew"]
+radius = 40.7922
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cpdf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eosdp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lpvk"]
+atlas = ExtResource("5_03paj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlwoy"]
+atlas = ExtResource("5_03paj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trl5s"]
+atlas = ExtResource("5_03paj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uwbf"]
+atlas = ExtResource("5_03paj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5igtm"]
+atlas = ExtResource("5_03paj")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq8yk"]
+atlas = ExtResource("5_03paj")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixqv3"]
+atlas = ExtResource("5_03paj")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6iwh"]
+atlas = ExtResource("5_03paj")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_844yl"]
+atlas = ExtResource("5_03paj")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqlo7"]
+atlas = ExtResource("5_03paj")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymuk1"]
+atlas = ExtResource("5_03paj")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a65sk"]
+atlas = ExtResource("5_03paj")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wt2i"]
+atlas = ExtResource("5_03paj")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2bmd"]
+atlas = ExtResource("5_03paj")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l2b6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lpvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlwoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trl5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uwbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5igtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq8yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixqv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6iwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_844yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqlo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymuk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a65sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wt2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2bmd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_cu2mu"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pneh4"]
+gradient = SubResource("Gradient_cu2mu")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
+[node name="Spectre" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSpectre", "sensor")]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_midhc")
+movement = NodePath("Movement")
+animatedSpectre = NodePath("AnimatedSprite2D")
+sensor = NodePath("Sensor")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 136
+script = ExtResource("2_jhjlh")
+damage = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_e7dew")
+debug_color = Color(0.96799, 7.70092e-07, 0.470739, 0.42)
+
+[node name="Movement" parent="." instance=ExtResource("3_irnwa")]
+speed = 120.0
+
+[node name="Sensor" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("4_iysxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+z_as_relative = false
+scale = Vector2(100, 100)
+shape = SubResource("CircleShape2D_5cpdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eosdp")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+z_as_relative = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6l2b6")
+frame_progress = 0.736832
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -8)
+scale = Vector2(4, 4)
+color = Color(0.741386, 1, 0.703501, 1)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_pneh4")

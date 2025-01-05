@@ -1,7 +1,137 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2uc2nai5lucc"]
+[gd_scene load_steps=36 format=3 uid="uid://d2uc2nai5lucc"]
 
 [ext_resource type="Script" path="res://scripts/Game.cs" id="1_a5t52"]
 [ext_resource type="PackedScene" uid="uid://n421qfqthsvn" path="res://scenes/board.tscn" id="2_bumaw"]
+[ext_resource type="Script" path="res://scripts/Pause.cs" id="3_n06tx"]
+[ext_resource type="Script" path="res://scripts/ScoreSystem.cs" id="4_g4t6u"]
+[ext_resource type="Texture2D" uid="uid://dev0fm1qui0sn" path="res://assets/gem5/0001.png" id="5_yebg4"]
+[ext_resource type="Texture2D" uid="uid://cs6jhdi3avmtd" path="res://assets/gem5/0002.png" id="6_4qd3o"]
+[ext_resource type="Texture2D" uid="uid://1pn5kifkrn6g" path="res://assets/gem5/0003.png" id="7_jtk0j"]
+[ext_resource type="Texture2D" uid="uid://dvsq7pajrmr7t" path="res://assets/gem5/0004.png" id="8_6ifah"]
+[ext_resource type="Texture2D" uid="uid://jcfuxshedk0s" path="res://assets/gem5/0005.png" id="9_2mx4l"]
+[ext_resource type="Texture2D" uid="uid://c2y787cxxmn7d" path="res://assets/gem5/0006.png" id="10_s0per"]
+[ext_resource type="Texture2D" uid="uid://cgk6siudd0d5l" path="res://assets/gem5/0007.png" id="11_70ift"]
+[ext_resource type="Texture2D" uid="uid://uypmxkfgpd8i" path="res://assets/gem5/0008.png" id="12_lhrg4"]
+[ext_resource type="Texture2D" uid="uid://b0lelryepf1ub" path="res://assets/gem5/0009.png" id="13_wd7fl"]
+[ext_resource type="Texture2D" uid="uid://du5m2k5a5hlb7" path="res://assets/gem5/0010.png" id="14_ffo4u"]
+[ext_resource type="Texture2D" uid="uid://dqwrnp3uo8jvb" path="res://assets/gem5/0011.png" id="15_dnbic"]
+[ext_resource type="Texture2D" uid="uid://bjy5fc86m5tas" path="res://assets/gem5/0012.png" id="16_ndaqm"]
+[ext_resource type="Texture2D" uid="uid://b8yun11m4yj2y" path="res://assets/gem5/0013.png" id="17_o4gxm"]
+[ext_resource type="Texture2D" uid="uid://bgckipbwvwguu" path="res://assets/gem5/0014.png" id="18_30py6"]
+[ext_resource type="Texture2D" uid="uid://bqp31lu56l3vy" path="res://assets/gem5/0015.png" id="19_wd1xs"]
+[ext_resource type="Texture2D" uid="uid://b4n2ryktxq0j1" path="res://assets/gem5/0016.png" id="20_vb0cb"]
+[ext_resource type="Texture2D" uid="uid://c83ugy7nv0wmi" path="res://assets/gem5/0017.png" id="21_yjt6n"]
+[ext_resource type="Texture2D" uid="uid://4fg2awjrkjdx" path="res://assets/gem5/0018.png" id="22_svxo8"]
+[ext_resource type="Texture2D" uid="uid://34ryxcdfprhq" path="res://assets/gem5/0019.png" id="23_h7w3k"]
+[ext_resource type="Texture2D" uid="uid://dypuvuyf183j4" path="res://assets/gem5/0020.png" id="24_lelmq"]
+[ext_resource type="Texture2D" uid="uid://d0q2c8m8qkcgf" path="res://assets/gem5/0021.png" id="25_iotek"]
+[ext_resource type="Texture2D" uid="uid://bsuo20n450mms" path="res://assets/gem5/0022.png" id="26_c648n"]
+[ext_resource type="Texture2D" uid="uid://l8lsmv7pfvsw" path="res://assets/gem5/0023.png" id="27_dyvl1"]
+[ext_resource type="Texture2D" uid="uid://duqsked2gg8og" path="res://assets/gem5/0024.png" id="28_eccam"]
+[ext_resource type="Texture2D" uid="uid://d1c7r6ki8kehx" path="res://assets/gem5/0025.png" id="29_uequt"]
+[ext_resource type="Texture2D" uid="uid://br4owt3dhnifx" path="res://assets/gem5/0026.png" id="30_5vdtt"]
+[ext_resource type="Texture2D" uid="uid://hdoy233x561p" path="res://assets/gem5/0027.png" id="31_tkt7g"]
+[ext_resource type="Texture2D" uid="uid://bi0e5rnnalber" path="res://assets/gem5/0028.png" id="32_a5i40"]
+[ext_resource type="Texture2D" uid="uid://c5lgiyllbxlj1" path="res://assets/gem5/0029.png" id="33_kuu0b"]
+[ext_resource type="Texture2D" uid="uid://c117h60qm5ng2" path="res://assets/gem5/0030.png" id="34_xj4wn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txqrd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yebg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4qd3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jtk0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ifah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2mx4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s0per")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_70ift")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lhrg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wd7fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ffo4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dnbic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ndaqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o4gxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_30py6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_wd1xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vb0cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yjt6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_svxo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h7w3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lelmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_iotek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c648n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dyvl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_eccam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uequt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5vdtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_tkt7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_a5i40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kuu0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_xj4wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Game" type="HBoxContainer" node_paths=PackedStringArray("Viewport1", "Viewport2", "Camera1", "Camera2")]
 anchors_preset = 15
@@ -44,3 +174,94 @@ render_target_update_mode = 4
 
 [node name="Camera 2" type="Camera2D" parent="SubViewportContainer 2/SubViewport 2"]
 zoom = Vector2(1.8, 1.8)
+
+[node name="Pause" type="CanvasLayer" parent="." node_paths=PackedStringArray("PausaLabel")]
+process_mode = 3
+visible = false
+script = ExtResource("3_n06tx")
+PausaLabel = NodePath("VBoxContainer/Label")
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.083392, 0.083392, 0.083392, 0.498039)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Pause/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Pause/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Salir"
+
+[node name="ScoreSystem" type="CanvasLayer" parent="." node_paths=PackedStringArray("animatedGema1", "animatedGema2", "Label1", "Label2")]
+script = ExtResource("4_g4t6u")
+animatedGema1 = NodePath("Gema1")
+animatedGema2 = NodePath("Gema2")
+Label1 = NodePath("Label1")
+Label2 = NodePath("Label3")
+
+[node name="Gema1" type="AnimatedSprite2D" parent="ScoreSystem"]
+z_index = 3
+z_as_relative = false
+position = Vector2(44.8, 48)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_txqrd")
+
+[node name="Label1" type="Label" parent="ScoreSystem"]
+offset_left = 127.8
+offset_top = 11.0
+offset_right = 199.8
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label2" type="Label" parent="ScoreSystem"]
+offset_left = 92.8
+offset_top = 8.0
+offset_right = 164.8
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = ":"
+
+[node name="Gema2" type="AnimatedSprite2D" parent="ScoreSystem"]
+z_index = 3
+z_as_relative = false
+position = Vector2(2420.8, 1392)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_txqrd")
+
+[node name="Label3" type="Label" parent="ScoreSystem"]
+offset_left = 2503.8
+offset_top = 1355.0
+offset_right = 2575.8
+offset_bottom = 1424.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label4" type="Label" parent="ScoreSystem"]
+offset_left = 2468.8
+offset_top = 1352.0
+offset_right = 2540.8
+offset_bottom = 1421.0
+theme_override_font_sizes/font_size = 50
+text = ":"
+
+[connection signal="pressed" from="Pause/VBoxContainer/Button" to="Pause" method="PressBack"]

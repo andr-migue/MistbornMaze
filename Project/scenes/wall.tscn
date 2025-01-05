@@ -9561,12 +9561,18 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD+//7/AAAUACUAAAD///7/AAAUACUAAAAAAP7/AAAUACUAAAABAP7/AAAUACUAAAD+////AAAUACUAAAD/////AAAUACUAAAAAAP//AAAUACUAAAABAP//AAAUACUAAAABAAAAAAAUACUAAAAAAAAAAAAUACUAAAD//wAAAAAUACUAAAD+/wAAAAAUACUAAAD+/wEAAAAUACUAAAD//wEAAAAUACUAAAAAAAEAAAAUACUAAAABAAEAAAAUACUAAAA=")
 tile_set = SubResource("TileSet_76pfc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
-position = Vector2(1, -54)
-scale = Vector2(2.7, 2.7)
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(1, -51)
+scale = Vector2(2.6, 2.6)
 tile_map_data = PackedByteArray("AAD//wAAAAASAB4AAAD//wEAAAASAB8AAAAAAAAAAAATAB4AAAAAAAEAAAATAB8AAAA=")
 tile_set = SubResource("TileSet_o4b8r")
 

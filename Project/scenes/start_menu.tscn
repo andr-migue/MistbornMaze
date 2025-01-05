@@ -24,9 +24,9 @@ texture = ExtResource("1_2mwvn")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 1136.0
-offset_right = 552.0
-offset_bottom = 1374.0
+offset_top = 1016.0
+offset_right = 945.0
+offset_bottom = 1376.0
 alignment = 1
 
 [node name="play" type="Button" parent="VBoxContainer"]
@@ -34,10 +34,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 79
 text = "Nuevo Juego"
 
+[node name="SelectPlayer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Selector de Personajes"
+
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 79
 text = "Salir"
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="PressPlay"]
+[connection signal="pressed" from="VBoxContainer/SelectPlayer" to="." method="PressSelectPlayer"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="PressExit"]

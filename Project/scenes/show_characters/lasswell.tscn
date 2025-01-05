@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb3k4vkjgxjl1"]
+
+[ext_resource type="PackedScene" uid="uid://gpbvlasngfa2" path="res://scenes/animated_characters/Laswell.tscn" id="1_vo2ur"]
+
+[node name="lasswell" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="Laswell" parent="." instance=ExtResource("1_vo2ur")]
+scale = Vector2(1.5, 1.5)
+animation = &"move_down"
+autoplay = "move_down"
+frame_progress = 0.521974
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 37.3333
+offset_top = -24.0
+offset_right = 267.333
+offset_bottom = 53.0
+scale = Vector2(0.6, 0.6)
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Vida: 150"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Velocidad: 180"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Habilidad: Sanación"
+horizontal_alignment = 1

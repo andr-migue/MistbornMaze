@@ -11,6 +11,13 @@ public partial class Board : Node2D{
     public Player1 Player1Instance;
     public Player2 Player2Instance;
     public int TrapCount;
+    public int FireCount;
+    public int TeleportCount;
+    public int MistCount;
+    public int GemaCount;
+    public int HeartCount;
+    public int WolfCount;
+    public int SpectreCount;
     public override void _Ready(){
         Filas = GlobalData.Filas;
         Columnas = GlobalData.Columnas;
@@ -20,6 +27,13 @@ public partial class Board : Node2D{
         PrintBoard(NodeBoard);
         PlacePlayers();
         PlaceTraps();
+        PlaceFires();
+        PlaceTeleport();
+        PlaceMist();
+        PlaceGema();
+        PlaceHeart();
+        PlaceWolf();
+        PlaceSpectre();
     }
     public static int[,] GenerateIntBoard(int filas, int columnas){
         // Crear matriz de enteros
@@ -168,6 +182,118 @@ public partial class Board : Node2D{
             trapInstance.Position = new Vector2(y * 64, x * 64);
             AddChild(trapInstance);
             TrapCount--;
+        }
+    }
+    public void PlaceFires(){
+        FireCount = GlobalData.Fire;
+        while (FireCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Area2D fireInstance = (Area2D)GD.Load<PackedScene>("res://scenes/fire.tscn").Instantiate();
+            fireInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(fireInstance);
+            FireCount--;
+        }
+    }
+    public void PlaceTeleport(){
+        TeleportCount = GlobalData.Teleport;
+        while (TeleportCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Area2D teleportInstance = (Area2D)GD.Load<PackedScene>("res://scenes/teleport.tscn").Instantiate();
+            teleportInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(teleportInstance);
+            TeleportCount--;
+        }
+    }
+    public void PlaceMist(){
+        MistCount = GlobalData.Mist;
+        while (MistCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Area2D mistInstance = (Area2D)GD.Load<PackedScene>("res://scenes/mist.tscn").Instantiate();
+            mistInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(mistInstance);
+            MistCount--;
+        }
+    }
+    public void PlaceGema(){
+        GemaCount = GlobalData.Gema;
+        while (GemaCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Area2D gemaInstance = (Area2D)GD.Load<PackedScene>("res://scenes/gema.tscn").Instantiate();
+            gemaInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(gemaInstance);
+            GemaCount--;
+        }
+    }
+    public void PlaceHeart(){
+        HeartCount = GlobalData.Heart;
+        while (HeartCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            Area2D heartInstance = (Area2D)GD.Load<PackedScene>("res://scenes/heart.tscn").Instantiate();
+            heartInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(heartInstance);
+            HeartCount--;
+        }
+    }
+    public void PlaceWolf(){
+        WolfCount = GlobalData.Wolf;
+        while (WolfCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            CharacterBody2D wolfInstance = (CharacterBody2D)GD.Load<PackedScene>("res://scenes/wolf.tscn").Instantiate();
+            wolfInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(wolfInstance);
+            WolfCount--;
+        }
+    }
+    public void PlaceSpectre(){
+        SpectreCount = GlobalData.Spectre;
+        while (SpectreCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            CharacterBody2D spectreInstance = (CharacterBody2D)GD.Load<PackedScene>("res://scenes/spectre.tscn").Instantiate();
+            spectreInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(spectreInstance);
+            SpectreCount--;
         }
     }
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ta8q25ctxdh"
-path="res://.godot/imported/PC Computer - Koumajou Densetsu II Strangers Requiem - Ghoul.png-aaeea37f8a3c84be1057d4f81c43e198.ctex"
+uid="uid://c83ugy7nv0wmi"
+path="res://.godot/imported/0017.png-f003f8270848eae190ee7ef1432f0d88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PC Computer - Koumajou Densetsu II Strangers Requiem - Ghoul.png"
-dest_files=["res://.godot/imported/PC Computer - Koumajou Densetsu II Strangers Requiem - Ghoul.png-aaeea37f8a3c84be1057d4f81c43e198.ctex"]
+source_file="res://assets/gem5/0017.png"
+dest_files=["res://.godot/imported/0017.png-f003f8270848eae190ee7ef1432f0d88.ctex"]
 
 [params]
 

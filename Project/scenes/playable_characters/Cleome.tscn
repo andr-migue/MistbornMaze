@@ -1,22 +1,160 @@
-[gd_scene load_steps=6 format=3 uid="uid://dct3p68k75t0b"]
+[gd_scene load_steps=30 format=3 uid="uid://dct3p68k75t0b"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Cleome.cs" id="1_riq3h"]
 [ext_resource type="PackedScene" uid="uid://cvmqiyd8wc7bb" path="res://scenes/animated_characters/Cleome.tscn" id="2_t18nc"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_4otxo"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_0nyn4"]
+[ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_gjmed"]
+[ext_resource type="Texture2D" uid="uid://stn71p7e76fj" path="res://assets/PinkSpectre.png" id="6_6hm8h"]
+[ext_resource type="Script" path="res://scripts/HitBox.cs" id="7_8sybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "MyHealthBox", "CurrentHability", "Cooldown")]
-z_index = 2
+[sub_resource type="Gradient" id="Gradient_t5blh"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s04xv"]
+gradient = SubResource("Gradient_t5blh")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57os5"]
+size = Vector2(40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tfjq"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uenv"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei051"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adgb0"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqvar"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1v4h"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w622x"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn80p"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv3fe"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qcmg"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnl0q"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8udh6"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwwp"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0xj3"]
+atlas = ExtResource("6_6hm8h")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5jwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tfjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uenv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei051")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adgb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqvar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1v4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w622x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn80p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv3fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qcmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnl0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8udh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0xj3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_hvl5u"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pyh0k"]
+gradient = SubResource("Gradient_hvl5u")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agoww"]
+radius = 40.7922
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "MyCollision", "animatedSprite", "animatedSpectre", "MyHealthBox", "MyHitbox", "sensor", "CurrentHability", "Cooldown")]
+z_index = 5
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_riq3h")
 movement = NodePath("Movement")
 MyCollision = NodePath("CollisionShape2D")
 animatedSprite = NodePath("Cleome")
+animatedSpectre = NodePath("AnimatedSprite2D")
 MyHealthBox = NodePath("HealthBox")
+MyHitbox = NodePath("HitBox")
+sensor = NodePath("Sensor")
 CurrentHability = NodePath("VBoxContainer/Label")
 Cooldown = NodePath("VBoxContainer/Label2")
 
@@ -29,10 +167,16 @@ shape = SubResource("RectangleShape2D_45uex")
 position = Vector2(0, -40)
 scale = Vector2(2, 2)
 
+[node name="PointLight2D" type="PointLight2D" parent="Cleome"]
+position = Vector2(0, -4)
+scale = Vector2(4, 4)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_s04xv")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = -56.0
-offset_top = 16.0
-offset_bottom = 66.0
+offset_top = 32.0
+offset_bottom = 82.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -53,3 +197,41 @@ z_as_relative = false
 collision_layer = 8
 collision_mask = 0
 label = NodePath("../Label")
+
+[node name="Sensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("5_gjmed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_57os5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 5
+z_as_relative = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c5jwv")
+frame_progress = 0.981175
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -8)
+scale = Vector2(4, 4)
+color = Color(1, 0.773443, 0.967473, 1)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_pyh0k")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 136
+script = ExtResource("7_8sybt")
+damage = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_agoww")
+debug_color = Color(0.96799, 7.70092e-07, 0.470739, 0.42)
