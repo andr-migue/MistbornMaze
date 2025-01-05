@@ -131,7 +131,7 @@ fill_to = Vector2(0.80057, 0.179487)
 
 [node name="Spectre" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSpectre", "sensor")]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 0
 script = ExtResource("1_midhc")
 movement = NodePath("Movement")
 animatedSpectre = NodePath("AnimatedSprite2D")
@@ -164,7 +164,6 @@ shape = SubResource("CircleShape2D_5cpdf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eosdp")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5

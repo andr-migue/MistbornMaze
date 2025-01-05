@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqni1tc310y4s"]
 
 [ext_resource type="Script" path="res://scripts/SelectionPlayer.cs" id="1_lyltv"]
-[ext_resource type="Texture2D" uid="uid://chj0qamu3p4i6" path="res://assets/DALL·E 2025-01-04 01.09.34 - A dark and mysterious title screen illustration for a fantasy video game inspired by the Mistborn series, featuring a desolate rooftop shrouded in thi.webp" id="1_xdlrq"]
+[ext_resource type="Texture2D" uid="uid://mtqk75o7lpdw" path="res://assets/DALL·E 2025-01-04 01.08.55 - A darker and more mysterious version of a title screen illustration for a fantasy video game inspired by the Mistborn series. The scene focuses on a d.webp" id="2_ghyrs"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_pamlu"]
 
 [node name="SelectionPlayer" type="Control" node_paths=PackedStringArray("position1", "position2")]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_xdlrq")
+texture = ExtResource("2_ghyrs")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

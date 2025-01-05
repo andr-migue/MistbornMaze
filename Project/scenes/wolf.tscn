@@ -146,7 +146,7 @@ size = Vector2(40, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5cpdf"]
 
-[node name="wolf" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedWolf", "sensor")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedWolf", "sensor")]
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_gbhpr")
@@ -160,8 +160,7 @@ z_as_relative = false
 position = Vector2(0, -40)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vi1a8")
-animation = &"move_left"
-frame_progress = 0.745784
+animation = &"move_down"
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -175,7 +174,7 @@ shape = SubResource("RectangleShape2D_d5kyd")
 debug_color = Color(0.980872, 0, 0.375961, 0.42)
 
 [node name="Movement" parent="." instance=ExtResource("3_vbabd")]
-speed = 120.0
+speed = 150.0
 
 [node name="Sensor" type="Area2D" parent="."]
 collision_layer = 0

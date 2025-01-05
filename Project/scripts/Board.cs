@@ -18,6 +18,7 @@ public partial class Board : Node2D{
     public int HeartCount;
     public int WolfCount;
     public int SpectreCount;
+    public int SkeletonCount;
     public override void _Ready(){
         Filas = GlobalData.Filas;
         Columnas = GlobalData.Columnas;
@@ -34,6 +35,7 @@ public partial class Board : Node2D{
         PlaceHeart();
         PlaceWolf();
         PlaceSpectre();
+        PlaceSkeleton();
     }
     public static int[,] GenerateIntBoard(int filas, int columnas){
         // Crear matriz de enteros
@@ -294,6 +296,22 @@ public partial class Board : Node2D{
             spectreInstance.Position = new Vector2(y * 64, x * 64);
             AddChild(spectreInstance);
             SpectreCount--;
+        }
+    }
+    public void PlaceSkeleton(){
+        SkeletonCount = GlobalData.skeleton;
+        while (SkeletonCount > 0) {
+            Random r = new Random();
+            int x = 0;
+            int y = 0;
+            while (GlobalData.IntBoard[x, y] != 0){
+                x = r.Next(1, GlobalData.Filas - 1);
+                y = r.Next(1, GlobalData.Columnas - 1);
+            }
+            CharacterBody2D skeletonInstance = (CharacterBody2D)GD.Load<PackedScene>("res://scenes/skeleton.tscn").Instantiate();
+            skeletonInstance.Position = new Vector2(y * 64, x * 64);
+            AddChild(skeletonInstance);
+            SkeletonCount--;
         }
     }
 }

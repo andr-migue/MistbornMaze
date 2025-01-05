@@ -17,6 +17,7 @@ public partial class GlobalData : Node{
     public static int Heart;
     public static int Wolf;
     public static int Spectre;
+    public static int skeleton;
     public static List<string> SongsMenu = new List<string>();
     public static List<string> SongsGame = new List<string>();
     public override void _Ready() {
@@ -46,7 +47,8 @@ public partial class GlobalData : Node{
         Mist = 5;
         Gema = 3;
         Heart = 1;
-        Wolf = 5;
+        Wolf = 2;
+        skeleton = 5;
         Spectre = 1;
         Score1 = 0;
         Score2 = 0;

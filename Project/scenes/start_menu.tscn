@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cke45sm7oh501"]
 
-[ext_resource type="Texture2D" uid="uid://mtqk75o7lpdw" path="res://assets/DALL·E 2025-01-04 01.08.55 - A darker and more mysterious version of a title screen illustration for a fantasy video game inspired by the Mistborn series. The scene focuses on a d.webp" id="1_2mwvn"]
 [ext_resource type="Script" path="res://scripts/Menu.cs" id="1_2sowe"]
+[ext_resource type="Texture2D" uid="uid://bagqfcx8kwd0c" path="res://assets/DALL·E 2025-01-05 04.05.15 - A gothic and mystical title screen for a video game inspired by the universe of Mistborn. The scene is set in a dark, eerie cemetery with dense fog en.webp" id="2_7cu6n"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_xmp5n"]
 
 [node name="StartMenu" type="Control" node_paths=PackedStringArray("lineEdit1", "lineEdit2")]
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2mwvn")
+texture = ExtResource("2_7cu6n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
