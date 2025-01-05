@@ -1,4 +1,3 @@
-
 using Godot;
 public partial class Menu : Control {
     [Export] LineEdit lineEdit1;
