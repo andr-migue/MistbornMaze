@@ -2,70 +2,71 @@
 
 ![image_2025-01-05_09-04-28](https://github.com/user-attachments/assets/6b1e08a8-47ef-4c1c-b1a8-c6e20e30d3d4)
 
-MistbornMaze es un emocionante juego multijugador en tiempo real desarrollado con Godot Engine y C#. Ambientado en el universo de Nacidos de la Bruma, los jugadores se adentran en un laberinto, lleno de trampas y enemigos, compitiendo por escapar.
+MistbornMaze is an exciting real-time multiplayer game developed with Godot Engine and C#. Set in the Mistborn universe, players venture into a maze filled with traps and enemies, competing to escape.
 
-## Introducción
+## Introduction
 
-Bajo un cielo perpetuamente nublado, el laberinto se extiende como un cementerio sin fin. Cruzas entre lápidas quebradas y mausoleos cubiertos de musgo, mientras la bruma danza sobre el suelo, ocultando lo que tus ojos no quieren ver. La poca luz que se filtra entre las nubes pinta sombras largas y distorsionadas, como si el propio cementerio tuviera vida.El aire está cargado de un silencio pesado, roto solo por el crujido ocasional de tus pasos o el eco lejano de algo arrastrándose en la oscuridad. Aquí, entre los muertos olvidados, cada camino parece conducir más profundo hacia la desesperación.
-Escondidos entre las criptas y sepulturas, yacen cinco fragmentos de Lerasium, brillando con un resplandor antinatural, como si no pertenecieran a este mundo. Este mineral no solo es la clave para tu escape, sino también el premio por tu supervivencia. Pero no estás solo. Algo te sigue tal vez sea el laberinto mismo, tal vez los ecos de quienes fracasaron antes. Y mientras los fragmentos se acercan, también lo hace el peligro. En este lugar de reposo eterno, solo uno podrá abandonar el reino de los muertos. Los demás se quedarán aquí, para siempre.
+Under a perpetually cloudy sky, the maze stretches out like an endless cemetery. You walk among broken tombstones and moss-covered mausoleums, while the mist dances on the ground, hiding what your eyes don't want to see. The faint light filtering through the clouds casts long, distorted shadows, making the cemetery seem alive. The air is thick with heavy silence, broken only by the occasional crunch of your steps or the distant echo of something crawling in the dark. Here, among the forgotten dead, every path seems to lead deeper into despair.
 
-## Características del Juego
+Hidden among the crypts and graves are five fragments of Lerasium, glowing with an otherworldly light, as if they don't belong in this world. This mineral is not only the key to your escape but also the reward for your survival. But you're not alone. Something is following you—perhaps the maze itself, perhaps the echoes of those who failed before. As the fragments draw near, so does the danger. In this place of eternal rest, only one will leave the realm of the dead. The rest will stay here, forever.
 
-### Generación del Laberinto
-- El laberinto se genera de manera dinámica utilizando el algoritmo de búsqueda en profundidad (DFS).
+## Game Features
 
-### Trampas y Enemigos
-- A lo largo del laberinto, los jugadores encontrarán trampas y enemigos que deberán esquivar o morir en el intento.
+### Maze Generation
+- The maze is dynamically generated using the Depth-First Search (DFS) algorithm.
 
-### Multijugador
-- El juego es para 2 jugadores que compiten en tiempo real.
+### Traps and Enemies
+- Throughout the maze, players will encounter traps and enemies that they must evade or die trying.
+
+### Multiplayer
+- The game is for 2 players competing in real-time.
 
 ![image_2025-01-05_09-06-47](https://github.com/user-attachments/assets/61736b0d-bccb-4d3c-a3fd-2d46efe9c8d2)
 
-### Objetivo
-- El primer jugador en recolectar 5 fragmentos de Lerasium gana la partida.
+### Objective
+- The first player to collect 5 fragments of Lerasium wins the game.
 
-### Personajes Jugables
-- Posibilidad de escoger entre 6 personajes jugables, cada uno con habilidades únicas, DESCÚBRELOS POR TI MISMO!
+### Playable Characters
+- Choose from 6 playable characters, each with unique abilities. DISCOVER THEM FOR YOURSELF!
 
 ![image_2025-01-05_09-05-22](https://github.com/user-attachments/assets/bc61f652-37fc-497f-ac42-1f303bb7d6f3)
 
-## Estructura del Proyecto
+## Project Structure
 
-- **assets/**: Contiene los archivos de recursos del juego.
-- **font/**: Contiene las fuentes utilizadas en el juego.
-- **scenes/**: Contiene las escenas del juego.
-- **scripts/**: Contiene los scripts en C# utilizados en el juego.
-- **soundtrack/**: Contiene la banda sonora del juego.
+- **assets/**: Contains game resource files.
+- **font/**: Contains the fonts used in the game.
+- **scenes/**: Contains the game scenes.
+- **scripts/**: Contains the C# scripts used in the game.
+- **soundtrack/**: Contains the game soundtrack.
 
-## Requisitos
+## Requirements
 
-- [Godot Engine](https://godotengine.org/) 4.3.0 o superior.
-- [.NET SDK](https://dotnet.microsoft.com/download) 6.0 o superior.
+- [Godot Engine](https://godotengine.org/) 4.3.0 or higher.
+- [.NET SDK](https://dotnet.microsoft.com/download) 6.0 or higher.
 
-## Configuración del Proyecto
+## Project Setup
 
-1. Clona el repositorio:
+1. Clone the repository:
     ```sh
-    git clone https://github.com/tu-usuario/MistbornMaze.git
+    git clone https://github.com/your-username/MistbornMaze.git
     cd MistbornMaze
     ```
 
-2. Abre el proyecto en Godot:
-    - Abre Godot Engine.
-    - Selecciona "Importar" y navega hasta el directorio del proyecto.
-    - Selecciona [project.godot](http://_vscodecontentref_/0) y haz clic en "Importar y Editar".
+2. Open the project in Godot:
+    - Open Godot Engine.
+    - Select "Import" and navigate to the project directory.
+    - Select [project.godot](http://_vscodecontentref_/0) and click "Import & Edit."
 
-3. Configura el entorno de desarrollo:
-    - Asegúrate de tener instalado el SDK de .NET adecuado.
-    - Abre [MistbornMaze.sln](http://_vscodecontentref_/1) en Visual Studio para editar los scripts en C#.
+3. Set up the development environment:
+    - Make sure the appropriate .NET SDK is installed.
+    - Open [MistbornMaze.sln](http://_vscodecontentref_/1) in Visual Studio to edit the C# scripts.
 
-## Exportación del Proyecto
+## Project Export
 
-Para exportar el proyecto, utiliza las configuraciones definidas en [export_presets.cfg](http://_vscodecontentref_/2). Puedes exportar el juego a diferentes plataformas desde el editor de Godot.
+To export the project, use the configurations defined in [export_presets.cfg](http://_vscodecontentref_/2). You can export the game to different platforms from the Godot editor.
 
-## Contacto
+## Contact
 
-Para cualquier consulta, puedes contactarme en:  
+For any inquiries, you can contact me at:  
 - [miguelzamora210405@gmail.com](mailto:miguelzamora210405@gmail.com)
-- [Mi cuenta de X](https://x.com/andr_migue)
+- [My X account](https://x.com/andr_migue)
