@@ -5,7 +5,12 @@ public partial class Board : Node2D{
     public int Filas;
     public int Columnas;
     [Export] public PackedScene path;
-    [Export] public PackedScene wall;
+    [Export] public PackedScene wall1;
+    [Export] public PackedScene wall2;
+    [Export] public PackedScene wall3;
+    [Export] public PackedScene wall4;
+    [Export] public PackedScene wall5;
+    List<PackedScene> walls = new List<PackedScene>();
     [Export] public PackedScene player1;
     [Export] public PackedScene player2;
     public Player1 Player1Instance;
@@ -20,6 +25,11 @@ public partial class Board : Node2D{
     public int SpectreCount;
     public int SkeletonCount;
     public override void _Ready(){
+        walls.Add(wall1);
+        walls.Add(wall2);
+        walls.Add(wall3);
+        walls.Add(wall4);
+        walls.Add(wall5);
         Filas = GlobalData.Filas;
         Columnas = GlobalData.Columnas;
         int[,] IntBoard = GenerateIntBoard(Filas, Columnas);
@@ -49,9 +59,9 @@ public partial class Board : Node2D{
         
         // Crear un laberinto utilizando DFS
         Random r = new Random();
-        CreateMaze(IntBoard, r, 1, 1);
+        CreateMaze(IntBoard, r, 4, 4);
         // Asegurar accesibilidad de esta posicion
-        BeAccesible(IntBoard, filas - 2, columnas - 2);
+        BeAccesible(IntBoard, filas - 5, columnas - 5);
         // Agregar caminos adicionales aleatorios
         AddRandomPaths(IntBoard, r);
         return IntBoard;
@@ -131,7 +141,7 @@ public partial class Board : Node2D{
     }
     public static bool IsValid(int[,] IntBoard,int x,int y){
         // Verificar si una celda se encuentra en los limites de la matriz
-        return x >= 1 && x < IntBoard.GetLength(0) - 1 && y >= 1 && y < IntBoard.GetLength(1) - 1; 
+        return x >= 4 && x < IntBoard.GetLength(0) - 4 && y >= 4 && y < IntBoard.GetLength(1) - 4; 
     }
     public Node2D[,] GenerateNodeBoard(int[,] IntBoard){
         //Generar matriz de nodos.
@@ -144,6 +154,9 @@ public partial class Board : Node2D{
                     NodeBoard[i, j] = PathInstance;
                 }
                 if (IntBoard[i, j] == 1){
+                    Random r = new Random();
+                    int index = r.Next(4);
+                    PackedScene wall = walls[index];
                     Node2D WallInstance = wall.Instantiate<Node2D>();
                     AddChild(WallInstance);
                     NodeBoard[i, j] = WallInstance;
@@ -167,8 +180,8 @@ public partial class Board : Node2D{
         Player2Instance = (Player2)player2.Instantiate<Node2D>();
         AddChild(Player2Instance);
         
-        Player1Instance.Position = new Vector2(1 * 64, 1 * 64);
-        Player2Instance.Position = new Vector2((Columnas - 2) * 64, (Filas - 2) * 64);
+        Player1Instance.Position = new Vector2(4 * 64, 4 * 64);
+        Player2Instance.Position = new Vector2((Columnas - 5) * 64, (Filas - 5) * 64);
     }
     public void PlaceTraps(){
         TrapCount = GlobalData.Traps;

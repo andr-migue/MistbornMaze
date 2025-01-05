@@ -39,8 +39,8 @@ public partial class GlobalData : Node{
         SongsGame.Add("res://soundtrack/ingame/32 Baldur's Gate 3 OST - The Legacy Of Bhaal.mp3");
         SongsGame.Add("res://soundtrack/ingame/36 Baldur's Gate 3 OST - Raphael's Final Act.mp3");
         SongsGame.Add("res://soundtrack/ingame/37 Baldur's Gate 3 OST - The Grand Design (Requiem).mp3");
-        Filas = 30;
-        Columnas = 30;
+        Filas = 33;
+        Columnas = 33;
         Traps = 10;
         Fire =3;
         Teleport = 1;

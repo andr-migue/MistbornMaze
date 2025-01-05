@@ -13,9 +13,7 @@ public partial class Chaos : CharacterBody2D {
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) {
-            Cooldown.Text = $"Cooldown: {Timer.TimeLeft:F1}";
-        }
+        if (!Timer.IsStopped()) Cooldown.Text = $"Cooldown: {Timer.TimeLeft:F1}";
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();

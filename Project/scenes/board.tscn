@@ -1,15 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://n421qfqthsvn"]
+[gd_scene load_steps=10 format=3 uid="uid://n421qfqthsvn"]
 
 [ext_resource type="Script" path="res://scripts/Board.cs" id="1_pgnvf"]
 [ext_resource type="PackedScene" uid="uid://tbvrenpqhjyb" path="res://scenes/player_1.tscn" id="2_8mxxe"]
 [ext_resource type="PackedScene" uid="uid://d3man53m7l1ee" path="res://scenes/path.tscn" id="2_8qon0"]
 [ext_resource type="PackedScene" uid="uid://cq64ahof4th0i" path="res://scenes/player_2.tscn" id="3_3t3pk"]
 [ext_resource type="PackedScene" uid="uid://cyw5cvltpsgs2" path="res://scenes/wall.tscn" id="3_utnd5"]
+[ext_resource type="PackedScene" uid="uid://c1uofdf8jht06" path="res://scenes/wall_2.tscn" id="4_pqsko"]
+[ext_resource type="PackedScene" uid="uid://6gl51awlov7g" path="res://scenes/wall_3.tscn" id="5_n0aou"]
+[ext_resource type="PackedScene" uid="uid://dusnmtj61rcul" path="res://scenes/wall_4.tscn" id="6_kympt"]
+[ext_resource type="PackedScene" uid="uid://cwtrdd5jxdwgm" path="res://scenes/wall_5.tscn" id="7_bgmj6"]
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_pgnvf")
 path = ExtResource("2_8qon0")
-wall = ExtResource("3_utnd5")
+wall1 = ExtResource("3_utnd5")
+wall2 = ExtResource("4_pqsko")
+wall3 = ExtResource("5_n0aou")
+wall4 = ExtResource("6_kympt")
+wall5 = ExtResource("7_bgmj6")
 player1 = ExtResource("2_8mxxe")
 player2 = ExtResource("3_3t3pk")
 

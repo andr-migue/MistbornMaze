@@ -21,7 +21,7 @@ public partial class Sophie : CharacterBody2D {
     public override void _Process(double delta) {
         Animation();
         CheckLimits();
-        if (!Timer.IsStopped()) CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
+        if (!Timer.IsStopped()) CurrentHability.Text = $"Desvanecimiento: {Timer.TimeLeft:F1}";
         if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
         if (sensor.colisiones.Count == 0 && Timer.IsStopped()) OnTimerTimeout(); 
     }
@@ -49,7 +49,7 @@ public partial class Sophie : CharacterBody2D {
         else if (parent is Player2 player2) inputVector = player2.InputVector;
     }
     void CheckLimits() {
-        if (GlobalPosition.X < -64 || GlobalPosition.X > GlobalData.Columnas * 64 || GlobalPosition.Y < -64 || GlobalPosition.Y > GlobalData.Filas * 64) {
+        if (GlobalPosition.X < 2 * 64 || GlobalPosition.X > (GlobalData.Columnas - 2) * 64 || GlobalPosition.Y < 2 * 64 || GlobalPosition.Y > (GlobalData.Filas - 2) * 64) {
             Position = InitialPosition;
         }
     }

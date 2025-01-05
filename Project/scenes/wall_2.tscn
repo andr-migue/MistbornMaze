@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cyw5cvltpsgs2"]
+[gd_scene load_steps=8 format=4 uid="uid://c1uofdf8jht06"]
 
-[ext_resource type="Texture2D" uid="uid://c0djcpmwgqjw" path="res://assets/SNES - Live A Live JPN - Lucrece Castle.png" id="1_wrhjb"]
-[ext_resource type="Texture2D" uid="uid://cruiq874lspiy" path="res://assets/GandalfHardcore Platformer Assets v2.png" id="2_7o46j"]
+[ext_resource type="Texture2D" uid="uid://c0djcpmwgqjw" path="res://assets/SNES - Live A Live JPN - Lucrece Castle.png" id="1_aixae"]
+[ext_resource type="Texture2D" uid="uid://cruiq874lspiy" path="res://assets/GandalfHardcore Platformer Assets v2.png" id="2_t61kt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_608cu"]
-texture = ExtResource("1_wrhjb")
+texture = ExtResource("1_aixae")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -7422,7 +7422,7 @@ texture = ExtResource("1_wrhjb")
 sources/0 = SubResource("TileSetAtlasSource_608cu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nvrt"]
-texture = ExtResource("2_7o46j")
+texture = ExtResource("2_t61kt")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9553,7 +9553,7 @@ sources/0 = SubResource("TileSetAtlasSource_7nvrt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb1lj"]
 size = Vector2(64, 64)
 
-[node name="Wall" type="StaticBody2D"]
+[node name="Wall2" type="StaticBody2D"]
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
@@ -9573,7 +9573,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(1, -51)
 scale = Vector2(2.6, 2.6)
-tile_map_data = PackedByteArray("AAD//wAAAAASAB4AAAD//wEAAAASAB8AAAAAAAAAAAATAB4AAAAAAAEAAAATAB8AAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAAMAB4AAAD//wEAAAAMAB8AAAAAAAAAAAANAB4AAAAAAAEAAAANAB8AAAA=")
 tile_set = SubResource("TileSet_o4b8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

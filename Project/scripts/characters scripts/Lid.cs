@@ -15,12 +15,8 @@ public partial class Lid : CharacterBody2D {
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) {
-            CurrentHability.Text = $"Invisibilidad: {Timer.TimeLeft:F1}";
-        }
-        if (!Timer2.IsStopped()) {
-            Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
-        }
+        if (!Timer.IsStopped()) CurrentHability.Text = $"Rapidez: {Timer.TimeLeft:F1}";
+        if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
     }
     public override void _PhysicsProcess(double delta) {
         CheckParent();
