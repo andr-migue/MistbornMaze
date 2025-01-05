@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo8s8piqr83nq"]
+
+[ext_resource type="Script" path="res://scripts/Intro.cs" id="1_4sgyj"]
+[ext_resource type="Texture2D" uid="uid://mtqk75o7lpdw" path="res://assets/DALL·E 2025-01-04 01.08.55 - A darker and more mysterious version of a title screen illustration for a fantasy video game inspired by the Mistborn series. The scene focuses on a d.webp" id="2_1y6sf"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_lti8e"]
+
+[node name="intro" type="Control" node_paths=PackedStringArray("label", "Continue", "Back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4sgyj")
+label = NodePath("Label")
+Continue = NodePath("HBoxContainer/Button2")
+Back = NodePath("HBoxContainer/Button")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1y6sf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.101961, 0.768627)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -160.0
+offset_right = 8.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lti8e")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -296.0
+offset_right = 299.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lti8e")
+theme_override_font_sizes/font_size = 80
+text = "Continuar"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lti8e")
+theme_override_font_sizes/font_size = 80
+text = "Atrás"
+
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="PressContinue"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="PressBack"]

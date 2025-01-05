@@ -13,7 +13,7 @@ public partial class Pause : CanvasLayer {
             PlayerNoWin = false;
             PauseVoid();
             GamePausable = false;
-            PausaLabel.Text = "Jugador 1 ha escapado del\nLaberinto del Lerasium.";
+            PausaLabel.Text = "Jugador 1 ha escapado del\nLaberinto.";
             GlobalData.Score1 = 0;
             GlobalData.Score2 = 0;
         }
@@ -22,7 +22,7 @@ public partial class Pause : CanvasLayer {
             PlayerNoWin = false;
             PauseVoid();
             GamePausable = false;
-            PausaLabel.Text = "Jugador 2 ha escapado del\nLaberinto del Lerasium.";
+            PausaLabel.Text = "Jugador 2 ha escapado del\nLaberinto.";
             GlobalData.Score1 = 0;
             GlobalData.Score2 = 0;
         }
@@ -35,6 +35,7 @@ public partial class Pause : CanvasLayer {
     }
     public void PressBack() {
         GetTree().Paused = !GetTree().Paused;
+        SoundManager.Play(GlobalData.SongsMenu);
         GetTree().ChangeSceneToFile("res://scenes/start_menu.tscn");
     }
 }

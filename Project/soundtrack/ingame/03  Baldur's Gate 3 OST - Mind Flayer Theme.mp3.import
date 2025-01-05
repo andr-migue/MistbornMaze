@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b100pwbxcnxe8"
+path="res://.godot/imported/03  Baldur's Gate 3 OST - Mind Flayer Theme.mp3-8794d4b84100d3bb8f62f9cc0c617ed0.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/ingame/03  Baldur's Gate 3 OST - Mind Flayer Theme.mp3"
+dest_files=["res://.godot/imported/03  Baldur's Gate 3 OST - Mind Flayer Theme.mp3-8794d4b84100d3bb8f62f9cc0c617ed0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://dct3p68k75t0b"]
+[gd_scene load_steps=31 format=3 uid="uid://dct3p68k75t0b"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Cleome.cs" id="1_riq3h"]
 [ext_resource type="PackedScene" uid="uid://cvmqiyd8wc7bb" path="res://scenes/animated_characters/Cleome.tscn" id="2_t18nc"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_4otxo"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_w0t6w"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_0nyn4"]
 [ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_gjmed"]
 [ext_resource type="Texture2D" uid="uid://stn71p7e76fj" path="res://assets/PinkSpectre.png" id="6_6hm8h"]
@@ -180,9 +181,11 @@ offset_bottom = 82.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w0t6w")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w0t6w")
 
 [node name="Movement" parent="." instance=ExtResource("3_4otxo")]
 
@@ -190,6 +193,7 @@ layout_mode = 2
 offset_left = -40.0
 offset_top = -104.0
 offset_bottom = -81.0
+theme_override_fonts/font = ExtResource("3_w0t6w")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_0nyn4")]
 z_index = 5

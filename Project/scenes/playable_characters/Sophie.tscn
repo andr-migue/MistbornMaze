@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl8w6beqjuc6i"]
+[gd_scene load_steps=10 format=3 uid="uid://dl8w6beqjuc6i"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Sophie.cs" id="1_mfd0s"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_r0wqg"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_wbyk2"]
 [ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="3_8g3hy"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_sdmke"]
 [ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_0snud"]
@@ -44,12 +45,14 @@ offset_bottom = 66.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
-speed = 250.0
+speed = 300.0
 
 [node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
 position = Vector2(0, -72)
@@ -59,6 +62,7 @@ scale = Vector2(1.5, 1.5)
 offset_left = -40.0
 offset_top = -168.0
 offset_bottom = -145.0
+theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_sdmke")]
 collision_layer = 8

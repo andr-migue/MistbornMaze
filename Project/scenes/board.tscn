@@ -22,4 +22,4 @@ scale = Vector2(1000, 1000)
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0383972, 0.0383972, 0.0383972, 1)
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)

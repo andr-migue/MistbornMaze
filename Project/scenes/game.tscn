@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2uc2nai5lucc"]
+[gd_scene load_steps=37 format=3 uid="uid://d2uc2nai5lucc"]
 
 [ext_resource type="Script" path="res://scripts/Game.cs" id="1_a5t52"]
 [ext_resource type="PackedScene" uid="uid://n421qfqthsvn" path="res://scenes/board.tscn" id="2_bumaw"]
 [ext_resource type="Script" path="res://scripts/Pause.cs" id="3_n06tx"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="4_cw5ra"]
 [ext_resource type="Script" path="res://scripts/ScoreSystem.cs" id="4_g4t6u"]
 [ext_resource type="Texture2D" uid="uid://dev0fm1qui0sn" path="res://assets/gem5/0001.png" id="5_yebg4"]
 [ext_resource type="Texture2D" uid="uid://cs6jhdi3avmtd" path="res://assets/gem5/0002.png" id="6_4qd3o"]
@@ -204,12 +205,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Pause/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 80
 text = "Pausa"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 80
 text = "Salir"
 
@@ -232,6 +235,7 @@ offset_left = 127.8
 offset_top = 11.0
 offset_right = 199.8
 offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 
 [node name="Label2" type="Label" parent="ScoreSystem"]
@@ -239,6 +243,7 @@ offset_left = 92.8
 offset_top = 8.0
 offset_right = 164.8
 offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 text = ":"
 
@@ -254,6 +259,7 @@ offset_left = 2503.8
 offset_top = 1355.0
 offset_right = 2575.8
 offset_bottom = 1424.0
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 
 [node name="Label4" type="Label" parent="ScoreSystem"]
@@ -261,6 +267,7 @@ offset_left = 2468.8
 offset_top = 1352.0
 offset_right = 2540.8
 offset_bottom = 1421.0
+theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 text = ":"
 

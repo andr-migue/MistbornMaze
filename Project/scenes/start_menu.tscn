@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cke45sm7oh501"]
+[gd_scene load_steps=4 format=3 uid="uid://cke45sm7oh501"]
 
 [ext_resource type="Texture2D" uid="uid://mtqk75o7lpdw" path="res://assets/DALL·E 2025-01-04 01.08.55 - A darker and more mysterious version of a title screen illustration for a fantasy video game inspired by the Mistborn series. The scene focuses on a d.webp" id="1_2mwvn"]
 [ext_resource type="Script" path="res://scripts/Menu.cs" id="1_2sowe"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_xmp5n"]
 
-[node name="StartMenu" type="Control"]
+[node name="StartMenu" type="Control" node_paths=PackedStringArray("lineEdit1", "lineEdit2")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2sowe")
+lineEdit1 = NodePath("VBoxContainer/HBoxContainer/LineEdit")
+lineEdit2 = NodePath("VBoxContainer/HBoxContainer/LineEdit2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,26 +27,71 @@ texture = ExtResource("1_2mwvn")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 1016.0
+offset_top = 896.0
 offset_right = 945.0
-offset_bottom = 1376.0
+offset_bottom = 1378.0
 alignment = 1
 
 [node name="play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 79
 text = "Nuevo Juego"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xmp5n")
+theme_override_font_sizes/font_size = 80
+placeholder_text = "Filas"
+alignment = 1
+expand_to_text_length = true
+
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xmp5n")
+theme_override_font_sizes/font_size = 80
+placeholder_text = "Columnas"
+alignment = 1
+expand_to_text_length = true
+
 [node name="SelectPlayer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
 text = "Selector de Personajes"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 79
+theme_override_fonts/font = ExtResource("3_xmp5n")
+theme_override_font_sizes/font_size = 80
 text = "Salir"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1832.0
+offset_top = 1328.0
+offset_right = 2567.0
+offset_bottom = 1370.0
+theme_override_fonts/font = ExtResource("3_xmp5n")
+theme_override_font_sizes/font_size = 30
+text = "Developed by Miguel Andrés Cazorla Zamora C-122"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2096.0
+offset_top = 1376.0
+offset_right = 2536.0
+offset_bottom = 1418.0
+theme_override_fonts/font = ExtResource("3_xmp5n")
+theme_override_font_sizes/font_size = 30
+text = "SoundTrack by Baldur's Gate 3"
+
 [connection signal="pressed" from="VBoxContainer/play" to="." method="PressPlay"]
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="ChangeRows"]
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/LineEdit2" to="." method="ChangeCollumns"]
 [connection signal="pressed" from="VBoxContainer/SelectPlayer" to="." method="PressSelectPlayer"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="PressExit"]

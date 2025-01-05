@@ -1,34 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcd1v3xc2ex1k"]
+[gd_scene load_steps=3 format=3 uid="uid://dcd1v3xc2ex1k"]
 
 [ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Chaos_bismarck.tscn" id="1_iw0br"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_vydyk"]
 
 [node name="Chaos" type="Node2D"]
-scale = Vector2(3, 3)
 
 [node name="Chaos Bismarck" parent="." instance=ExtResource("1_iw0br")]
+scale = Vector2(4, 4)
 animation = &"move_down"
 autoplay = "move_down"
 frame_progress = 0.495403
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 37.3333
-offset_top = -24.0
-offset_right = 267.333
-offset_bottom = 53.0
-scale = Vector2(0.6, 0.6)
+offset_left = 80.0
+offset_top = -56.0
+offset_right = 516.0
+offset_bottom = 63.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Vida: 500"
+theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_font_sizes/font_size = 30
+text = "Chaos Bismarck"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_font_sizes/font_size = 30
+text = "Salud: 500"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_font_sizes/font_size = 30
 text = "Velocidad: 150"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_font_sizes/font_size = 30
 text = "Habilidad: Teletransportación"
 horizontal_alignment = 1

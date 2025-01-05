@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccvunj4tuqqff"
+path="res://.godot/imported/04  Baldur's Gate 3 OST - Who Are You.mp3-1987c3f0cb9640dd0948c7793a0021e6.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/startmenu/04  Baldur's Gate 3 OST - Who Are You.mp3"
+dest_files=["res://.godot/imported/04  Baldur's Gate 3 OST - Who Are You.mp3-1987c3f0cb9640dd0948c7793a0021e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,13 +1,19 @@
 
 using Godot;
 public partial class Menu : Control {
-    public void PressPlay() {
-        GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+    [Export] LineEdit lineEdit1;
+    [Export] LineEdit lineEdit2;
+    public override void _Ready(){
+        lineEdit1.Text = GlobalData.Filas + "";
+        lineEdit2.Text = GlobalData.Columnas + "";
     }
-    void RowsChanged(string text) {
+    public void PressPlay() {
+        GetTree().ChangeSceneToFile("res://scenes/intro.tscn");
+    }
+    void ChangeRows(string text) {
         if (IsNumber(text)) GlobalData.Filas = int.Parse(text);
     }
-    void ColumnsChanged(string text) {
+    void ChangeCollumns(string text) {
         if (IsNumber(text)) GlobalData.Columnas = int.Parse(text);
     }
     public void PressSelectPlayer() {

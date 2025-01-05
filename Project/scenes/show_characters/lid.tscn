@@ -1,35 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://mvgbc275l6k4"]
+[gd_scene load_steps=3 format=3 uid="uid://mvgbc275l6k4"]
 
 [ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Lid.tscn" id="1_trmmi"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_wdsey"]
 
 [node name="Lid" type="Node2D"]
-scale = Vector2(3, 3)
 
 [node name="Lid" parent="." instance=ExtResource("1_trmmi")]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(4.5, 4.5)
 animation = &"move_down"
 autoplay = "move_down"
 frame_progress = 0.34867
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 37.3333
-offset_top = -24.0
-offset_right = 267.333
-offset_bottom = 53.0
-scale = Vector2(0.6, 0.6)
+offset_left = 80.0
+offset_top = -56.0
+offset_right = 516.0
+offset_bottom = 63.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Vida: 150"
+theme_override_fonts/font = ExtResource("2_wdsey")
+theme_override_font_sizes/font_size = 30
+text = "Lid"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wdsey")
+theme_override_font_sizes/font_size = 30
+text = "Salud: 150"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wdsey")
+theme_override_font_sizes/font_size = 30
 text = "Velocidad: 200"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wdsey")
+theme_override_font_sizes/font_size = 30
 text = "Habilidad: Rapidez"
 horizontal_alignment = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bngtjbw82pv7o"]
+[gd_scene load_steps=9 format=3 uid="uid://bngtjbw82pv7o"]
 
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_lcbgt"]
 [ext_resource type="Script" path="res://scripts/characters scripts/Lid.cs" id="1_oko0y"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_04cjc"]
 [ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Lid.tscn" id="2_u7t3l"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_fsppm"]
 
@@ -40,9 +41,11 @@ offset_bottom = 66.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_04cjc")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_04cjc")
 
 [node name="Movement" parent="." instance=ExtResource("1_lcbgt")]
 
@@ -56,6 +59,7 @@ z_as_relative = false
 offset_left = -40.0
 offset_top = -128.0
 offset_bottom = -105.0
+theme_override_fonts/font = ExtResource("2_04cjc")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_fsppm")]
 collision_layer = 8

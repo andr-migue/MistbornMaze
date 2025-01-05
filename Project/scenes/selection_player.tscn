@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqni1tc310y4s"]
+[gd_scene load_steps=4 format=3 uid="uid://cqni1tc310y4s"]
 
 [ext_resource type="Script" path="res://scripts/SelectionPlayer.cs" id="1_lyltv"]
 [ext_resource type="Texture2D" uid="uid://chj0qamu3p4i6" path="res://assets/DALL·E 2025-01-04 01.09.34 - A dark and mysterious title screen illustration for a fantasy video game inspired by the Mistborn series, featuring a desolate rooftop shrouded in thi.webp" id="1_xdlrq"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="3_pamlu"]
 
 [node name="SelectionPlayer" type="Control" node_paths=PackedStringArray("position1", "position2")]
 layout_mode = 3
@@ -36,6 +37,7 @@ offset_right = 100.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "Atrás"
 
@@ -45,6 +47,7 @@ offset_left = 464.0
 offset_top = 1024.0
 offset_right = 773.0
 offset_bottom = 1142.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "Aceptar"
 
@@ -54,6 +57,7 @@ offset_left = 144.0
 offset_top = 576.0
 offset_right = 198.0
 offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "<"
 
@@ -63,6 +67,7 @@ offset_left = 1056.0
 offset_top = 576.0
 offset_right = 1110.0
 offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -72,6 +77,7 @@ offset_left = 448.0
 offset_top = 200.0
 offset_right = 813.0
 offset_bottom = 310.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "Jugador 1"
 
@@ -88,6 +94,7 @@ offset_left = 1768.0
 offset_top = 1024.0
 offset_right = 2077.0
 offset_bottom = 1142.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "Aceptar"
 
@@ -97,6 +104,7 @@ offset_left = 1448.0
 offset_top = 576.0
 offset_right = 1502.0
 offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "<"
 
@@ -106,6 +114,7 @@ offset_left = 2360.0
 offset_top = 576.0
 offset_right = 2414.0
 offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -115,6 +124,7 @@ offset_left = 1752.0
 offset_top = 200.0
 offset_right = 2117.0
 offset_bottom = 310.0
+theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
 text = "Jugador 1"
 

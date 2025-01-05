@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bohqspws8bmi0"]
+[gd_scene load_steps=11 format=3 uid="uid://bohqspws8bmi0"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Rain.cs" id="1_h2pws"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_gkl4j"]
 [ext_resource type="PackedScene" uid="uid://b6mbv5bpkj7kq" path="res://scenes/animated_characters/Rain.tscn" id="2_phi0m"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="4_k4e6o"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_swfwc"]
 [ext_resource type="PackedScene" uid="uid://dfskvw3mvjl6u" path="res://scenes/hit_box.tscn" id="5_3wfky"]
 [ext_resource type="Script" path="res://scripts/RainHitBox.cs" id="6_pe1pq"]
@@ -44,6 +45,7 @@ scale = Vector2(2, 2)
 offset_left = -40.0
 offset_top = -120.0
 offset_bottom = -97.0
+theme_override_fonts/font = ExtResource("4_k4e6o")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_swfwc")]
 z_index = 5

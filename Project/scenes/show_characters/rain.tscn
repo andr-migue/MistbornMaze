@@ -1,34 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://evx2dodddimo"]
+[gd_scene load_steps=3 format=3 uid="uid://evx2dodddimo"]
 
 [ext_resource type="PackedScene" uid="uid://b6mbv5bpkj7kq" path="res://scenes/animated_characters/Rain.tscn" id="1_x3qrr"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_qmu4e"]
 
 [node name="Rain" type="Node2D"]
-scale = Vector2(3, 3)
 
 [node name="Rain" parent="." instance=ExtResource("1_x3qrr")]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(4.5, 4.5)
 animation = &"move_down"
 frame_progress = 0.74025
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 37.3333
-offset_top = -24.0
-offset_right = 267.333
-offset_bottom = 53.0
-scale = Vector2(0.6, 0.6)
+offset_left = 80.0
+offset_top = -56.0
+offset_right = 516.0
+offset_bottom = 63.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Vida: 100"
+theme_override_fonts/font = ExtResource("2_qmu4e")
+theme_override_font_sizes/font_size = 30
+text = "Rain"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qmu4e")
+theme_override_font_sizes/font_size = 30
+text = "Salud: 100"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qmu4e")
+theme_override_font_sizes/font_size = 30
 text = "Velocidad: 220"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Habilidad: Absorción"
+theme_override_fonts/font = ExtResource("2_qmu4e")
+theme_override_font_sizes/font_size = 30
+text = "Habilidad: Absorber Salud"
 horizontal_alignment = 1

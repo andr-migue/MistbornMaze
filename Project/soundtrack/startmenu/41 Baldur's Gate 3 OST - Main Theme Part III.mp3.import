@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3oao3dpkmrv"
+path="res://.godot/imported/41 Baldur's Gate 3 OST - Main Theme Part III.mp3-44b254c40b8572f2aa89ee6318b388dc.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/startmenu/41 Baldur's Gate 3 OST - Main Theme Part III.mp3"
+dest_files=["res://.godot/imported/41 Baldur's Gate 3 OST - Main Theme Part III.mp3-44b254c40b8572f2aa89ee6318b388dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

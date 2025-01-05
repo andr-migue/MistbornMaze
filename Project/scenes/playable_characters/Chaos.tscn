@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://86t2iqsyqw3p"]
+[gd_scene load_steps=9 format=3 uid="uid://86t2iqsyqw3p"]
 
 [ext_resource type="Script" path="res://scripts/characters scripts/Chaos.cs" id="1_5q6jb"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_xuwbq"]
 [ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Chaos_bismarck.tscn" id="2_5672d"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_vngc1"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_mrt51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
@@ -39,6 +40,7 @@ offset_bottom = 66.0
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vngc1")
 
 [node name="Movement" parent="." instance=ExtResource("1_xuwbq")]
 speed = 150.0
@@ -52,6 +54,7 @@ animation = &"move_down"
 offset_left = -40.0
 offset_top = -184.0
 offset_bottom = -161.0
+theme_override_fonts/font = ExtResource("2_vngc1")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_mrt51")]
 z_index = 5
