@@ -48,7 +48,7 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/MistbornMaze.git
+    git clone https://github.com/andr-migue/MistbornMaze.git
     cd MistbornMaze
     ```
 
