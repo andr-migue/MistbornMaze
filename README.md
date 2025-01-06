@@ -49,7 +49,6 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 1. Clone the repository:
     ```sh
     git clone https://github.com/andr-migue/MistbornMaze.git
-    cd MistbornMaze
     ```
 
 2. Open the project in Godot:
@@ -61,12 +60,14 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
     - Make sure the appropriate .NET SDK is installed.
     - Open [MistbornMaze.sln](http://_vscodecontentref_/1) in Visual Studio to edit the C# scripts.
 
-## Project Export 📦
+## Project Execution 🚀
 
-To export the project, use the configurations defined in [export_presets.cfg](http://_vscodecontentref_/2). You can export the game to different platforms from the Godot editor.
+1. Navigate to the `Executable` folder.
+2. Unzip the contents.
+3. Run `MistBornMaze.exe`.
 
 ## Contact 📧
 
 For any inquiries, you can contact me at:  
-- [miguelzamora210405@gmail.com](mailto:miguelzamora210405@gmail.com)
-- [My X account](https://x.com/andr_migue)
+- [My Email.](mailto:miguelzamora210405@gmail.com)
+- [My X Account.](https://x.com/andr_migue)
