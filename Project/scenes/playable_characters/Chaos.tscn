@@ -19,14 +19,14 @@ fill = 1
 fill_from = Vector2(0.495726, 0.51567)
 fill_to = Vector2(0.80057, 0.179487)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "animatedSprite", "Cooldown")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "Cooldown", "animatedSprite")]
 z_index = 5
 z_as_relative = false
 collision_mask = 2
 script = ExtResource("1_5q6jb")
 movement = NodePath("Movement")
-animatedSprite = NodePath("Chaos Bismarck")
 Cooldown = NodePath("VBoxContainer/Label2")
+animatedSprite = NodePath("Chaos Bismarck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -46,14 +46,15 @@ theme_override_fonts/font = ExtResource("2_vngc1")
 speed = 150.0
 
 [node name="Chaos Bismarck" parent="." instance=ExtResource("2_5672d")]
-position = Vector2(0, -72)
-scale = Vector2(1.5, 1.5)
-animation = &"move_down"
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+animation = &"stop"
+frame_progress = 0.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0
-offset_top = -184.0
-offset_bottom = -161.0
+offset_top = -128.0
+offset_bottom = -105.0
 theme_override_fonts/font = ExtResource("2_vngc1")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_mrt51")]

@@ -52,13 +52,14 @@ theme_override_fonts/font = ExtResource("2_04cjc")
 [node name="Lid" parent="." instance=ExtResource("2_u7t3l")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
+frame_progress = 0.0399873
 
 [node name="Label" type="Label" parent="."]
 z_index = 5
 z_as_relative = false
 offset_left = -40.0
-offset_top = -128.0
-offset_bottom = -105.0
+offset_top = -136.0
+offset_bottom = -113.0
 theme_override_fonts/font = ExtResource("2_04cjc")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_fsppm")]

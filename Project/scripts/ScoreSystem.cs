@@ -1,6 +1,4 @@
 using Godot;
-using System;
-
 public partial class ScoreSystem : CanvasLayer {
     [Export] AnimatedSprite2D animatedGema1;
     [Export] AnimatedSprite2D animatedGema2;

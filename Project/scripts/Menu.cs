@@ -2,7 +2,7 @@ using Godot;
 public partial class Menu : Control {
     [Export] LineEdit lineEdit1;
     [Export] LineEdit lineEdit2;
-    public override void _Ready(){
+    public override void _Ready() {
         lineEdit1.Text = GlobalData.Filas + "";
         lineEdit2.Text = GlobalData.Columnas + "";
     }
@@ -22,6 +22,7 @@ public partial class Menu : Control {
         GetTree().Quit();
     }
     private bool IsNumber(string text) {
+        // Verificar si el texto ingresado es un número.
         if (string.IsNullOrEmpty(text)) return false;
         for (int i = 0; i < text.Length; i++) {
             if (char.IsDigit(text[i])) return true;

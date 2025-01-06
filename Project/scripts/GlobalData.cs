@@ -1,7 +1,7 @@
 using Godot;
-using System;
 using System.Collections.Generic;
-public partial class GlobalData : Node{
+public partial class GlobalData : Node {
+    // Autoload GlobalData para almacenar variables globales.
     public static int Filas;
     public static int Columnas;
     public static int[,] IntBoard;

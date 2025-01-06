@@ -40,6 +40,9 @@ speed = 220.0
 [node name="Rain" parent="." instance=ExtResource("2_phi0m")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
+animation = &"stop"
+autoplay = "stop"
+frame_progress = 0.505737
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0

@@ -55,13 +55,13 @@ theme_override_fonts/font = ExtResource("2_wbyk2")
 speed = 300.0
 
 [node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
-position = Vector2(0, -72)
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0
-offset_top = -168.0
-offset_bottom = -145.0
+offset_top = -128.0
+offset_bottom = -105.0
 theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_sdmke")]

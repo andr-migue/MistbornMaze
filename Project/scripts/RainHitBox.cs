@@ -1,5 +1,6 @@
 using Godot;
 public partial class RainHitBox : Area2D {
+    // Variación de la clase HitBox para el personaje Rain que le permite absorber salud de otros personajes.
     [Export] int damage = 30;
     [Export] HealthBox MyHealthBox;
     public override void _Ready(){

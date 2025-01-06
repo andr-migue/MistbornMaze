@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b6mbv5bpkj7kq"]
+[gd_scene load_steps=31 format=3 uid="uid://b6mbv5bpkj7kq"]
 
 [ext_resource type="Texture2D" uid="uid://bpw5jadr10ave" path="res://assets/Mobile - Final Fantasy Brave Exvius - Rain.png" id="1_0uxy3"]
 
@@ -98,9 +98,21 @@ region = Rect2(320, 576, 64, 64)
 atlas = ExtResource("1_0uxy3")
 region = Rect2(384, 576, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fupjr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqb2m"]
 atlas = ExtResource("1_0uxy3")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 2004, 58, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xehv"]
+atlas = ExtResource("1_0uxy3")
+region = Rect2(58, 2004, 58, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl7j2"]
+atlas = ExtResource("1_0uxy3")
+region = Rect2(116, 2004, 58, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2iui"]
+atlas = ExtResource("1_0uxy3")
+region = Rect2(174, 2004, 58, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpx1w"]
 animations = [{
@@ -198,14 +210,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fupjr")
+"texture": SubResource("AtlasTexture_vqb2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xehv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl7j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2iui")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="Rain" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_kpx1w")
 animation = &"stop"
 autoplay = "move_down"
+frame_progress = 0.253534

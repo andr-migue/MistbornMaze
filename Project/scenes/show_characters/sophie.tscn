@@ -6,10 +6,9 @@
 [node name="Sophie" type="Node2D"]
 
 [node name="Sophie" parent="." instance=ExtResource("1_83tsr")]
-scale = Vector2(4, 4)
-animation = &"move_down"
-autoplay = "move_down"
-frame_progress = 0.523822
+scale = Vector2(4.5, 4.5)
+autoplay = "stop"
+frame_progress = 0.278844
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 80.0
@@ -22,7 +21,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qhui3")
 theme_override_font_sizes/font_size = 30
-text = "Sophie"
+text = "Nichols"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]

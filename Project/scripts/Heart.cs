@@ -16,7 +16,7 @@ public partial class Heart : Area2D{
         Random r = new Random();
         int x = 0;
         int y = 0;
-        while (GlobalData.IntBoard[x, y] != 0){
+        while (GlobalData.IntBoard[x, y] != 0) {
             x = r.Next(1, GlobalData.Filas - 1);
             y = r.Next(1, GlobalData.Columnas - 1);
         }

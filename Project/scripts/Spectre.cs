@@ -8,9 +8,9 @@ public partial class Spectre : CharacterBody2D {
     }
     public override void _PhysicsProcess(double delta) {
         if (sensor.target != null) {
-            if (sensor.target_distance < 2000) {
-                movement.move(sensor.target_direction);
-                Animation(sensor.target_direction);
+            if (sensor.targetDistance < 2000) {
+                movement.move(sensor.targetDirection);
+                Animation(sensor.targetDirection);
             }
         }
     }

@@ -1,9 +1,8 @@
 using Godot;
 public partial class Rain : CharacterBody2D {
     [Export] Movement movement;
-    Vector2 inputVector;
     [Export] AnimatedSprite2D animatedSprite;
-    private bool IsHability = true;
+    private Vector2 inputVector;
     private Timer Timer;
     public override void _Ready() {
         movement.setup(this);
@@ -12,11 +11,13 @@ public partial class Rain : CharacterBody2D {
         Animation();
     }
     public override void _PhysicsProcess(double delta) {
-        CheckParent();
+        CheckInputVector();
+        // Ejecutar movimiento de acuerdo al Vector.
         movement.move(inputVector.Normalized());
     }
     private void Animation() {
-        CheckParent();
+        CheckInputVector();
+        // Ejecutar animación de acuerdo al Vector.
         if (inputVector.Length() > 0) {
             if (inputVector.Y != 0) {
                 if (inputVector.Y < 0) animatedSprite.Play("move_up");
@@ -29,7 +30,8 @@ public partial class Rain : CharacterBody2D {
         } 
         else animatedSprite.Play("stop");
     }
-    void CheckParent(){        
+    void CheckInputVector() {
+        // Obtener Vector de movimiento correspondiente.
         Node parent = GetParent();
         if (parent is Player1 player1) inputVector = player1.InputVector;
         else if (parent is Player2 player2) inputVector = player2.InputVector;

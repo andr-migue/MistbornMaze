@@ -4,9 +4,7 @@ public partial class Pause : CanvasLayer {
     private bool PlayerNoWin = true;
     private bool GamePausable = true;
     public override void _Process(double delta) {
-        if (Input.IsActionJustPressed("Pausa")) {
-            PauseVoid();
-        }
+        if (Input.IsActionJustPressed("Pausa")) PauseVoid();
     }
     public override void _PhysicsProcess(double delta) {
         if (GlobalData.Score1 >= 5 && PlayerNoWin) {

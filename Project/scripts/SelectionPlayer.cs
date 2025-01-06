@@ -1,67 +1,69 @@
 using Godot;
 public partial class SelectionPlayer : Control { 
+    // Clase que gestiona la pantalla de seleccionar personajes.
     [Export] Node2D position1;
     [Export] Node2D position2;
-    private PackedScene[] characterScenes = new PackedScene[6];
-    private PackedScene[] playablecharacters = new PackedScene[6];
-    private Node2D currentPlayer1Character;
-    private Node2D currentPlayer2Character;
-    private int currentPlayer1Index = 4;
-    private int currentPlayer2Index = 2;
+    private PackedScene[] showCharacters = new PackedScene[6];
+    private PackedScene[] playableCharacters = new PackedScene[6];
+    private Node2D current1;
+    private Node2D current2;
+    private int index1 = 4;
+    private int index2 = 2;
     public override void _Ready() {
-        // Cargar escenas para la imagen
-        characterScenes[0] = GD.Load<PackedScene>("res://scenes/show_characters/chaos.tscn");
-        characterScenes[1] = GD.Load<PackedScene>("res://scenes/show_characters/cleome.tscn");
-        characterScenes[2] = GD.Load<PackedScene>("res://scenes/show_characters/lasswell.tscn");
-        characterScenes[3] = GD.Load<PackedScene>("res://scenes/show_characters/lid.tscn");
-        characterScenes[4] = GD.Load<PackedScene>("res://scenes/show_characters/rain.tscn");
-        characterScenes[5] = GD.Load<PackedScene>("res://scenes/show_characters/sophie.tscn");
-        // Cargar personaje jugable
-        playablecharacters[0] = GD.Load<PackedScene>("res://scenes/playable_characters/Chaos.tscn");
-        playablecharacters[1] = GD.Load<PackedScene>("res://scenes/playable_characters/Cleome.tscn");
-        playablecharacters[2] = GD.Load<PackedScene>("res://scenes/playable_characters/Lasswell.tscn");
-        playablecharacters[3] = GD.Load<PackedScene>("res://scenes/playable_characters/Lid.tscn");
-        playablecharacters[4] = GD.Load<PackedScene>("res://scenes/playable_characters/Rain.tscn");
-        playablecharacters[5] = GD.Load<PackedScene>("res://scenes/playable_characters/Sophie.tscn");
-        currentPlayer1Character = characterScenes[currentPlayer1Index].Instantiate<Node2D>();
-        currentPlayer2Character = characterScenes[currentPlayer2Index].Instantiate<Node2D>();
-        AddChild(currentPlayer1Character);
-        AddChild(currentPlayer2Character);
+        // Cargar escenas para visualizar en el selector
+        showCharacters[0] = GD.Load<PackedScene>("res://scenes/show_characters/chaos.tscn");
+        showCharacters[1] = GD.Load<PackedScene>("res://scenes/show_characters/cleome.tscn");
+        showCharacters[2] = GD.Load<PackedScene>("res://scenes/show_characters/lasswell.tscn");
+        showCharacters[3] = GD.Load<PackedScene>("res://scenes/show_characters/lid.tscn");
+        showCharacters[4] = GD.Load<PackedScene>("res://scenes/show_characters/rain.tscn");
+        showCharacters[5] = GD.Load<PackedScene>("res://scenes/show_characters/sophie.tscn");
+        // Cargar personajes jugables
+        playableCharacters[0] = GD.Load<PackedScene>("res://scenes/playable_characters/Chaos.tscn");
+        playableCharacters[1] = GD.Load<PackedScene>("res://scenes/playable_characters/Cleome.tscn");
+        playableCharacters[2] = GD.Load<PackedScene>("res://scenes/playable_characters/Lasswell.tscn");
+        playableCharacters[3] = GD.Load<PackedScene>("res://scenes/playable_characters/Lid.tscn");
+        playableCharacters[4] = GD.Load<PackedScene>("res://scenes/playable_characters/Rain.tscn");
+        playableCharacters[5] = GD.Load<PackedScene>("res://scenes/playable_characters/Sophie.tscn");
+        current1 = showCharacters[index1].Instantiate<Node2D>();
+        current2 = showCharacters[index2].Instantiate<Node2D>();
+        AddChild(current1);
+        AddChild(current2);
         UpdateCharacterPositions();
     }
-    private void UpdateCharacterPositions(){
-        currentPlayer1Character.Position = position1.Position;
-        currentPlayer2Character.Position = position2.Position;
+    private void UpdateCharacterPositions() {
+        current1.Position = position1.Position;
+        current2.Position = position2.Position;
     }
-    public void PressLeft1(){
-        currentPlayer1Index = (currentPlayer1Index - 1 + characterScenes.Length) % characterScenes.Length;
-        UpdateCurrentCharacter(ref currentPlayer1Character, currentPlayer1Index);
+    public void PressLeft1() {
+        index1 = (index1 - 1 + 6) % 6;
+        UpdateCurrentCharacter(ref current1, index1);
     }
-    public void PressRight1(){
-        currentPlayer1Index = (currentPlayer1Index + 1) % characterScenes.Length;
-        UpdateCurrentCharacter(ref currentPlayer1Character, currentPlayer1Index);
+    public void PressRight1() {
+        index1 = (index1 + 1) % 6;
+        UpdateCurrentCharacter(ref current1, index1);
     }
-    public void PressAccept1(){
-        GlobalData.Player1Scene = playablecharacters[currentPlayer1Index];
+    public void PressAccept1() {
+        GlobalData.Player1Scene = playableCharacters[index1];
 }
-    public void PressLeft2(){
-        currentPlayer2Index = (currentPlayer2Index - 1 + characterScenes.Length) % characterScenes.Length;
-        UpdateCurrentCharacter(ref currentPlayer2Character, currentPlayer2Index);
+    public void PressLeft2() {
+        index2 = (index2 - 1 + 6) % 6;
+        UpdateCurrentCharacter(ref current2, index2);
     }
-    public void PressRight2(){
-        currentPlayer2Index = (currentPlayer2Index + 1) % characterScenes.Length;
-        UpdateCurrentCharacter(ref currentPlayer2Character, currentPlayer2Index);
+    public void PressRight2() {
+        index2 = (index2 + 1) % 6;
+        UpdateCurrentCharacter(ref current2, index2);
     }
-    public void PressAccept2(){
-        GlobalData.Player2Scene = playablecharacters[currentPlayer2Index];
+    public void PressAccept2() {
+        GlobalData.Player2Scene = playableCharacters[index2];
 }
-    private void UpdateCurrentCharacter(ref Node2D currentCharacter, int index){
-        if (currentCharacter != null) currentCharacter.QueueFree();
-        currentCharacter = characterScenes[index].Instantiate<Node2D>();
-        AddChild(currentCharacter);
+    private void UpdateCurrentCharacter(ref Node2D current, int index) {
+        // Cambiar personaje actual accediendo a la variable current por referencia.
+        if (current != null) current.QueueFree();
+        current = showCharacters[index].Instantiate<Node2D>();
+        AddChild(current);
         UpdateCharacterPositions();
     }
-    public void PressBack(){
+    public void PressBack() {
         GetTree().ChangeSceneToFile("res://scenes/start_menu.tscn");
     }
 }

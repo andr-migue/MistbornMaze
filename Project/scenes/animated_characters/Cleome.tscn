@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cvmqiyd8wc7bb"]
+[gd_scene load_steps=29 format=3 uid="uid://cvmqiyd8wc7bb"]
 
 [ext_resource type="Texture2D" uid="uid://bfsauuvicvcof" path="res://assets/Mobile - Final Fantasy Brave Exvius - Cleome.png" id="1_kamwf"]
 
@@ -98,9 +98,13 @@ region = Rect2(320, 65, 64, 65)
 atlas = ExtResource("1_kamwf")
 region = Rect2(384, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vweor"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_evv2c"]
 atlas = ExtResource("1_kamwf")
-region = Rect2(0, 0, 64, 65)
+region = Rect2(174, 1472, 58, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi1kn"]
+atlas = ExtResource("1_kamwf")
+region = Rect2(232, 1472, 58, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ex65t"]
 animations = [{
@@ -198,14 +202,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vweor")
+"texture": SubResource("AtlasTexture_evv2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi1kn")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Cleome" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ex65t")
 animation = &"stop"
-frame_progress = 0.389493
+frame_progress = 0.642796

@@ -1,30 +1,31 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-public partial class Board : Node2D{
-    public int Filas;
-    public int Columnas;
-    [Export] public PackedScene path;
-    [Export] public PackedScene wall1;
-    [Export] public PackedScene wall2;
-    [Export] public PackedScene wall3;
-    [Export] public PackedScene wall4;
-    [Export] public PackedScene wall5;
-    List<PackedScene> walls = new List<PackedScene>();
-    [Export] public PackedScene player1;
-    [Export] public PackedScene player2;
+public partial class Board : Node2D {
+    // Clase Board para la generacion del mapa del juego.
+    [Export] PackedScene path;
+    [Export] PackedScene wall1;
+    [Export] PackedScene wall2;
+    [Export] PackedScene wall3;
+    [Export] PackedScene wall4;
+    [Export] PackedScene wall5;
+    [Export] PackedScene player1;
+    [Export] PackedScene player2;
     public Player1 Player1Instance;
     public Player2 Player2Instance;
-    public int TrapCount;
-    public int FireCount;
-    public int TeleportCount;
-    public int MistCount;
-    public int GemaCount;
-    public int HeartCount;
-    public int WolfCount;
-    public int SpectreCount;
-    public int SkeletonCount;
-    public override void _Ready(){
+    private List<PackedScene> walls = new List<PackedScene>();
+    private int Filas;
+    private int Columnas;
+    private int TrapCount;
+    private int FireCount;
+    private int TeleportCount;
+    private int MistCount;
+    private int GemaCount;
+    private int HeartCount;
+    private int WolfCount;
+    private int SpectreCount;
+    private int SkeletonCount;
+    public override void _Ready() {
         walls.Add(wall1);
         walls.Add(wall2);
         walls.Add(wall3);
@@ -47,16 +48,15 @@ public partial class Board : Node2D{
         PlaceSpectre();
         PlaceSkeleton();
     }
-    public static int[,] GenerateIntBoard(int filas, int columnas){
+    public static int[,] GenerateIntBoard(int filas, int columnas) {
         // Crear matriz de enteros
         int[,] IntBoard = new int[filas, columnas];
-        // Inicializar todas las celdas como paredes (1)
-        for (int i = 0; i < filas; i++){
-            for (int j = 0; j < columnas; j++){
+        // Inicializar todas las celdas como paredes
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
                 IntBoard[i, j] = 1;
             }
         }
-        
         // Crear un laberinto utilizando DFS
         Random r = new Random();
         CreateMaze(IntBoard, r, 4, 4);
@@ -66,25 +66,25 @@ public partial class Board : Node2D{
         AddRandomPaths(IntBoard, r);
         return IntBoard;
     }
-    private static void CreateMaze(int[,] IntBoard, Random r, int x, int y){
+    private static void CreateMaze(int[,] IntBoard, Random r, int x, int y) {
         // Arrays de direcciones
         int[] DirX = { 2, -2, 0,  0 };
         int[] DirY = { 0,  0, 2, -2 };
         // Crear una lista de direcciones
         List<int> directions = new List<int> { 0, 1, 2, 3 };
         // Aleatorizar lista de direcciones
-        for (int i = directions.Count - 1; i > 0; i--){
+        for (int i = directions.Count - 1; i > 0; i--) {
             int j = r.Next(i + 1);
             int temp = directions[i];
             directions[i] = directions[j];
             directions[j] = temp;
         }
         // Recorrer las direcciones mezcladas
-        for (int d = 0; d < directions.Count; d++){
+        for (int d = 0; d < directions.Count; d++) {
             int direction = directions[d];
             int NewX = x + DirX[direction];
             int NewY = y + DirY[direction];
-            if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX, NewY] == 1){
+            if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX, NewY] == 1) {
                 // Eliminar la pared entre la celda actual y la nueva celda
                 IntBoard[x + DirX[direction] / 2, y + DirY[direction] / 2] = 0;
                 // Hacer la nueva celda un camino
@@ -94,33 +94,33 @@ public partial class Board : Node2D{
             }
         }
     }
-    private static void BeAccesible(int[,] IntBoard, int x, int y){
+    private static void BeAccesible(int[,] IntBoard, int x, int y) {
         // Asegurarse de que la posición (x, y) sea un camino
-        if (IntBoard[x, y] != 0) IntBoard[x, y] = 0; // Convertir a camino
+        if (IntBoard[x, y] != 0) IntBoard[x, y] = 0;
         // Conectar el camino al menos a una celda adyacente que sea un camino
         int[] DirX = { -1, 1,  0, 0 };
         int[] Diry = {  0, 0, -1, 1 };
-        for (int d = 0; d < DirX.Length; d++){
+        for (int d = 0; d < DirX.Length; d++) {
             int adjacentX = x + DirX[d];
             int adjacentY = y + Diry[d];
-            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 0) return; // Ya está conectado a un camino existente
+            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 0) return;// Ya está conectado a un camino existente
         }
         // Si no hay caminos adyacentes disponibles para conectar,
         // simplemente elimina una pared adyacente aleatoria.
-        for (int d = 0; d < DirX.Length; d++){
+        for (int d = 0; d < DirX.Length; d++) {
             int adjacentX = x + DirX[d];
             int adjacentY = y + Diry[d];
-            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 1){
+            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 1) {
                 IntBoard[adjacentX, adjacentY] = 0; // Convertir a camino
                 return;
             }
         }
     }
-    private static void AddRandomPaths(int[,] IntBoard, Random r){
-        for (int i = 0; i < IntBoard.GetLength(0); i++){
-            for (int j = 0; j < IntBoard.GetLength(1); j++){
-                if (IntBoard[i, j] == 1 && IsAdjacentToPath(IntBoard, i, j)){
-                    if (IsValid(IntBoard, i, j) && IntBoard[i, j] == 1){
+    private static void AddRandomPaths(int[,] IntBoard, Random r) {
+        for (int i = 0; i < IntBoard.GetLength(0); i++) {
+            for (int j = 0; j < IntBoard.GetLength(1); j++) {
+                if (IntBoard[i, j] == 1 && IsAdjacentToPath(IntBoard, i, j)) {
+                    if (IsValid(IntBoard, i, j) && IntBoard[i, j] == 1) {
                         // Convertir algunas paredes a caminos aleatoriamente (30%)
                         if (r.NextDouble() < 0.3) IntBoard[i, j] = 0;
                     }
@@ -128,32 +128,33 @@ public partial class Board : Node2D{
             }
         }
     }
-    private static bool IsAdjacentToPath(int[,] IntBoard, int x,int y){
+    private static bool IsAdjacentToPath(int[,] IntBoard, int x,int y) {
         // Verificar si una pared es adyacente a un camino
         int[] DirX = { -1, 1,  0, 0 };
         int[] Diry = {  0, 0, -1, 1 };
-        for (int d = 0; d < DirX.Length; d++){
+        for (int d = 0; d < DirX.Length; d++) {
             int NewX = x + DirX[d];
             int NewY = y + Diry[d];
             if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX,NewY] == 0) return true;
         }
         return false;
     }
-    public static bool IsValid(int[,] IntBoard,int x,int y){
+    public static bool IsValid(int[,] IntBoard,int x,int y) {
         // Verificar si una celda se encuentra en los limites de la matriz
         return x >= 4 && x < IntBoard.GetLength(0) - 4 && y >= 4 && y < IntBoard.GetLength(1) - 4; 
     }
-    public Node2D[,] GenerateNodeBoard(int[,] IntBoard){
+    public Node2D[,] GenerateNodeBoard(int[,] IntBoard) {
         //Generar matriz de nodos.
         Node2D[,] NodeBoard = new Node2D[IntBoard.GetLength(0), IntBoard.GetLength(1)];
-        for (int i = 0; i < Filas; i++){
-            for (int j = 0; j < Columnas; j++){
-                if (IntBoard[i, j] == 0){
+        for (int i = 0; i < Filas; i++) {
+            for (int j = 0; j < Columnas; j++) {
+                if (IntBoard[i, j] == 0) {
                     Node2D PathInstance = path.Instantiate<Node2D>();
                     AddChild(PathInstance);
                     NodeBoard[i, j] = PathInstance;
                 }
-                if (IntBoard[i, j] == 1){
+                if (IntBoard[i, j] == 1) {
+                    // Aleatorizar visualización de las paredes
                     Random r = new Random();
                     int index = r.Next(4);
                     PackedScene wall = walls[index];
@@ -165,31 +166,30 @@ public partial class Board : Node2D{
         }
         return NodeBoard;
     }
-    public void PrintBoard(Node2D[,] NodeBoard){
-        //Mostrar cada nodo en su posicion correspondiente.
-        for (int i = 0; i < NodeBoard.GetLength(0); i++){
-            for (int j = 0; j < NodeBoard.GetLength(1); j++){
+    public void PrintBoard(Node2D[,] NodeBoard) {
+        // Mostrar cada nodo en su posicion correspondiente.
+        for (int i = 0; i < NodeBoard.GetLength(0); i++) {
+            for (int j = 0; j < NodeBoard.GetLength(1); j++) {
                 NodeBoard[i, j].Position = new Vector2(j * 64, i * 64);
             }
         }
     }
-    public void PlacePlayers(){
-        //Spawnear Players
+    // Métodos para la generacion de los jugadores, trampas, enemigos e items.
+    public void PlacePlayers() {
         Player1Instance = (Player1)player1.Instantiate<Node2D>();
         AddChild(Player1Instance);
         Player2Instance = (Player2)player2.Instantiate<Node2D>();
         AddChild(Player2Instance);
-        
         Player1Instance.Position = new Vector2(4 * 64, 4 * 64);
         Player2Instance.Position = new Vector2((Columnas - 5) * 64, (Filas - 5) * 64);
     }
-    public void PlaceTraps(){
+    public void PlaceTraps() {
         TrapCount = GlobalData.Traps;
         while (TrapCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -199,13 +199,13 @@ public partial class Board : Node2D{
             TrapCount--;
         }
     }
-    public void PlaceFires(){
+    public void PlaceFires() {
         FireCount = GlobalData.Fire;
         while (FireCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -215,13 +215,13 @@ public partial class Board : Node2D{
             FireCount--;
         }
     }
-    public void PlaceTeleport(){
+    public void PlaceTeleport() {
         TeleportCount = GlobalData.Teleport;
         while (TeleportCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -231,13 +231,13 @@ public partial class Board : Node2D{
             TeleportCount--;
         }
     }
-    public void PlaceMist(){
+    public void PlaceMist() {
         MistCount = GlobalData.Mist;
         while (MistCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -247,13 +247,13 @@ public partial class Board : Node2D{
             MistCount--;
         }
     }
-    public void PlaceGema(){
+    public void PlaceGema() {
         GemaCount = GlobalData.Gema;
         while (GemaCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -263,13 +263,13 @@ public partial class Board : Node2D{
             GemaCount--;
         }
     }
-    public void PlaceHeart(){
+    public void PlaceHeart() {
         HeartCount = GlobalData.Heart;
         while (HeartCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -279,13 +279,13 @@ public partial class Board : Node2D{
             HeartCount--;
         }
     }
-    public void PlaceWolf(){
+    public void PlaceWolf() {
         WolfCount = GlobalData.Wolf;
         while (WolfCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -295,13 +295,13 @@ public partial class Board : Node2D{
             WolfCount--;
         }
     }
-    public void PlaceSpectre(){
+    public void PlaceSpectre() {
         SpectreCount = GlobalData.Spectre;
         while (SpectreCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
@@ -311,13 +311,13 @@ public partial class Board : Node2D{
             SpectreCount--;
         }
     }
-    public void PlaceSkeleton(){
+    public void PlaceSkeleton() {
         SkeletonCount = GlobalData.skeleton;
         while (SkeletonCount > 0) {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0){
+            while (GlobalData.IntBoard[x, y] != 0) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
