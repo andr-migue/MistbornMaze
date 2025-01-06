@@ -52,7 +52,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
-speed = 300.0
 
 [node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
 position = Vector2(0, -48)

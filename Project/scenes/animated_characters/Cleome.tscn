@@ -98,13 +98,13 @@ region = Rect2(320, 65, 64, 65)
 atlas = ExtResource("1_kamwf")
 region = Rect2(384, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evv2c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g2yr"]
 atlas = ExtResource("1_kamwf")
-region = Rect2(174, 1472, 58, 66)
+region = Rect2(174, 1474, 58, 62)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vi1kn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn8j1"]
 atlas = ExtResource("1_kamwf")
-region = Rect2(232, 1472, 58, 66)
+region = Rect2(232, 1474, 58, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ex65t"]
 animations = [{
@@ -202,10 +202,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evv2c")
+"texture": SubResource("AtlasTexture_6g2yr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vi1kn")
+"texture": SubResource("AtlasTexture_nn8j1")
 }],
 "loop": true,
 "name": &"stop",
@@ -215,4 +215,4 @@ animations = [{
 [node name="Cleome" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ex65t")
 animation = &"stop"
-frame_progress = 0.642796
+frame_progress = 0.740949

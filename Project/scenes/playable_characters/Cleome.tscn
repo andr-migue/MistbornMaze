@@ -188,6 +188,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_w0t6w")
 
 [node name="Movement" parent="." instance=ExtResource("3_4otxo")]
+speed = 180.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0

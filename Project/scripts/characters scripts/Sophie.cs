@@ -60,6 +60,7 @@ public partial class Sophie : CharacterBody2D {
             MyCollision.Disabled = true;
             MyHealthBox.Monitorable = false;
             SetTransparency(0.5f);
+            movement.speed = 300;
             IsHability = false;
             Timer.Start();
             Timer2.Start();
@@ -79,6 +80,7 @@ public partial class Sophie : CharacterBody2D {
             MyCollision.Disabled = false;
             MyHealthBox.Monitorable = true;
             SetTransparency(1);
+            movement.speed = 200;
             CurrentHability.Visible = false;
         }
     }

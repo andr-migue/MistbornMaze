@@ -45,7 +45,7 @@ public partial class GlobalData : Node {
         Fire =3;
         Teleport = 1;
         Mist = 5;
-        Gema = 3;
+        Gema = 2;
         Heart = 1;
         Wolf = 2;
         skeleton = 5;

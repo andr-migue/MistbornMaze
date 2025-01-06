@@ -85,7 +85,7 @@ public partial class Cleome : CharacterBody2D {
     }
     private void InitTimer() {
         Timer = new Timer();
-        Timer.WaitTime = 5.0f;
+        Timer.WaitTime = 15.0f;
         Timer.OneShot = true;
         Timer.Connect("timeout", new Callable(this, nameof(Timeout)));
         AddChild(Timer);
@@ -102,7 +102,7 @@ public partial class Cleome : CharacterBody2D {
     }
     private void InitTimer2() {
         Timer2 = new Timer();
-        Timer2.WaitTime = 20.0f;
+        Timer2.WaitTime = 30.0f;
         Timer2.OneShot = true;
         Timer2.Connect("timeout", new Callable(this, nameof(Timeout2)));
         AddChild(Timer2);
