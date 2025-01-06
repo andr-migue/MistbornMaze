@@ -3,7 +3,6 @@ public partial class Rain : CharacterBody2D {
     [Export] Movement movement;
     [Export] AnimatedSprite2D animatedSprite;
     private Vector2 inputVector;
-    private Timer Timer;
     public override void _Ready() {
         movement.setup(this);
     }

@@ -49,7 +49,6 @@ speed = 180.0
 [node name="Laswell" parent="." instance=ExtResource("3_3rrij")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
-animation = &"stop"
 frame_progress = 0.0
 
 [node name="Label" type="Label" parent="."]

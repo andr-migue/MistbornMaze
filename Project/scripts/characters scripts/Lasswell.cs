@@ -43,7 +43,7 @@ public partial class Lasswell : CharacterBody2D {
     }
     public void Hability() {
         if (IsHability) {
-            MyHealthBox.TakeHealth(50);
+            MyHealthBox.TakeHealth(100);
             IsHability = false;
             Cooldown.Visible = true;
             Timer.Start();

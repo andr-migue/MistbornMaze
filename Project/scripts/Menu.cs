@@ -2,11 +2,12 @@ using Godot;
 public partial class Menu : Control {
     [Export] LineEdit lineEdit1;
     [Export] LineEdit lineEdit2;
+    [Export] Control controls;
     public override void _Ready() {
         lineEdit1.Text = GlobalData.Filas + "";
         lineEdit2.Text = GlobalData.Columnas + "";
     }
-    public void PressPlay() {
+    void PressPlay() {
         GetTree().ChangeSceneToFile("res://scenes/intro.tscn");
     }
     void ChangeRows(string text) {
@@ -15,10 +16,13 @@ public partial class Menu : Control {
     void ChangeCollumns(string text) {
         if (IsNumber(text)) GlobalData.Columnas = int.Parse(text);
     }
-    public void PressSelectPlayer() {
+    void PressSelectPlayer() {
         GetTree().ChangeSceneToFile("res://scenes/selection_player.tscn");
     }
-    public void PressExit() {
+    void PressControls() {
+        controls.Visible = !controls.Visible;
+    }
+    void PressExit() {
         GetTree().Quit();
     }
     private bool IsNumber(string text) {
