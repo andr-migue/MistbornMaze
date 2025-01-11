@@ -70,4 +70,4 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 
 For any inquiries, you can contact me at:  
 - [My Email.](mailto:miguelzamora210405@gmail.com)
-- [My X Account.](https://x.com/andr_migue)
+- [My 𝕏 Account.](https://x.com/andr_migue)
