@@ -126,7 +126,7 @@ offset_right = 2117.0
 offset_bottom = 310.0
 theme_override_fonts/font = ExtResource("3_pamlu")
 theme_override_font_sizes/font_size = 80
-text = "Jugador 1"
+text = "Jugador 2"
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0

@@ -11,9 +11,11 @@ public partial class Board : Node2D {
     [Export] PackedScene wall5;
     [Export] PackedScene player1;
     [Export] PackedScene player2;
+    [Export] CanvasModulate ilumination;
     public Player1 Player1Instance;
     public Player2 Player2Instance;
     private List<PackedScene> walls = new List<PackedScene>();
+    private Color modulateColor;
     private int Filas;
     private int Columnas;
     private int TrapCount;
@@ -47,6 +49,18 @@ public partial class Board : Node2D {
         PlaceWolf();
         PlaceSpectre();
         PlaceSkeleton();
+    }
+    public override void _Process(double delta) {
+        if (Input.IsActionJustPressed("DecreaseIlumination")) DecreaseIlumination();
+        if (Input.IsActionJustPressed("IncreaseIlumination")) IncreaseIlumination();
+    }
+    public void DecreaseIlumination() {
+        modulateColor = ilumination.Color;
+        ilumination.Color = new Color(modulateColor.R - 0.05f, modulateColor.G - 0.05f, modulateColor.B - 0.05f, modulateColor.A);
+    }
+    public void IncreaseIlumination() {
+        modulateColor = ilumination.Color;
+        ilumination.Color = new Color(modulateColor.R + 0.05f, modulateColor.G + 0.05f, modulateColor.B + 0.05f, modulateColor.A);
     }
     public static int[,] GenerateIntBoard(int filas, int columnas) {
         // Crear matriz de enteros
