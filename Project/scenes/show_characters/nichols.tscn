@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx57nflipldv3"]
 
-[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="1_83tsr"]
+[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Nichols.tscn" id="1_83tsr"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_qhui3"]
 
-[node name="Sophie" type="Node2D"]
+[node name="Nichols" type="Node2D"]
 
-[node name="Sophie" parent="." instance=ExtResource("1_83tsr")]
+[node name="Nichols" parent="." instance=ExtResource("1_83tsr")]
 scale = Vector2(4.5, 4.5)
 autoplay = "stop"
 frame_progress = 0.278844

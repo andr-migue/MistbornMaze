@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl8w6beqjuc6i"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Sophie.cs" id="1_mfd0s"]
+[ext_resource type="Script" path="res://scripts/characters scripts/Nichols.cs" id="1_l6bmx"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_r0wqg"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_wbyk2"]
-[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Sophie.tscn" id="3_8g3hy"]
+[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Nichols.tscn" id="3_8g3hy"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_sdmke"]
 [ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_0snud"]
 
@@ -24,10 +24,10 @@ fill_to = Vector2(0.80057, 0.179487)
 z_index = 5
 z_as_relative = false
 collision_mask = 2
-script = ExtResource("1_mfd0s")
+script = ExtResource("1_l6bmx")
 movement = NodePath("Movement")
 MyCollision = NodePath("CollisionShape2D")
-animatedSprite = NodePath("Sophie")
+animatedSprite = NodePath("Nichols")
 MyHealthBox = NodePath("HealthBox")
 sensor = NodePath("Sensor")
 CurrentHability = NodePath("VBoxContainer/Label")
@@ -53,7 +53,7 @@ theme_override_fonts/font = ExtResource("2_wbyk2")
 
 [node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
 
-[node name="Sophie" parent="." instance=ExtResource("3_8g3hy")]
+[node name="Nichols" parent="." instance=ExtResource("3_8g3hy")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 

@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcd1v3xc2ex1k"]
+[gd_scene load_steps=3 format=3 uid="uid://mvgbc275l6k4"]
 
-[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Chaos_bismarck.tscn" id="1_iw0br"]
-[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_vydyk"]
+[ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Jake.tscn" id="1_trmmi"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_wdsey"]
 
-[node name="Chaos" type="Node2D"]
+[node name="Jake" type="Node2D"]
 
-[node name="Chaos Bismarck" parent="." instance=ExtResource("1_iw0br")]
+[node name="Jake" parent="." instance=ExtResource("1_trmmi")]
 scale = Vector2(4.5, 4.5)
-animation = &"stop"
 autoplay = "stop"
-frame_progress = 0.0
+frame_progress = 0.34195
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 80.0
@@ -20,28 +19,28 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_fonts/font = ExtResource("2_wdsey")
 theme_override_font_sizes/font_size = 30
-text = "Cid"
+text = "Jake"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_fonts/font = ExtResource("2_wdsey")
 theme_override_font_sizes/font_size = 30
-text = "Salud: 300"
+text = "Salud: 150"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_fonts/font = ExtResource("2_wdsey")
 theme_override_font_sizes/font_size = 30
-text = "Velocidad: 150"
+text = "Velocidad: 200"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vydyk")
+theme_override_fonts/font = ExtResource("2_wdsey")
 theme_override_font_sizes/font_size = 30
-text = "Habilidad: Teletransportación"
+text = "Habilidad: Rapidez"
 horizontal_alignment = 1

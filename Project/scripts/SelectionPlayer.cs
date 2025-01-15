@@ -11,19 +11,19 @@ public partial class SelectionPlayer : Control {
     private int index2 = 2;
     public override void _Ready() {
         // Cargar escenas para visualizar en el selector
-        showCharacters[0] = GD.Load<PackedScene>("res://scenes/show_characters/chaos.tscn");
+        showCharacters[0] = GD.Load<PackedScene>("res://scenes/show_characters/cid.tscn");
         showCharacters[1] = GD.Load<PackedScene>("res://scenes/show_characters/cleome.tscn");
         showCharacters[2] = GD.Load<PackedScene>("res://scenes/show_characters/lasswell.tscn");
-        showCharacters[3] = GD.Load<PackedScene>("res://scenes/show_characters/lid.tscn");
+        showCharacters[3] = GD.Load<PackedScene>("res://scenes/show_characters/jake.tscn");
         showCharacters[4] = GD.Load<PackedScene>("res://scenes/show_characters/rain.tscn");
-        showCharacters[5] = GD.Load<PackedScene>("res://scenes/show_characters/sophie.tscn");
+        showCharacters[5] = GD.Load<PackedScene>("res://scenes/show_characters/nichols.tscn");
         // Cargar personajes jugables
-        playableCharacters[0] = GD.Load<PackedScene>("res://scenes/playable_characters/Chaos.tscn");
+        playableCharacters[0] = GD.Load<PackedScene>("res://scenes/playable_characters/Cid.tscn");
         playableCharacters[1] = GD.Load<PackedScene>("res://scenes/playable_characters/Cleome.tscn");
         playableCharacters[2] = GD.Load<PackedScene>("res://scenes/playable_characters/Lasswell.tscn");
-        playableCharacters[3] = GD.Load<PackedScene>("res://scenes/playable_characters/Lid.tscn");
+        playableCharacters[3] = GD.Load<PackedScene>("res://scenes/playable_characters/Jake.tscn");
         playableCharacters[4] = GD.Load<PackedScene>("res://scenes/playable_characters/Rain.tscn");
-        playableCharacters[5] = GD.Load<PackedScene>("res://scenes/playable_characters/Sophie.tscn");
+        playableCharacters[5] = GD.Load<PackedScene>("res://scenes/playable_characters/Nichols.tscn");
         current1 = showCharacters[index1].Instantiate<Node2D>();
         current2 = showCharacters[index2].Instantiate<Node2D>();
         AddChild(current1);

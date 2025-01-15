@@ -1,22 +1,29 @@
 using Godot;
-public partial class Lid : CharacterBody2D {
+public partial class Nichols : CharacterBody2D {
     [Export] Movement movement;
+    [Export] CollisionShape2D MyCollision;
     [Export] AnimatedSprite2D animatedSprite;
+    [Export] HealthBox MyHealthBox;
+    [Export] PlayerSensor sensor;
     [Export] Label CurrentHability;
     [Export] Label Cooldown;
-    private Vector2 inputVector;
     private Timer Timer;
     private Timer Timer2;
+    private Vector2 inputVector;
+    private Vector2 InitialPosition;
     private bool IsHability = true;
     public override void _Ready() {
+        InitialPosition = Position;
         movement.setup(this);
         InitTimer();
         InitTimer2();
     }
     public override void _Process(double delta) {
         Animation();
-        if (!Timer.IsStopped()) CurrentHability.Text = $"Rapidez: {Timer.TimeLeft:F1}";
+        CheckLimits();
+        if (!Timer.IsStopped()) CurrentHability.Text = $"Desvanecimiento: {Timer.TimeLeft:F1}";
         if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
+        if (sensor.collisions.Count == 0 && Timer.IsStopped()) Timeout(); 
     }
     public override void _PhysicsProcess(double delta) {
         CheckInputVector();
@@ -38,15 +45,22 @@ public partial class Lid : CharacterBody2D {
         } 
         else animatedSprite.Play("stop");
     }
-    void CheckInputVector() {
+    void CheckInputVector() { 
         // Obtener Vector de movimiento correspondiente.
         Node parent = GetParent();
         if (parent is Player1 player1) inputVector = player1.InputVector;
         else if (parent is Player2 player2) inputVector = player2.InputVector;
     }
+    void CheckLimits() {
+        // Reubicar personaje si se sale de los límites del mapa.
+        if (GlobalPosition.X < 2 * 64 || GlobalPosition.X > (GlobalData.Columnas - 2) * 64 || GlobalPosition.Y < 2 * 64 || GlobalPosition.Y > (GlobalData.Filas - 2) * 64) Position = InitialPosition;
+    }
     public void Hability() {
         if (IsHability) {
-            movement.speed = 400;
+            MyCollision.Disabled = true;
+            MyHealthBox.Monitorable = false;
+            SetTransparency(0.5f);
+            movement.speed = 300;
             IsHability = false;
             Timer.Start();
             Timer2.Start();
@@ -62,8 +76,13 @@ public partial class Lid : CharacterBody2D {
         AddChild(Timer);
     }
     private void Timeout() {
-        movement.speed = 200;
-        CurrentHability.Visible = false;
+        if (sensor.collisions.Count == 0) {
+            MyCollision.Disabled = false;
+            MyHealthBox.Monitorable = true;
+            SetTransparency(1);
+            movement.speed = 200;
+            CurrentHability.Visible = false;
+        }
     }
     private void InitTimer2() {
         Timer2 = new Timer();
@@ -75,5 +94,10 @@ public partial class Lid : CharacterBody2D {
     private void Timeout2() {
         IsHability = true;
         Cooldown.Visible = false;
+    }
+    public void SetTransparency(float alpha) {
+        // Ajustar transparencia del sprite usando el constructor de la clase Color.
+        Color currentColor = animatedSprite.Modulate;
+        animatedSprite.Modulate = new Color(currentColor.R, currentColor.G, currentColor.B, alpha);
     }
 }

@@ -226,7 +226,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Lid" type="AnimatedSprite2D"]
+[node name="Jake" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_er6y8")
 animation = &"stop"
 frame_progress = 0.785478

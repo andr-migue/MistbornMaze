@@ -226,7 +226,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Sophie" type="AnimatedSprite2D"]
+[node name="Nichols" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_nt763")
 animation = &"stop"
 frame_progress = 0.738522

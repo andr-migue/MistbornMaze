@@ -212,7 +212,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Chaos Bismarck" type="AnimatedSprite2D"]
+[node name="Cid" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ub0pr")
 animation = &"move_down"
 frame_progress = 0.277903

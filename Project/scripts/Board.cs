@@ -16,6 +16,7 @@ public partial class Board : Node2D {
     public Player2 Player2Instance;
     private List<PackedScene> walls = new List<PackedScene>();
     private Color modulateColor;
+    private int iluminationCount = 0;
     private int Filas;
     private int Columnas;
     private int TrapCount;
@@ -55,12 +56,18 @@ public partial class Board : Node2D {
         if (Input.IsActionJustPressed("IncreaseIlumination")) IncreaseIlumination();
     }
     public void DecreaseIlumination() {
-        modulateColor = ilumination.Color;
-        ilumination.Color = new Color(modulateColor.R - 0.05f, modulateColor.G - 0.05f, modulateColor.B - 0.05f, modulateColor.A);
+        if (iluminationCount > -3) {
+            modulateColor = ilumination.Color;
+            ilumination.Color = new Color(modulateColor.R - 0.05f, modulateColor.G - 0.05f, modulateColor.B - 0.05f, modulateColor.A);
+            iluminationCount--;
+        }
     }
     public void IncreaseIlumination() {
-        modulateColor = ilumination.Color;
-        ilumination.Color = new Color(modulateColor.R + 0.05f, modulateColor.G + 0.05f, modulateColor.B + 0.05f, modulateColor.A);
+        if (iluminationCount < 3) {
+            modulateColor = ilumination.Color;
+            ilumination.Color = new Color(modulateColor.R + 0.05f, modulateColor.G + 0.05f, modulateColor.B + 0.05f, modulateColor.A);
+            iluminationCount++;
+        }
     }
     public static int[,] GenerateIntBoard(int filas, int columnas) {
         // Crear matriz de enteros
@@ -115,17 +122,11 @@ public partial class Board : Node2D {
         int[] DirX = { -1, 1,  0, 0 };
         int[] Diry = {  0, 0, -1, 1 };
         for (int d = 0; d < DirX.Length; d++) {
-            int adjacentX = x + DirX[d];
-            int adjacentY = y + Diry[d];
-            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 0) return;// Ya está conectado a un camino existente
-        }
-        // Si no hay caminos adyacentes disponibles para conectar,
-        // simplemente elimina una pared adyacente aleatoria.
-        for (int d = 0; d < DirX.Length; d++) {
-            int adjacentX = x + DirX[d];
-            int adjacentY = y + Diry[d];
-            if (IsValid(IntBoard, adjacentX, adjacentY) && IntBoard[adjacentX, adjacentY] == 1) {
-                IntBoard[adjacentX, adjacentY] = 0; // Convertir a camino
+            int NewX = x + DirX[d];
+            int NewY = y + Diry[d];
+            if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX, NewY] == 0) return;// Ya está conectado a un camino existente
+            else if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX, NewY] == 1) {
+                IntBoard[NewX, NewY] = 0; // Convertir a camino
                 return;
             }
         }
@@ -133,25 +134,11 @@ public partial class Board : Node2D {
     private static void AddRandomPaths(int[,] IntBoard, Random r) {
         for (int i = 0; i < IntBoard.GetLength(0); i++) {
             for (int j = 0; j < IntBoard.GetLength(1); j++) {
-                if (IntBoard[i, j] == 1 && IsAdjacentToPath(IntBoard, i, j)) {
-                    if (IsValid(IntBoard, i, j) && IntBoard[i, j] == 1) {
-                        // Convertir algunas paredes a caminos aleatoriamente (30%)
-                        if (r.NextDouble() < 0.3) IntBoard[i, j] = 0;
-                    }
+                if (IntBoard[i, j] == 1 && IsValid(IntBoard, i, j) && r.NextDouble() < 0.2) {
+                    IntBoard[i, j] = 0; // Convertir algunas paredes a caminos aleatoriamente (20%)
                 }
             }
         }
-    }
-    private static bool IsAdjacentToPath(int[,] IntBoard, int x,int y) {
-        // Verificar si una pared es adyacente a un camino
-        int[] DirX = { -1, 1,  0, 0 };
-        int[] Diry = {  0, 0, -1, 1 };
-        for (int d = 0; d < DirX.Length; d++) {
-            int NewX = x + DirX[d];
-            int NewY = y + Diry[d];
-            if (IsValid(IntBoard, NewX, NewY) && IntBoard[NewX,NewY] == 0) return true;
-        }
-        return false;
     }
     public static bool IsValid(int[,] IntBoard,int x,int y) {
         // Verificar si una celda se encuentra en los limites de la matriz

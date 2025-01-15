@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bngtjbw82pv7o"]
 
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_lcbgt"]
-[ext_resource type="Script" path="res://scripts/characters scripts/Lid.cs" id="1_oko0y"]
+[ext_resource type="Script" path="res://scripts/characters scripts/Jake.cs" id="1_retjm"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_04cjc"]
-[ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Lid.tscn" id="2_u7t3l"]
+[ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Jake.tscn" id="2_u7t3l"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_fsppm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
@@ -23,9 +23,9 @@ fill_to = Vector2(0.80057, 0.179487)
 z_index = 5
 z_as_relative = false
 collision_mask = 2
-script = ExtResource("1_oko0y")
+script = ExtResource("1_retjm")
 movement = NodePath("Movement")
-animatedSprite = NodePath("Lid")
+animatedSprite = NodePath("Jake")
 CurrentHability = NodePath("VBoxContainer/Label")
 Cooldown = NodePath("VBoxContainer/Label2")
 
@@ -49,7 +49,7 @@ theme_override_fonts/font = ExtResource("2_04cjc")
 
 [node name="Movement" parent="." instance=ExtResource("1_lcbgt")]
 
-[node name="Lid" parent="." instance=ExtResource("2_u7t3l")]
+[node name="Jake" parent="." instance=ExtResource("2_u7t3l")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 frame_progress = 0.0399873

@@ -1,6 +1,6 @@
 using System;
 using Godot;
-public partial class Chaos : CharacterBody2D {
+public partial class Cid : CharacterBody2D {
     [Export] Movement movement;
     [Export] Label Cooldown;
     [Export] AnimatedSprite2D animatedSprite;

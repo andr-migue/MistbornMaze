@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://86t2iqsyqw3p"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Chaos.cs" id="1_5q6jb"]
-[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_xuwbq"]
-[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Chaos_bismarck.tscn" id="2_5672d"]
-[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_vngc1"]
-[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_mrt51"]
+[ext_resource type="Script" path="res://scripts/characters scripts/Cid.cs" id="1_0bkth"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_mi7nm"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_lthd1"]
+[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Cid.tscn" id="4_oy5b7"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="5_vu6lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)
@@ -23,10 +23,10 @@ fill_to = Vector2(0.80057, 0.179487)
 z_index = 5
 z_as_relative = false
 collision_mask = 2
-script = ExtResource("1_5q6jb")
+script = ExtResource("1_0bkth")
 movement = NodePath("Movement")
 Cooldown = NodePath("VBoxContainer/Label2")
-animatedSprite = NodePath("Chaos Bismarck")
+animatedSprite = NodePath("Cid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -40,12 +40,12 @@ offset_bottom = 66.0
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vngc1")
+theme_override_fonts/font = ExtResource("2_mi7nm")
 
-[node name="Movement" parent="." instance=ExtResource("1_xuwbq")]
+[node name="Movement" parent="." instance=ExtResource("3_lthd1")]
 speed = 150.0
 
-[node name="Chaos Bismarck" parent="." instance=ExtResource("2_5672d")]
+[node name="Cid" parent="." instance=ExtResource("4_oy5b7")]
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 animation = &"stop"
@@ -55,9 +55,9 @@ frame_progress = 0.0
 offset_left = -40.0
 offset_top = -128.0
 offset_bottom = -105.0
-theme_override_fonts/font = ExtResource("2_vngc1")
+theme_override_fonts/font = ExtResource("2_mi7nm")
 
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_mrt51")]
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("5_vu6lw")]
 z_index = 5
 z_as_relative = false
 collision_layer = 8
