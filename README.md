@@ -29,7 +29,7 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 ### Playable Characters 🎭
 - Choose from 6 playable characters, each with unique abilities. DISCOVER THEM FOR YOURSELF!
 
-![image_2025-01-05_09-05-22](https://github.com/user-attachments/assets/bc61f652-37fc-497f-ac42-1f303bb7d6f3)
+![image_2025-01-14_20-38-40](https://github.com/user-attachments/assets/80434e76-7272-4a15-acd5-6f4189fd77fa)
 
 ## Project Structure 📂
 
