@@ -1,4 +1,4 @@
-# MistbornMaze 🎮
+<h1 align=center> MistbornMaze 🎮  </h2>
 
 ![image_2025-01-06_04-17-11](https://github.com/user-attachments/assets/d0d51543-7d5d-46a5-ad7a-95515673488f)
 
