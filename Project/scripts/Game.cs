@@ -18,18 +18,15 @@ public partial class Game : HBoxContainer {
         Camera2.GlobalPosition = Camera2.Position.Lerp(MyBoard.Player2Instance.characterInstance.GlobalPosition, 0.1f);
     }
     private void SetCameraLimits() {
-        // Calcular los límites del mapa
-        int mapWidth = (GlobalData.Filas - 1) * 64;
-        int mapHeight = (GlobalData.Columnas - 1) * 64;
         // Establecer límites para Camera1
         Camera1.LimitLeft = 0;
-        Camera1.LimitRight = mapWidth;
+        Camera1.LimitRight = (GlobalData.Columnas - 1) * 64;
         Camera1.LimitTop = 0;
-        Camera1.LimitBottom = mapHeight;
+        Camera1.LimitBottom = (GlobalData.Filas - 1) * 64;
         // Establecer límites para Camera2
         Camera2.LimitLeft = 0;
-        Camera2.LimitRight = mapWidth;
+        Camera2.LimitRight = (GlobalData.Columnas - 1) * 64;
         Camera2.LimitTop = 0;
-        Camera2.LimitBottom = mapHeight;
+        Camera2.LimitBottom = (GlobalData.Filas - 1) * 64;
     }
 }
