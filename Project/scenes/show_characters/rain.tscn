@@ -42,5 +42,5 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qmu4e")
 theme_override_font_sizes/font_size = 30
-text = "Habilidad: Absorber Salud"
+text = "Habilidad: Destello"
 horizontal_alignment = 1

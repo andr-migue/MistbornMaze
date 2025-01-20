@@ -160,7 +160,7 @@ size = Vector2i(1278, 1440)
 render_target_update_mode = 4
 
 [node name="Camera 1" type="Camera2D" parent="SubViewportContainer 1/SubViewport 1"]
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2.2, 2.2)
 
 [node name="SubViewportContainer 2" type="SubViewportContainer" parent="."]
 layout_mode = 2
@@ -174,7 +174,7 @@ size = Vector2i(1278, 1440)
 render_target_update_mode = 4
 
 [node name="Camera 2" type="Camera2D" parent="SubViewportContainer 2/SubViewport 2"]
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(2.2, 2.2)
 
 [node name="Pause" type="CanvasLayer" parent="." node_paths=PackedStringArray("PausaLabel")]
 process_mode = 3
