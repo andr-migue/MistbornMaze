@@ -8,7 +8,7 @@ MistbornMaze is an exciting real-time multiplayer game developed with Godot Engi
 
 Under a perpetually cloudy sky, the maze stretches out like an endless cemetery. You walk among broken tombstones and moss-covered mausoleums, while the mist dances on the ground, hiding what your eyes don't want to see. The faint light filtering through the clouds casts long, distorted shadows, making the cemetery seem alive. The air is thick with heavy silence, broken only by the occasional crunch of your steps or the distant echo of something crawling in the dark. Here, among the forgotten dead, every path seems to lead deeper into despair.
 
-Hidden among the crypts and graves are five fragments of Lerasium, glowing with an otherworldly light, as if they don't belong in this world. This mineral is not only the key to your escape but also the reward for your survival. But you're not alone. Something is following you—perhaps the maze itself, perhaps the echoes of those who failed before. As the fragments draw near, so does the danger. In this place of eternal rest, only one will leave the realm of the dead. The rest will stay here, forever.
+Hidden among the crypts and graves are five fragments of Lerasium, glowing with an otherworldly light, as if they don't belong in this world. This mineral is not only the key to your escape but also the reward for your survival. But you're not alone. Something is following you, perhaps the maze itself, perhaps the echoes of those who failed before. As the fragments draw near, so does the danger. In this place of eternal rest, only one will leave the realm of the dead. The rest will stay here, forever.
 
 ## Game Features 🕹️
 
@@ -21,7 +21,7 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 ### Multiplayer 👥
 - The game is for 2 players competing in real-time.
 
-![image_2025-01-05_09-06-47](https://github.com/user-attachments/assets/61736b0d-bccb-4d3c-a3fd-2d46efe9c8d2)
+<img width="1276" alt="image_2025-01-22_00-20-41" src="https://github.com/user-attachments/assets/cea65d1b-071c-4759-8b3b-ac26e97775a3" />
 
 ### Objective 🏆
 - The first player to collect 5 fragments of Lerasium wins the game.
@@ -29,7 +29,7 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 ### Playable Characters 🎭
 - Choose from 6 playable characters, each with unique abilities. DISCOVER THEM FOR YOURSELF!
 
-![image_2025-01-14_20-38-40](https://github.com/user-attachments/assets/80434e76-7272-4a15-acd5-6f4189fd77fa)
+<img width="1278" alt="image_2025-01-22_00-20-34" src="https://github.com/user-attachments/assets/d8cf9a7a-0662-45b6-8f63-c2c3d40b8d87" />
 
 ## Project Structure 📂
 
@@ -55,10 +55,6 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
     - Open Godot Engine.
     - Select "Import" and navigate to the project directory.
     - Select [project.godot](http://_vscodecontentref_/0) and click "Import & Edit."
-
-3. Set up the development environment:
-    - Make sure the appropriate .NET SDK is installed.
-    - Open [MistbornMaze.sln](http://_vscodecontentref_/1) in Visual Studio to edit the C# scripts.
 
 ## Project Execution 🚀
 
