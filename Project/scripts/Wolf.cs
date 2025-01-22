@@ -9,7 +9,7 @@ public partial class Wolf : CharacterBody2D {
     }
     public override void _PhysicsProcess(double delta) {
         if (sensor.target != null) {
-            if (sensor.targetDistance < 2000) {
+            if (sensor.targetDistance < 2000 && sensor.targetDistance > 5) {
                 movement.move(sensor.targetDirection);
                 Animation(sensor.targetDirection);
             }

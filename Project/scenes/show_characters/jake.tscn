@@ -10,37 +10,17 @@ scale = Vector2(4.5, 4.5)
 autoplay = "stop"
 frame_progress = 0.34195
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 80.0
-offset_top = -56.0
-offset_right = 516.0
-offset_bottom = 63.0
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -136.0
+offset_right = 532.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("2_wdsey")
 theme_override_font_sizes/font_size = 30
-text = "Jake"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wdsey")
-theme_override_font_sizes/font_size = 30
-text = "Salud: 150"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wdsey")
-theme_override_font_sizes/font_size = 30
-text = "Velocidad: 200"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wdsey")
-theme_override_font_sizes/font_size = 30
-text = "Habilidad: Rapidez"
-horizontal_alignment = 1
+text = "Jake
+Salud: 150
+Velocidad: 200
+Habilidad: Rapidez
+Duplica su Velocidad durante
+5 segundos.
+Cooldown: 20 segundos. "

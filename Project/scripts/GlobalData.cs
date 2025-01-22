@@ -44,11 +44,11 @@ public partial class GlobalData : Node {
         Traps = 5;
         Fire =2;
         Teleport = 1;
-        Mist = 5;
+        Mist = 10;
         Gema = 3;
         Heart = 2;
-        Wolf = 1;
-        skeleton = 3;
+        Wolf = 2;
+        skeleton = 4;
         Spectre = 1;
         Score1 = 0;
         Score2 = 0;

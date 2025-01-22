@@ -57,7 +57,6 @@ public partial class Cleome : CharacterBody2D {
             if (inputVector.X < 0) animatedSpectre.Scale = new Vector2(-2, 2);
             else animatedSpectre.Scale = new Vector2(2, 2);
         } 
-        else animatedSpectre.Stop();
     }
     void CheckInputVector() {
         // Obtener Vector de movimiento correspondiente.

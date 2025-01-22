@@ -10,37 +10,16 @@ scale = Vector2(4.5, 4.5)
 autoplay = "stop"
 frame_progress = 0.0329231
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 80.0
-offset_top = -56.0
-offset_right = 516.0
-offset_bottom = 63.0
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -120.0
+offset_right = 532.0
+offset_bottom = 157.0
 theme_override_fonts/font = ExtResource("2_23oro")
 theme_override_font_sizes/font_size = 30
-text = "Lasswell"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_23oro")
-theme_override_font_sizes/font_size = 30
-text = "Salud: 150"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_23oro")
-theme_override_font_sizes/font_size = 30
-text = "Velocidad: 180"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_23oro")
-theme_override_font_sizes/font_size = 30
-text = "Habilidad: Sanación"
-horizontal_alignment = 1
+text = "Lasswell
+Salud: 150
+Velocidad: 180
+Habilidad: Sanación
+Sana 100 puntos de Salud.
+Cooldown: 30 segundos."

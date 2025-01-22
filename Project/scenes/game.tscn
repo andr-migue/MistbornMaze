@@ -231,18 +231,18 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_txqrd")
 
 [node name="Label1" type="Label" parent="ScoreSystem"]
-offset_left = 127.8
-offset_top = 11.0
-offset_right = 199.8
-offset_bottom = 80.0
+offset_left = 128.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 
 [node name="Label2" type="Label" parent="ScoreSystem"]
-offset_left = 92.8
-offset_top = 8.0
-offset_right = 164.8
-offset_bottom = 77.0
+offset_left = 88.0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 text = ":"
@@ -255,20 +255,34 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_txqrd")
 
 [node name="Label3" type="Label" parent="ScoreSystem"]
-offset_left = 2503.8
-offset_top = 1355.0
-offset_right = 2575.8
-offset_bottom = 1424.0
+offset_left = 2504.0
+offset_top = 1360.0
+offset_right = 2576.0
+offset_bottom = 1429.0
 theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 
 [node name="Label4" type="Label" parent="ScoreSystem"]
-offset_left = 2468.8
-offset_top = 1352.0
-offset_right = 2540.8
-offset_bottom = 1421.0
+offset_left = 2464.0
+offset_top = 1360.0
+offset_right = 2536.0
+offset_bottom = 1429.0
 theme_override_fonts/font = ExtResource("4_cw5ra")
 theme_override_font_sizes/font_size = 50
 text = ":"
+
+[node name="Info" type="Label" parent="ScoreSystem"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_cw5ra")
+theme_override_font_sizes/font_size = 40
+text = "Modificar Iluminación General: (-) (+)"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Pause/VBoxContainer/Button" to="Pause" method="PressBack"]

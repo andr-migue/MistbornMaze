@@ -39,17 +39,20 @@ z_as_relative = false
 shape = SubResource("RectangleShape2D_45uex")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -56.0
+offset_left = -64.0
 offset_top = 16.0
+offset_right = -8.0
 offset_bottom = 66.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wbyk2")
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wbyk2")
+horizontal_alignment = 1
 
 [node name="Movement" parent="." instance=ExtResource("2_r0wqg")]
 
@@ -57,17 +60,12 @@ theme_override_fonts/font = ExtResource("2_wbyk2")
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="."]
-offset_left = -40.0
-offset_top = -128.0
-offset_bottom = -105.0
-theme_override_fonts/font = ExtResource("2_wbyk2")
-
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_sdmke")]
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label", "changeLabel") instance=ExtResource("4_sdmke")]
 collision_layer = 8
 collision_mask = 0
 Health = 100
-label = NodePath("../Label")
+label = NodePath("../HBoxContainer/Label")
+changeLabel = NodePath("../HBoxContainer/changeLabel")
 
 [node name="Sensor" type="Area2D" parent="."]
 collision_layer = 0
@@ -84,3 +82,16 @@ position = Vector2(0, -48)
 scale = Vector2(8, 8)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_fxfpi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -40.0
+offset_top = -136.0
+offset_bottom = -96.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wbyk2")
+
+[node name="changeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wbyk2")

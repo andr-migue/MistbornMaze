@@ -136,10 +136,10 @@ offset_right = 2288.0
 offset_bottom = 960.0
 
 [node name="GuideNode" type="Node2D" parent="."]
-position = Vector2(448, 640)
+position = Vector2(384, 640)
 
 [node name="GuideNode2" type="Node2D" parent="."]
-position = Vector2(1752, 640)
+position = Vector2(1688, 640)
 
 [connection signal="pressed" from="Button" to="." method="PressBack"]
 [connection signal="pressed" from="Button2" to="." method="PressAccept1"]

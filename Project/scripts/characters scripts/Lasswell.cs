@@ -43,7 +43,7 @@ public partial class Lasswell : CharacterBody2D {
     }
     public void Hability() {
         if (IsHability) {
-            MyHealthBox.TakeHealth(50);
+            MyHealthBox.TakeHealth(100);
             IsHability = false;
             Cooldown.Visible = true;
             Timer.Start();
@@ -51,7 +51,7 @@ public partial class Lasswell : CharacterBody2D {
     }
     private void InitTimer() {
         Timer = new Timer();
-        Timer.WaitTime = 20.0f;
+        Timer.WaitTime = 30.0f;
         Timer.OneShot = true;
         Timer.Connect("timeout", new Callable(this, nameof(Timeout)));
         AddChild(Timer);

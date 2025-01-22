@@ -42,6 +42,7 @@ offset_bottom = 66.0
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_mpgvr")
+horizontal_alignment = 1
 
 [node name="Movement" parent="." instance=ExtResource("2_qthm4")]
 speed = 180.0
@@ -51,21 +52,29 @@ position = Vector2(0, -48)
 scale = Vector2(2, 2)
 frame_progress = 0.0
 
-[node name="Label" type="Label" parent="."]
-offset_left = -40.0
-offset_top = -136.0
-offset_bottom = -113.0
-theme_override_fonts/font = ExtResource("2_mpgvr")
-
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_bmn3x")]
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label", "changeLabel") instance=ExtResource("4_bmn3x")]
 z_index = 5
 z_as_relative = false
 collision_layer = 8
 collision_mask = 0
-label = NodePath("../Label")
+label = NodePath("../HBoxContainer/Label")
+changeLabel = NodePath("../HBoxContainer/changeLabel")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -48)
 scale = Vector2(8, 8)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_3awh6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -40.0
+offset_top = -144.0
+offset_bottom = -104.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mpgvr")
+
+[node name="changeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mpgvr")

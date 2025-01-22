@@ -10,37 +10,19 @@ scale = Vector2(4.5, 4.5)
 autoplay = "stop"
 frame_progress = 0.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 80.0
-offset_top = -56.0
-offset_right = 516.0
-offset_bottom = 63.0
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -168.0
+offset_right = 568.0
+offset_bottom = 189.0
 theme_override_fonts/font = ExtResource("2_7qtk6")
 theme_override_font_sizes/font_size = 30
-text = "Cleome"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7qtk6")
-theme_override_font_sizes/font_size = 30
-text = "Salud: 150"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7qtk6")
-theme_override_font_sizes/font_size = 30
-text = "Velocidad: 180"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7qtk6")
-theme_override_font_sizes/font_size = 30
-text = "Habilidad: Transformación"
-horizontal_alignment = 1
+text = "Cleome
+Salud: 150
+Velocidad: 180
+Habilidad: Transformación
+Se transforma en un espectro
+capaz de atravezar obstáculos
+y provocar daño, durante 15
+segundos.
+Cooldown: 30 segundos."

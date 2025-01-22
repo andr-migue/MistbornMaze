@@ -142,7 +142,7 @@ fill_from = Vector2(0.495726, 0.51567)
 fill_to = Vector2(0.80057, 0.179487)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_agoww"]
-radius = 40.7922
+radius = 32.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "CurrentHability", "Cooldown", "MyCollision", "animatedSprite", "animatedSpectre", "MyHealthBox", "MyHitbox", "sensor")]
 z_index = 5
@@ -167,6 +167,7 @@ shape = SubResource("RectangleShape2D_45uex")
 [node name="Cleome" parent="." instance=ExtResource("2_t18nc")]
 position = Vector2(0, -40)
 scale = Vector2(2, 2)
+frame_progress = 0.0
 
 [node name="PointLight2D" type="PointLight2D" parent="Cleome"]
 position = Vector2(0, -4)
@@ -175,33 +176,31 @@ blend_mode = 2
 texture = SubResource("GradientTexture2D_s04xv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -56.0
-offset_top = 32.0
-offset_bottom = 82.0
+offset_left = -64.0
+offset_top = 40.0
+offset_right = -8.0
+offset_bottom = 90.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_w0t6w")
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_w0t6w")
+horizontal_alignment = 1
 
 [node name="Movement" parent="." instance=ExtResource("3_4otxo")]
 speed = 180.0
 
-[node name="Label" type="Label" parent="."]
-offset_left = -40.0
-offset_top = -112.0
-offset_bottom = -89.0
-theme_override_fonts/font = ExtResource("3_w0t6w")
-
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_0nyn4")]
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label", "changeLabel") instance=ExtResource("4_0nyn4")]
 z_index = 5
 z_as_relative = false
 collision_layer = 8
 collision_mask = 0
-label = NodePath("../Label")
+label = NodePath("../HBoxContainer/Label")
+changeLabel = NodePath("../HBoxContainer/changeLabel")
 
 [node name="Sensor" type="Area2D" parent="."]
 collision_layer = 0
@@ -219,6 +218,7 @@ z_index = 5
 z_as_relative = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_c5jwv")
+autoplay = "default"
 frame_progress = 0.981175
 
 [node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
@@ -240,3 +240,16 @@ z_as_relative = false
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_agoww")
 debug_color = Color(0.96799, 7.70092e-07, 0.470739, 0.42)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -40.0
+offset_top = -120.0
+offset_bottom = -80.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w0t6w")
+
+[node name="changeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w0t6w")

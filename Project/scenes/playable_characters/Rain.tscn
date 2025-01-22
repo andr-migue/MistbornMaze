@@ -44,18 +44,13 @@ scale = Vector2(2, 2)
 autoplay = "stop"
 frame_progress = 0.505737
 
-[node name="Label" type="Label" parent="."]
-offset_left = -40.0
-offset_top = -120.0
-offset_bottom = -97.0
-theme_override_fonts/font = ExtResource("4_k4e6o")
-
-[node name="HealthBox" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_swfwc")]
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label", "changeLabel") instance=ExtResource("4_swfwc")]
 z_index = 5
 z_as_relative = false
 collision_layer = 128
 collision_mask = 0
-label = NodePath("../Label")
+label = NodePath("../HBoxContainer/Label")
+changeLabel = NodePath("../HBoxContainer/changeLabel")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -48)
@@ -71,7 +66,22 @@ offset_bottom = 66.0
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_k4e6o")
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_k4e6o")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -40.0
+offset_top = -144.0
+offset_bottom = -104.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_k4e6o")
+
+[node name="changeLabel" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_k4e6o")

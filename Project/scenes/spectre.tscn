@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4o4wm8p22045" path="res://assets/PC Computer - Koumajou Densetsu II Strangers Requiem - Spectre.png" id="5_03paj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e7dew"]
-radius = 40.7922
+radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5cpdf"]
 
