@@ -52,9 +52,7 @@ public partial class Rain : CharacterBody2D {
             light.TextureScale = light.TextureScale * 2;
             IsHability = false;
             Timer.Start();
-            Timer2.Start();
             CurrentHability.Visible = true;
-            Cooldown.Visible = true;
         }
     }
     private void InitTimer() {
@@ -67,6 +65,8 @@ public partial class Rain : CharacterBody2D {
     private void Timeout() {
         light.TextureScale = originalLight;
         CurrentHability.Visible = false;
+        Cooldown.Visible = true;
+        Timer2.Start();
     }
     private void InitTimer2() {
         Timer2 = new Timer();

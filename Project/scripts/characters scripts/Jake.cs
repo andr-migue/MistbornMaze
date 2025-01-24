@@ -49,9 +49,7 @@ public partial class Jake : CharacterBody2D {
             movement.speed = 400;
             IsHability = false;
             Timer.Start();
-            Timer2.Start();
             CurrentHability.Visible = true;
-            Cooldown.Visible = true;
         }
     }
     private void InitTimer() {
@@ -64,6 +62,8 @@ public partial class Jake : CharacterBody2D {
     private void Timeout() {
         movement.speed = 200;
         CurrentHability.Visible = false;
+        Cooldown.Visible = true;
+        Timer2.Start();
     }
     private void InitTimer2() {
         Timer2 = new Timer();

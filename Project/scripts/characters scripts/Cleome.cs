@@ -14,6 +14,7 @@ public partial class Cleome : CharacterBody2D {
     private Timer Timer;
     private Timer Timer2;
     private bool IsHability = true;
+    private bool IsTransform = false;
     public override void _Ready() {
         InitialPosition = Position;
         movement.setup(this);
@@ -27,7 +28,7 @@ public partial class Cleome : CharacterBody2D {
         AnimationSpectre();
         if (!Timer.IsStopped()) CurrentHability.Text = $"Transformación: {Timer.TimeLeft:F1}";
         if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
-        if (sensor.collisions.Count == 0 && Timer.IsStopped()) Timeout();
+        if (sensor.collisions.Count == 0 && IsTransform && Timer.IsStopped()) Timeout();
     }
     public override void _PhysicsProcess(double delta) {
         CheckInputVector();
@@ -70,6 +71,7 @@ public partial class Cleome : CharacterBody2D {
     }
     public void Hability() {
         if (IsHability) {
+            IsTransform = true;
             MyCollision.Disabled = true;
             MyHealthBox.Monitorable = false;
             MyHitbox.Monitoring = true;
@@ -77,9 +79,7 @@ public partial class Cleome : CharacterBody2D {
             animatedSpectre.Visible = true;
             IsHability = false;
             Timer.Start();
-            Timer2.Start();
             CurrentHability.Visible = true;
-            Cooldown.Visible = true;
         }
     }
     private void InitTimer() {
@@ -91,12 +91,15 @@ public partial class Cleome : CharacterBody2D {
     }
     private void Timeout() {
         if (sensor.collisions.Count == 0) {
+            IsTransform = false;
             MyHitbox.Monitoring = false;
             animatedSprite.Visible = true;
             animatedSpectre.Visible = false;
             MyCollision.Disabled = false;
             MyHealthBox.Monitorable = true;
             CurrentHability.Visible = false;
+            Timer2.Start();
+            Cooldown.Visible = true;
         }
     }
     private void InitTimer2() {

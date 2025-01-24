@@ -12,6 +12,7 @@ public partial class Nichols : CharacterBody2D {
     private Vector2 inputVector;
     private Vector2 InitialPosition;
     private bool IsHability = true;
+    private bool IsTransform = false;
     public override void _Ready() {
         InitialPosition = Position;
         movement.setup(this);
@@ -23,7 +24,7 @@ public partial class Nichols : CharacterBody2D {
         CheckLimits();
         if (!Timer.IsStopped()) CurrentHability.Text = $"Desvanecimiento: {Timer.TimeLeft:F1}";
         if (!Timer2.IsStopped()) Cooldown.Text = $"Cooldown: {Timer2.TimeLeft:F1}";
-        if (sensor.collisions.Count == 0 && Timer.IsStopped()) Timeout(); 
+        if (sensor.collisions.Count == 0 && IsTransform && Timer.IsStopped()) Timeout(); 
     }
     public override void _PhysicsProcess(double delta) {
         CheckInputVector();
@@ -57,15 +58,14 @@ public partial class Nichols : CharacterBody2D {
     }
     public void Hability() {
         if (IsHability) {
+            IsTransform = true;
             MyCollision.Disabled = true;
             MyHealthBox.Monitorable = false;
             SetTransparency(0.5f);
             movement.speed = 300;
             IsHability = false;
             Timer.Start();
-            Timer2.Start();
             CurrentHability.Visible = true;
-            Cooldown.Visible = true;
         }
     }
     private void InitTimer() {
@@ -77,11 +77,14 @@ public partial class Nichols : CharacterBody2D {
     }
     private void Timeout() {
         if (sensor.collisions.Count == 0) {
+            IsTransform = false;
             MyCollision.Disabled = false;
             MyHealthBox.Monitorable = true;
             SetTransparency(1);
             movement.speed = 200;
             CurrentHability.Visible = false;
+            Cooldown.Visible = true;
+            Timer2.Start();
         }
     }
     private void InitTimer2() {
