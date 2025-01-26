@@ -62,6 +62,112 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 2. Unzip the contents.
 3. Run `MistBornMaze.exe`.
 
+## Classes Structure 📘
+
+### Main Classes
+
+- **Board.cs**: Manages the generation of the game map, including creating the maze, placing players, traps, enemies, and items.
+- **Game.cs**: Configures the cameras and associates the players' view with the board.
+- **GlobalData.cs**: Stores global variables and playlists. Defines static variables to be used throughout the game.
+
+### Game Control
+- **Pause.cs**: Manages the game's pause and the detection of winners.
+- **Menu.cs**: Controls the main game menu, including methods to navigate between menu options and change settings.
+- **Intro.cs**: Manages the game's introduction screen using a timer to gradually show the introduction text.
+- **SelectionPlayer.cs**: Manages the character selection screen, allowing navigation between characters and selecting playable characters.
+
+### Movement and Collisions
+- **Movement.cs**: Enables the movement of entities.
+- **Player1.cs and Player2.cs**: Control the input and behavior of players 1 and 2, initializing characters and handling keyboard inputs.
+- **PlayerSensor.cs**: Detects collisions with other objects in the game, using lists to store and remove collisions.
+- **Sensor.cs**: Determines the target towards which entities will move, using methods to scan and select the nearest target.
+
+### Health and Scoring System
+- **HealthBox.cs**: Manages the players' health system, including methods to update health and handle respawn.
+- **HitBox.cs**: Manages the damage to entities in the game, with a simple method to apply damage.
+- **ScoreSystem.cs**: Displays the players' scores on the interface, using labels to show scores and animations for the gems.
+
+### Traps, Enemies, and Items
+- **Fire.cs**: Controls the fire animation in the game.
+- **Gema.cs**: Manages the behavior of the gems in the game, including their collection and respawn.
+- **Heart.cs**: Controls the healing of players when they collect hearts, using events to detect collection and handle respawn.
+- **Mist.cs**: Controls the visibility of the mist in the game, using a timer to manage mist visibility when a character enters the area.
+- **Trap.cs**: Controls the traps in the game, using animations and timers to activate and deactivate traps.
+- **Teleport.cs**: Controls the teleportation of players, using methods to detect a player's entry and change their position.
+- **Skeleton.cs**: Controls the behavior of the skeleton enemy, using sensors and animations to move the skeleton towards the target.
+- **Spectre.cs**: Controls the behavior of the specter enemy, similar to Skeleton.cs, using sensors and animations to move the specter towards the target.
+- **Wolf.cs**: Controls the behavior of the wolf enemy, similar to Skeleton.cs, using sensors and animations to move the wolf towards the target.
+
+### Sound System
+- **SoundManager.cs**: Manages the game's soundtrack, including methods to play, randomize, and change songs.
+
+### Characters
+All characters share the following common features:
+- Extend the `CharacterBody2D` class from Godot, allowing them to have a 2D body and move.
+- Use a `Movement` object to handle their movements.
+- Have specific animations for different movement directions using `AnimatedSprite2D`.
+- Possess unique abilities that can be activated and have a cooldown period.
+- Each character has a `Timer` to manage the cooldown of their abilities.
+- Use labels (`Label`) to display relevant information on the interface, such as the cooldown of their abilities.
+- Detect and respond to player input through `InputVector`.
+
+These common features provide a basic and consistent structure for all characters, allowing each to have unique abilities while sharing a similar base functionality.
+
+#### Specific Abilities
+- **Cid**: Teleports to a random position on the map. Cooldown: 5 seconds.
+- **Jake**: Temporarily increases movement speed. Cooldown: 20 seconds.
+- **Rain**: Increases the size of their light to illuminate more area. Cooldown: 20 seconds.
+- **Cleome**: Transforms into a specter, becoming invisible to enemies. Cooldown: 20 seconds.
+- **Nichols**: Fades, becoming less visible and increasing speed. Cooldown: 20 seconds.
+- **Lasswell**: Recovers health. Cooldown: 30 seconds.
+
+## Maze Generation Algorithm 🔄
+
+### Integer Matrix Generation
+
+1. **Initialization**:
+   - A 2D integer matrix is created with all cells initialized as walls (value `1`).
+
+2. **Maze Creation Using DFS**:
+   - The algorithm uses Depth-First Search (DFS) starting from a specific cell.
+   - It randomly selects directions (North, South, East, West).
+   - If the adjacent cell in the chosen direction is a valid wall, it converts the wall and the intermediate cell into paths (value `0`).
+   - This process continues recursively until all cells are visited.
+
+3. **Ensuring Accessibility**:
+   - The algorithm ensures a specific position in the maze is a path.
+   - It connects this position to at least one adjacent cell that is already a path.
+
+4. **Adding Random Paths**:
+   - To increase the maze's accessibility, the algorithm randomly converts some additional walls into paths.
+
+### Node Matrix Generation
+
+1. **Node Initialization**:
+   - A 2D node matrix is created based on the integer matrix.
+   - For each cell in the integer matrix:
+     - If the cell is a path (`0`), a path node is instantiated.
+     - If the cell is a wall (`1`), a wall node is instantiated randomly from a predefined set of walls.
+
+2. **Node Positioning**:
+   - Each node is positioned in the game world according to its coordinates in the matrix.
+   - The positioning is scaled based on the cell size of the board.
+
+### Additional Elements Placement
+
+1. **Players**:
+   - Player instances are created and placed at predefined starting positions.
+
+2. **Traps, Fires, Teleports, and Mist**:
+   - These elements are placed randomly in the maze at positions that are paths (`0`).
+   - The algorithm ensures that these elements are not placed on walls.
+
+3. **Gems and Hearts**:
+   - Similar to traps and other elements, gems and hearts are placed at random path positions.
+
+4. **Enemies (Wolves, Spectres, Skeletons)**:
+   - Enemy instances are created and placed at random path positions, ensuring they are not on walls.
+
 ## Contact 📧
 
 For any inquiries, you can contact me at:  
