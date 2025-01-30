@@ -48,7 +48,7 @@ public partial class GlobalData : Node {
         Gema = 3;
         Heart = 2;
         Wolf = 2;
-        skeleton = 4;
+        skeleton = 5;
         Spectre = 1;
         Score1 = 0;
         Score2 = 0;
