@@ -1,8 +1,8 @@
-<h1 align=center> MistbornMaze 🎮  </h2>
+<h1 align=center> Mistborn Maze 🎮  </h2>
 
 ![image_2025-01-06_04-17-11](https://github.com/user-attachments/assets/d0d51543-7d5d-46a5-ad7a-95515673488f)
 
-MistbornMaze is an exciting real-time multiplayer game developed with Godot Engine and C#. Set in the Mistborn universe, players venture into a maze filled with traps and enemies, competing to escape.
+Mistborn Maze is an exciting real-time multiplayer game developed with Godot Engine and C#. Set in the Mistborn universe, players venture into a maze filled with traps and enemies, competing to escape.
 
 ## Introduction 🌫️
 
