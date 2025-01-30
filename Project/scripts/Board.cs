@@ -190,10 +190,11 @@ public partial class Board : Node2D {
             Random r = new Random();
             int x = 0;
             int y = 0;
-            while (GlobalData.IntBoard[x, y] != 0) {
+            while (GlobalData.IntBoard[x, y] == 1) {
                 x = r.Next(1, GlobalData.Filas - 1);
                 y = r.Next(1, GlobalData.Columnas - 1);
             }
+            GlobalData.IntBoard[x, y] = 1;
             Node2D Instance = (Node2D)GD.Load<PackedScene>(path).Instantiate();
             Instance.Position = new Vector2(y * 64, x * 64);
             AddChild(Instance);
