@@ -95,8 +95,8 @@ Hidden among the crypts and graves are five fragments of Lerasium, glowing with 
 - **Trap.cs**: Controls the traps in the game, using animations and timers to activate and deactivate traps.
 - **Teleport.cs**: Controls the teleportation of players, using methods to detect a player's entry and change their position.
 - **Skeleton.cs**: Controls the behavior of the skeleton enemy, using sensors and animations to move the skeleton towards the target.
-- **Spectre.cs**: Controls the behavior of the specter enemy, similar to Skeleton.cs, using sensors and animations to move the specter towards the target.
-- **Wolf.cs**: Controls the behavior of the wolf enemy, similar to Skeleton.cs, using sensors and animations to move the wolf towards the target.
+- **Spectre.cs**: Controls the behavior of the specter enemy, similar to Skeleton.cs.
+- **Wolf.cs**: Controls the behavior of the wolf enemy, similar to Skeleton.cs.
 
 ### Sound System
 - **SoundManager.cs**: Manages the game's soundtrack, including methods to play, randomize, and change songs.
