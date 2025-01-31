@@ -285,4 +285,32 @@ theme_override_font_sizes/font_size = 40
 text = "Modificar Iluminación General: (-) (+)"
 horizontal_alignment = 1
 
+[node name="Habilidad 1" type="Label" parent="ScoreSystem"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1256.0
+offset_top = 1368.0
+offset_right = -573.0
+offset_bottom = 1417.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_cw5ra")
+theme_override_font_sizes/font_size = 40
+text = "Habilidad: F"
+
+[node name="Habilidad 2" type="Label" parent="ScoreSystem"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 1384.0
+offset_right = 715.0
+offset_bottom = 1433.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_cw5ra")
+theme_override_font_sizes/font_size = 40
+text = "Habilidad: Shift"
+
 [connection signal="pressed" from="Pause/VBoxContainer/Button" to="Pause" method="PressBack"]

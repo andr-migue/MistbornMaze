@@ -41,14 +41,14 @@ public partial class GlobalData : Node {
         SongsGame.Add("res://soundtrack/ingame/37 Baldur's Gate 3 OST - The Grand Design (Requiem).mp3");
         Filas = 33;
         Columnas = 33;
-        Traps = 5;
-        Fire =2;
+        Traps = 10;
+        Fire = 2;
         Teleport = 1;
         Mist = 10;
         Gema = 3;
-        Heart = 2;
+        Heart = 1;
         Wolf = 2;
-        skeleton = 5;
+        skeleton = 7;
         Spectre = 1;
         Score1 = 0;
         Score2 = 0;
