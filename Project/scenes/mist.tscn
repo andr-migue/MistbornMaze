@@ -88,6 +88,7 @@ z_as_relative = false
 shape = SubResource("RectangleShape2D_a8rrn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.0755101, 0.0755101, 0.0755101, 1)
 z_index = 6
 z_as_relative = false
 scale = Vector2(20, 20)
