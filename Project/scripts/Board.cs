@@ -145,7 +145,7 @@ public partial class Board : Node2D {
         return x >= 4 && x < IntBoard.GetLength(0) - 4 && y >= 4 && y < IntBoard.GetLength(1) - 4; 
     }
     public Node2D[,] GenerateNodeBoard(int[,] IntBoard) {
-        //Generar matriz de nodos.
+        // Generar matriz de nodos.
         Node2D[,] NodeBoard = new Node2D[IntBoard.GetLength(0), IntBoard.GetLength(1)];
         for (int i = 0; i < Filas; i++) {
             for (int j = 0; j < Columnas; j++) {
