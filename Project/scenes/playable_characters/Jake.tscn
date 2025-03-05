@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bngtjbw82pv7o"]
 
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="1_lcbgt"]
-[ext_resource type="Script" path="res://scripts/characters scripts/Jake.cs" id="1_retjm"]
+[ext_resource type="Script" uid="uid://crynd4dydpfnh" path="res://scripts/characters scripts/Jake.cs" id="1_retjm"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_04cjc"]
 [ext_resource type="PackedScene" uid="uid://f7wxs0e86or4" path="res://scenes/animated_characters/Jake.tscn" id="2_u7t3l"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_fsppm"]

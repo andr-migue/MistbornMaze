@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bp1xbqsq0vxdk"]
 
-[ext_resource type="Script" path="res://scripts/Teleport.cs" id="1_x8a1o"]
+[ext_resource type="Script" uid="uid://38pmex1ou3wg" path="res://scripts/Teleport.cs" id="1_x8a1o"]
 [ext_resource type="Texture2D" uid="uid://blm8ki8bvc3p6" path="res://assets/Arcade - Darius Gaiden Silver Hawk - Black Hole Bomb.png" id="2_wae77"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ta1fi"]

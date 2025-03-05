@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://bn8b2q7xvxly4"]
 
-[ext_resource type="Script" path="res://scripts/Skeleton.cs" id="1_y88e8"]
-[ext_resource type="Script" path="res://scripts/HitBox.cs" id="2_ihln4"]
+[ext_resource type="Script" uid="uid://dyl8x8qm5qgbi" path="res://scripts/Skeleton.cs" id="1_y88e8"]
+[ext_resource type="Script" uid="uid://chsjxs20myr8n" path="res://scripts/HitBox.cs" id="2_ihln4"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_uup2y"]
-[ext_resource type="Script" path="res://scripts/Sensor.cs" id="4_af2pr"]
+[ext_resource type="Script" uid="uid://bns4nknudaigy" path="res://scripts/Sensor.cs" id="4_af2pr"]
 [ext_resource type="Texture2D" uid="uid://bm2jvpm7ke8fw" path="res://assets/PC Computer - Koumajou Densetsu II Strangers Requiem - Ghoul.png" id="5_ru8ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5kyd"]

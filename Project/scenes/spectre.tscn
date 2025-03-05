@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=3 uid="uid://q0c2rx6x46ex"]
 
-[ext_resource type="Script" path="res://scripts/Spectre.cs" id="1_midhc"]
-[ext_resource type="Script" path="res://scripts/HitBox.cs" id="2_jhjlh"]
+[ext_resource type="Script" uid="uid://djcysrms25h2s" path="res://scripts/Spectre.cs" id="1_midhc"]
+[ext_resource type="Script" uid="uid://chsjxs20myr8n" path="res://scripts/HitBox.cs" id="2_jhjlh"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_irnwa"]
-[ext_resource type="Script" path="res://scripts/Sensor.cs" id="4_iysxy"]
+[ext_resource type="Script" uid="uid://bns4nknudaigy" path="res://scripts/Sensor.cs" id="4_iysxy"]
 [ext_resource type="Texture2D" uid="uid://c4o4wm8p22045" path="res://assets/PC Computer - Koumajou Densetsu II Strangers Requiem - Spectre.png" id="5_03paj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e7dew"]

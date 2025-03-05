@@ -1,10 +1,10 @@
 [gd_scene load_steps=25 format=3 uid="uid://cl1jf4j6yiq6o"]
 
 [ext_resource type="Texture2D" uid="uid://yo4glfohr1k6" path="res://assets/Mobile - Final Fantasy Brave Exvius - King Yashka.png" id="1_g257a"]
-[ext_resource type="Script" path="res://scripts/Wolf.cs" id="1_gbhpr"]
-[ext_resource type="Script" path="res://scripts/HitBox.cs" id="2_kh7jc"]
+[ext_resource type="Script" uid="uid://b3n5ud51mgxhb" path="res://scripts/Wolf.cs" id="1_gbhpr"]
+[ext_resource type="Script" uid="uid://chsjxs20myr8n" path="res://scripts/HitBox.cs" id="2_kh7jc"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_vbabd"]
-[ext_resource type="Script" path="res://scripts/Sensor.cs" id="5_xhv81"]
+[ext_resource type="Script" uid="uid://bns4nknudaigy" path="res://scripts/Sensor.cs" id="5_xhv81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjfys"]
 atlas = ExtResource("1_g257a")

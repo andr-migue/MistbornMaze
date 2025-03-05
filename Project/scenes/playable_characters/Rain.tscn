@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bohqspws8bmi0"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Rain.cs" id="1_h2pws"]
+[ext_resource type="Script" uid="uid://cu6kenp7u0mi1" path="res://scripts/characters scripts/Rain.cs" id="1_h2pws"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_gkl4j"]
 [ext_resource type="PackedScene" uid="uid://b6mbv5bpkj7kq" path="res://scenes/animated_characters/Rain.tscn" id="2_phi0m"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="4_k4e6o"]

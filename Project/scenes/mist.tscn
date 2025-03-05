@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://kf8uplrsfp78"]
 
 [ext_resource type="Texture2D" uid="uid://byxoobrcqini0" path="res://assets/PC Computer - RPG Maker MV - Mist.png" id="1_p0fpd"]
-[ext_resource type="Script" path="res://scripts/Mist.cs" id="1_sueou"]
+[ext_resource type="Script" uid="uid://sx6hsklnf1gg" path="res://scripts/Mist.cs" id="1_sueou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8rrn"]
 size = Vector2(64, 64)

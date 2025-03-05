@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl8w6beqjuc6i"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Nichols.cs" id="1_l6bmx"]
+[ext_resource type="Script" uid="uid://dbhv0iq8ks4it" path="res://scripts/characters scripts/Nichols.cs" id="1_l6bmx"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_r0wqg"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_wbyk2"]
 [ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Nichols.tscn" id="3_8g3hy"]
 [ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="4_sdmke"]
-[ext_resource type="Script" path="res://scripts/PlayerSensor.cs" id="5_0snud"]
+[ext_resource type="Script" uid="uid://ke1ener255fi" path="res://scripts/PlayerSensor.cs" id="5_0snud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
 size = Vector2(40, 40)

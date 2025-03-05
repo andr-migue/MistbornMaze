@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=3 uid="uid://dtxu88n0jlygf"]
 
-[ext_resource type="Script" path="res://scripts/Fire.cs" id="1_g7efk"]
+[ext_resource type="Script" uid="uid://fca62g1xnvln" path="res://scripts/Fire.cs" id="1_g7efk"]
 [ext_resource type="Texture2D" uid="uid://bd5b8vk71wq15" path="res://assets/PC Computer - Curious Expedition - Campfire.png" id="2_dtqre"]
-[ext_resource type="Script" path="res://scripts/HitBox.cs" id="3_qvnoa"]
+[ext_resource type="Script" uid="uid://chsjxs20myr8n" path="res://scripts/HitBox.cs" id="3_qvnoa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qrnxu"]
 radius = 16.0

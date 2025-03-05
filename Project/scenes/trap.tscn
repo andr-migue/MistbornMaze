@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://oephf710n3sn"]
 
-[ext_resource type="Script" path="res://scripts/Trap.cs" id="1_rj35k"]
+[ext_resource type="Script" uid="uid://bffj3tsac16ca" path="res://scripts/Trap.cs" id="1_rj35k"]
 [ext_resource type="Texture2D" uid="uid://s6gsdkc6v47i" path="res://assets/PC Computer - La Tale - Traps.png" id="2_w4m4q"]
 [ext_resource type="PackedScene" uid="uid://dfskvw3mvjl6u" path="res://scenes/hit_box.tscn" id="3_56l5a"]
 

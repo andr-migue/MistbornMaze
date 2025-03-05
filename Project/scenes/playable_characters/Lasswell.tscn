@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dd8ss8v32uuvh"]
 
-[ext_resource type="Script" path="res://scripts/characters scripts/Lasswell.cs" id="1_5e64h"]
+[ext_resource type="Script" uid="uid://lt1p4mngfrvp" path="res://scripts/characters scripts/Lasswell.cs" id="1_5e64h"]
 [ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_mpgvr"]
 [ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="2_qthm4"]
 [ext_resource type="PackedScene" uid="uid://gpbvlasngfa2" path="res://scenes/animated_characters/Laswell.tscn" id="3_3rrij"]
