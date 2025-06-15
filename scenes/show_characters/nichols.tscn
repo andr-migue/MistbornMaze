@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx57nflipldv3"]
+
+[ext_resource type="PackedScene" uid="uid://es2nsfdmtyj3" path="res://scenes/animated_characters/Nichols.tscn" id="1_83tsr"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_qhui3"]
+
+[node name="Nichols" type="Node2D"]
+
+[node name="Nichols" parent="." instance=ExtResource("1_83tsr")]
+scale = Vector2(4.5, 4.5)
+autoplay = "stop"
+frame_progress = 0.278844
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -168.0
+offset_right = 532.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource("2_qhui3")
+theme_override_font_sizes/font_size = 30
+text = "Nichols
+Salud: 100
+Velocidad: 200
+Habilidad: Desvanecimiento
+Se desvanece durante 5 
+segundos permitiéndole 
+atravesar obstáculos
+y evitar enemigos.
+Cooldown: 20 segundos."

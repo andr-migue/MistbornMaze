@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcd1v3xc2ex1k"]
+
+[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Cid.tscn" id="1_djbht"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_ro1ic"]
+
+[node name="Cid" type="Node2D"]
+
+[node name="Cid" parent="." instance=ExtResource("1_djbht")]
+scale = Vector2(4.5, 4.5)
+animation = &"stop"
+autoplay = "stop"
+frame_progress = 0.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -136.0
+offset_right = 532.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("2_ro1ic")
+theme_override_font_sizes/font_size = 30
+text = "Cid
+Salud: 300
+Velocidad: 150
+Habilidad: Teletransportación
+Se teletransporta a un lugar
+aleatorio en el mapa.
+Cooldown: 5 segundos."

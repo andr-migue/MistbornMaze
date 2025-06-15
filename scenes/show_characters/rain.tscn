@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://evx2dodddimo"]
+
+[ext_resource type="PackedScene" uid="uid://b6mbv5bpkj7kq" path="res://scenes/animated_characters/Rain.tscn" id="1_x3qrr"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_qmu4e"]
+
+[node name="Rain" type="Node2D"]
+
+[node name="Rain" parent="." instance=ExtResource("1_x3qrr")]
+scale = Vector2(4.5, 4.5)
+autoplay = "stop"
+frame_progress = 0.408339
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -136.0
+offset_right = 532.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("2_qmu4e")
+theme_override_font_sizes/font_size = 30
+text = "Rain
+Salud: 150
+Velocidad: 220
+Habilidad: Destello
+Duplica su Área de Iluminación
+durante 5 segundos.
+Cooldown: 20 segundos."

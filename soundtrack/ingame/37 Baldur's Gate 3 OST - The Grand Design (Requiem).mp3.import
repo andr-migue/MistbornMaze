@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbh8yg3utkae2"
+path="res://.godot/imported/37 Baldur's Gate 3 OST - The Grand Design (Requiem).mp3-6853a8e1c0225dc67081412bfacf7dea.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/ingame/37 Baldur's Gate 3 OST - The Grand Design (Requiem).mp3"
+dest_files=["res://.godot/imported/37 Baldur's Gate 3 OST - The Grand Design (Requiem).mp3-6853a8e1c0225dc67081412bfacf7dea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

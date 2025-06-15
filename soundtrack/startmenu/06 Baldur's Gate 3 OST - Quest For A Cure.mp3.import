@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gusjjdfrdof4"
+path="res://.godot/imported/06 Baldur's Gate 3 OST - Quest For A Cure.mp3-1d83c161ed050d486dba02fc2b45ee7d.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/startmenu/06 Baldur's Gate 3 OST - Quest For A Cure.mp3"
+dest_files=["res://.godot/imported/06 Baldur's Gate 3 OST - Quest For A Cure.mp3-1d83c161ed050d486dba02fc2b45ee7d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

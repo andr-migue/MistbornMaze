@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be3b1bd1l6qg3"
+path="res://.godot/imported/31 Baldur's Gate 3 OST - Song Of Balduran.mp3-6262c6211ff4c5f059e6f89f7c5d7d2a.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/ingame/31 Baldur's Gate 3 OST - Song Of Balduran.mp3"
+dest_files=["res://.godot/imported/31 Baldur's Gate 3 OST - Song Of Balduran.mp3-6262c6211ff4c5f059e6f89f7c5d7d2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://86t2iqsyqw3p"]
+
+[ext_resource type="Script" uid="uid://d04hq0fi6ap4p" path="res://scripts/characters scripts/Cid.cs" id="1_0bkth"]
+[ext_resource type="FontFile" uid="uid://ddx4uwgsrlofl" path="res://font/PixelifySans-Regular.ttf" id="2_mi7nm"]
+[ext_resource type="PackedScene" uid="uid://wady5pa2uggw" path="res://scenes/movement.tscn" id="3_lthd1"]
+[ext_resource type="PackedScene" uid="uid://bv275wdwxar24" path="res://scenes/animated_characters/Cid.tscn" id="4_oy5b7"]
+[ext_resource type="PackedScene" uid="uid://do5ashpqjw6hx" path="res://scenes/health_box.tscn" id="5_vu6lw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45uex"]
+size = Vector2(40, 40)
+
+[sub_resource type="Gradient" id="Gradient_d13bh"]
+offsets = PackedFloat32Array(0.00253807, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_neef6"]
+gradient = SubResource("Gradient_d13bh")
+fill = 1
+fill_from = Vector2(0.495726, 0.51567)
+fill_to = Vector2(0.80057, 0.179487)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "Cooldown", "animatedSprite")]
+z_index = 5
+z_as_relative = false
+collision_mask = 2
+script = ExtResource("1_0bkth")
+movement = NodePath("Movement")
+Cooldown = NodePath("VBoxContainer/Label2")
+animatedSprite = NodePath("Cid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+shape = SubResource("RectangleShape2D_45uex")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -56.0
+offset_top = 16.0
+offset_bottom = 66.0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mi7nm")
+horizontal_alignment = 1
+
+[node name="Movement" parent="." instance=ExtResource("3_lthd1")]
+speed = 150.0
+
+[node name="Cid" parent="." instance=ExtResource("4_oy5b7")]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+animation = &"stop"
+frame_progress = 0.0
+
+[node name="HealthBox" parent="." node_paths=PackedStringArray("label", "changeLabel") instance=ExtResource("5_vu6lw")]
+z_index = 5
+z_as_relative = false
+collision_layer = 8
+collision_mask = 0
+Health = 300
+label = NodePath("../HBoxContainer/Label")
+changeLabel = NodePath("../HBoxContainer/changeLabel")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(8, 8)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_neef6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -40.0
+offset_top = -128.0
+offset_bottom = -88.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mi7nm")
+
+[node name="changeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mi7nm")

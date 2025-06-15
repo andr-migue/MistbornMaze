@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://tbvrenpqhjyb"]
-
-[ext_resource type="Script" uid="uid://bsfwflpxho5mw" path="res://scripts/Player1.cs" id="1_mbym0"]
-
-[node name="Player1" type="Node2D"]
-z_index = 5
-z_as_relative = false
-script = ExtResource("1_mbym0")

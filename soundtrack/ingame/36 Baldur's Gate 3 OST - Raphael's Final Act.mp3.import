@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cynixhnfal3v4"
+path="res://.godot/imported/36 Baldur's Gate 3 OST - Raphael's Final Act.mp3-b6b244a4532858f2e786b5abb87eb038.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/ingame/36 Baldur's Gate 3 OST - Raphael's Final Act.mp3"
+dest_files=["res://.godot/imported/36 Baldur's Gate 3 OST - Raphael's Final Act.mp3-b6b244a4532858f2e786b5abb87eb038.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

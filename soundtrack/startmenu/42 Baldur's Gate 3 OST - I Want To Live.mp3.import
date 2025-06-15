@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bba638cmjlikh"
+path="res://.godot/imported/42 Baldur's Gate 3 OST - I Want To Live.mp3-201750ba755236555d947eb07769f0ea.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/startmenu/42 Baldur's Gate 3 OST - I Want To Live.mp3"
+dest_files=["res://.godot/imported/42 Baldur's Gate 3 OST - I Want To Live.mp3-201750ba755236555d947eb07769f0ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
