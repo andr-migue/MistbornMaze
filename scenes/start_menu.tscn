@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cke45sm7oh501"]
+[gd_scene format=3 uid="uid://cke45sm7oh501"]
 
 [ext_resource type="Script" uid="uid://5txvk74n0pgf" path="res://scripts/Menu.cs" id="1_2sowe"]
 [ext_resource type="Texture2D" uid="uid://bagqfcx8kwd0c" path="res://assets/DALL·E 2025-01-05 04.05.15 - A gothic and mystical title screen for a video game inspired by the universe of Mistborn. The scene is set in a dark, eerie cemetery with dense fog en.webp" id="2_7cu6n"]
@@ -76,7 +76,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="StartMenu" type="Control" node_paths=PackedStringArray("lineEdit1", "lineEdit2", "controls", "Info")]
+[node name="StartMenu" type="Control" unique_id=658572488 node_paths=PackedStringArray("lineEdit1", "lineEdit2", "controls", "Info")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,7 +89,7 @@ lineEdit2 = NodePath("VBoxContainer/HBoxContainer/LineEdit2")
 controls = NodePath("Controles")
 Info = NodePath("Info")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1237335211]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7cu6n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1884793184]
 modulate = Color(0.0745098, 0.0745098, 0.0745098, 1)
 z_as_relative = false
 position = Vector2(568, 688)
@@ -107,7 +107,7 @@ sprite_frames = SubResource("SpriteFrames_ypcl6")
 autoplay = "default"
 frame_progress = 0.514362
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1201788461]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 832.0
@@ -115,17 +115,17 @@ offset_right = 995.0
 offset_bottom = 1372.0
 alignment = 1
 
-[node name="play" type="Button" parent="VBoxContainer"]
+[node name="play" type="Button" parent="VBoxContainer" unique_id=1985216197]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 79
 text = "Nuevo Juego"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=918179922]
 layout_mode = 2
 alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" unique_id=1520238099]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
@@ -133,7 +133,7 @@ placeholder_text = "Filas"
 alignment = 1
 expand_to_text_length = true
 
-[node name="LineEdit2" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer/HBoxContainer" unique_id=66820432]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
@@ -141,31 +141,31 @@ placeholder_text = "Columnas"
 alignment = 1
 expand_to_text_length = true
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1054540756]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
 text = "   !   "
 
-[node name="SelectPlayer" type="Button" parent="VBoxContainer"]
+[node name="SelectPlayer" type="Button" parent="VBoxContainer" unique_id=353075402]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
 text = "Selector de Personajes"
 
-[node name="SelectPlayer2" type="Button" parent="VBoxContainer"]
+[node name="SelectPlayer2" type="Button" parent="VBoxContainer" unique_id=814752766]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
 text = "Controles"
 
-[node name="exit" type="Button" parent="VBoxContainer"]
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=174555794]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 80
 text = "Salir"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=468603516]
 layout_mode = 0
 offset_left = 1832.0
 offset_top = 1328.0
@@ -175,7 +175,7 @@ theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 30
 text = "Developed by Miguel Andrés Cazorla Zamora C-122"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=1239759653]
 layout_mode = 0
 offset_left = 2064.0
 offset_top = 1376.0
@@ -185,7 +185,7 @@ theme_override_fonts/font = ExtResource("3_xmp5n")
 theme_override_font_sizes/font_size = 30
 text = "SoundTrack from Baldur's Gate 3"
 
-[node name="Controles" type="Control" parent="."]
+[node name="Controles" type="Control" parent="." unique_id=827834879]
 visible = false
 anchors_preset = 0
 offset_left = 1208.0
@@ -193,14 +193,14 @@ offset_top = 912.0
 offset_right = 1248.0
 offset_bottom = 952.0
 
-[node name="Panel" type="Panel" parent="Controles"]
+[node name="Panel" type="Panel" parent="Controles" unique_id=1776347915]
 layout_mode = 0
 offset_left = -152.0
 offset_top = 144.0
 offset_right = 610.0
 offset_bottom = 464.0
 
-[node name="Label" type="Label" parent="Controles"]
+[node name="Label" type="Label" parent="Controles" unique_id=2122064512]
 layout_mode = 0
 offset_left = -80.0
 offset_top = 184.0
@@ -216,7 +216,7 @@ Mover Izquierda: D
 Usar Habilidad: F"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Controles"]
+[node name="Label2" type="Label" parent="Controles" unique_id=1027583927]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 176.0
@@ -232,20 +232,20 @@ Mover Izquierda: →
 Usar Habilidad: Shift"
 horizontal_alignment = 1
 
-[node name="Info" type="Control" parent="."]
+[node name="Info" type="Control" parent="." unique_id=608576770]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel2" type="Panel" parent="Info"]
+[node name="Panel2" type="Panel" parent="Info" unique_id=1927690170]
 layout_mode = 0
 offset_left = 1056.0
 offset_top = 936.0
 offset_right = 1818.0
 offset_bottom = 1048.0
 
-[node name="Label" type="Label" parent="Info"]
+[node name="Label" type="Label" parent="Info" unique_id=297551615]
 layout_mode = 0
 offset_left = 1064.0
 offset_top = 952.0
@@ -256,7 +256,7 @@ theme_override_font_sizes/font_size = 30
 text = "Para una experiencia de juego óptima, configurar
 las dimensiones del mundo con valores entre 20 y 80."
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="." unique_id=793347626]
 layout_mode = 0
 offset_left = -8.0
 offset_top = 312.0
